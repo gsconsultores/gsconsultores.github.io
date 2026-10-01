@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR para tarjetas</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+:root{ --navy:#16305C; --orange:#E2653A; --bg:#F4F6FA; --ink:#16213A; --muted:#5B6782; --line:#DCE2EC }
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:560px; margin:0 auto; padding:24px 16px}
+h1{font:800 22px Archivo,sans-serif; margin:0 0 4px; color:var(--navy)}
+p{color:var(--muted); margin:0 0 16px}
+input{width:100%; font:15px "IBM Plex Sans",sans-serif; padding:12px; border:1px solid var(--line); border-radius:10px}
+.row{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
+label{display:flex; align-items:center; gap:6px; font-size:14px}
+#qr{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin:16px 0; display:grid; place-items:center}
+#qr svg{width:100%; max-width:300px; height:auto}
+button{font:600 15px "IBM Plex Sans",sans-serif; border:0; border-radius:10px; padding:12px 16px; cursor:pointer; background:var(--navy); color:#fff; flex:1}
+button.alt{background:var(--orange)}
+small{display:block; color:var(--muted); margin-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>QR para las tarjetas</h1>
+  <p>Pegá la dirección final de la página y descargá el QR.</p>
+  <input id="url" value="https://gsconsultores.github.io/" spellcheck="false">
+  <div class="row">
+    <label><input type="radio" name="col" value="#16305C" checked style="width:auto"> Azul GS</label>
+    <label><input type="radio" name="col" value="#000000" style="width:auto"> Negro</label>
+  </div>
+  <div id="qr"></div>
+  <div class="row">
+    <button id="svg">Descargar SVG (imprenta)</button>
+    <button id="png" class="alt">Descargar PNG</button>
+  </div>
+  <small>Imprimilo de 2 cm de lado como mínimo y dejá un margen blanco alrededor. Probalo con dos o tres celulares antes de mandar a imprimir.</small>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+"use strict";
+var svgActual = "";
+
+function color(){ return document.querySelector("input[name=col]:checked").value; }
+
+/* Se arma el SVG a mano, módulo por módulo, para que salga vectorial y con el color elegido */
+function generar(){
+  var txt = document.getElementById("url").value.trim() || " ";
+  var q = qrcode(0, "Q");
+  q.addData(txt);
+  q.make();
+  var n = q.getModuleCount(), m = 4, t = n + m * 2, d = "";
+  for(var r=0;r<n;r++){
+    for(var c=0;c<n;c++){ if(q.isDark(r, c)) d += "M" + (c + m) + " " + (r + m) + "h1v1h-1z"; }
+  }
+  svgActual = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + t + ' ' + t + '" shape-rendering="crispEdges">' +
+    '<rect width="' + t + '" height="' + t + '" fill="#fff"/><path fill="' + color() + '" d="' + d + '"/></svg>';
+  document.getElementById("qr").innerHTML = svgActual;
+}
+
+function bajar(blob, nombre){
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = nombre;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+}
+
+document.getElementById("svg").addEventListener("click", function(){
+  bajar(new Blob([svgActual], {type:"image/svg+xml"}), "qr-gs-consultores.svg");
+});
+document.getElementById("png").addEventListener("click", function(){
+  var img = new Image(), lado = 2000;
+  img.onload = function(){
+    var cv = document.createElement("canvas");
+    cv.width = cv.height = lado;
+    var ctx = cv.getContext("2d");
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 0, 0, lado, lado);
+    cv.toBlob(function(b){ bajar(b, "qr-gs-consultores.png"); }, "image/png");
+  };
+  img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgActual);
+});
+document.getElementById("url").addEventListener("input", generar);
+document.querySelectorAll("input[name=col]").forEach(function(el){ el.addEventListener("change", generar); });
+generar();
+</script>
+</body>
+</html>
