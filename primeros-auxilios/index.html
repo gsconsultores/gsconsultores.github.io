@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primeros Auxilios · GS. Consultores</title>
+<meta name="description" content="Curso de Primeros Auxilios y RCP de GS. Consultores: lecciones en video, examen final y certificado descargable.">
+<meta name="theme-color" content="#16305C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* ============ Tokens (mismos que la web) ============ */
+:root{
+  --navy:#16305C; --navy2:#0F2347; --navy3:#0A1830; --ink:#0E1A30;
+  --blue:#0070AD; --sky:#5A9EC8; --aqua:#A0D5DC;
+  --orange:#E2653A; --orange2:#C9502A;
+  --bg:#F4F6FA; --card:#FFFFFF; --muted:#5B6782; --line:#DCE2EC; --soft:#EEF2F8;
+  --ok:#1FA855; --bad:#D1393B;
+  --r:20px; --r2:14px;
+  --sh:0 1px 2px rgba(14,26,48,.05), 0 14px 34px rgba(14,26,48,.08);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --display:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); overflow-x:hidden; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,select{font:inherit; color:inherit}
+[hidden]{display:none !important}
+h1,h2,h3{font-family:var(--display); margin:0; line-height:1.15}
+.wrap{width:100%; max-width:1200px; margin:0 auto; padding:0 16px}
+@media (min-width:768px){ .wrap{padding:0 32px} }
+.ico{width:22px; height:22px; flex:none; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round}
+:focus-visible{outline:3px solid var(--orange); outline-offset:3px}
+.eyebrow{display:inline-flex; align-items:center; gap:12px; font:600 12.5px/1.2 var(--body); letter-spacing:.16em; text-transform:uppercase; color:var(--orange)}
+.eyebrow::before{content:""; width:30px; height:2px; background:currentColor; flex:none}
+
+/* ============ Botones ============ */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; border:0; cursor:pointer; text-decoration:none; font-weight:600; border-radius:999px; padding:13px 22px; background:var(--orange); color:#fff; transition:background .2s, transform .2s var(--ease), opacity .2s}
+.btn:hover{background:var(--orange2)}
+.btn:active{transform:scale(.97)}
+.btn.sec{background:var(--soft); color:var(--navy)}
+.btn.sec:hover{background:var(--line)}
+.btn.nav{background:var(--navy)}
+.btn.nav:hover{background:var(--navy2)}
+.btn[disabled]{opacity:.45; cursor:not-allowed; transform:none}
+
+/* ============ Encabezado ============ */
+header.top{background:var(--navy); color:#fff; position:sticky; top:0; z-index:20; box-shadow:0 6px 20px rgba(8,20,42,.25)}
+header.top .wrap{display:flex; align-items:center; gap:16px; min-height:66px}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+.brand svg{width:24px; height:36px}
+.brand b{display:block; white-space:nowrap; font:800 16px/1 var(--display); letter-spacing:.04em}
+.brand small{display:block; font-size:11.5px; color:var(--aqua); letter-spacing:.06em}
+.prog{margin-left:auto; display:flex; align-items:center; gap:12px; font-size:13px; color:#C9D6EA}
+.prog .bar{width:140px; height:8px; background:rgba(255,255,255,.15); border-radius:9px; overflow:hidden}
+.salir{margin-left:14px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.22); color:#fff; border-radius:999px; padding:6px 14px; font-size:13px; cursor:pointer}
+.salir:hover{background:rgba(255,255,255,.2)}
+.prog[hidden] + .salir{margin-left:auto}
+.prog .bar i{display:block; height:100%; width:0; background:var(--orange); transition:width .5s var(--ease)}
+@media (max-width:560px){ .prog .bar,.brand small,.prog .pl{display:none} .salir{margin-left:10px; padding:6px 12px} }
+@media (max-width:360px){ .brand b{font-size:14px} }
+
+/* ============ Portada ============ */
+.hero{background:radial-gradient(1200px 500px at 85% -10%, #1F4A86 0%, transparent 60%), linear-gradient(160deg, var(--navy) 0%, var(--navy3) 100%); color:#fff; padding:56px 0 64px}
+.hero .wrap{display:grid; gap:40px}
+@media (min-width:960px){ .hero .wrap{grid-template-columns:1.15fr .85fr; align-items:center} }
+.hero h1{font-size:clamp(34px,5.4vw,58px); font-weight:800; font-stretch:92%; margin:16px 0 18px}
+.hero h1 em{font-style:normal; color:var(--orange)}
+.hero p.lead{font-size:18px; color:#D3DEEE; max-width:560px; margin:0 0 26px}
+.facts{display:flex; flex-wrap:wrap; gap:10px; margin:0; padding:0; list-style:none}
+.facts li{display:flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); font-size:14px}
+.facts .ico{width:18px; height:18px; color:var(--aqua)}
+
+.card{background:var(--card); border-radius:var(--r); box-shadow:var(--sh); padding:26px}
+.form h2{font-size:22px; color:var(--navy); margin-bottom:6px}
+.form p.sub{margin:0 0 18px; color:var(--muted); font-size:14.5px}
+.fld{display:block; margin-bottom:14px}
+.fld span{display:block; font-size:13px; font-weight:600; color:var(--navy); margin-bottom:6px}
+.fld input{width:100%; padding:12px 14px; border:1.5px solid var(--line); border-radius:12px; background:#fff; outline:none; transition:border-color .2s}
+.fld input:focus{border-color:var(--sky)}
+.fld input.err{border-color:var(--bad)}
+.row2{display:grid; gap:0 12px}
+@media (min-width:480px){ .row2{grid-template-columns:1fr 1fr} }
+.form .btn{width:100%; margin-top:6px}
+.fine{font-size:12.5px; color:var(--muted); margin:12px 0 0}
+.form .hola{background:var(--soft); border-radius:12px; padding:14px 16px; margin-bottom:16px; font-size:14.5px}
+
+.temario{padding:56px 0}
+.temario h2{font-size:clamp(26px,3.4vw,36px); color:var(--navy); margin:12px 0 26px}
+.grid-m{display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.mcard{display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:var(--r2); padding:16px}
+.mcard .n{flex:none; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; background:var(--soft); color:var(--navy); font:800 15px var(--display)}
+.mcard.ok .n{background:var(--ok); color:#fff}
+.mcard b{display:block; color:var(--navy); line-height:1.3}
+.mcard small{color:var(--muted)}
+
+/* ============ Curso ============ */
+.curso{padding:28px 0 60px}
+.curso .wrap{display:grid; gap:24px}
+@media (min-width:980px){ .curso .wrap{grid-template-columns:300px 1fr; align-items:start} }
+.side{background:#fff; border-radius:var(--r); box-shadow:var(--sh); padding:10px; position:relative}
+@media (min-width:980px){ .side{position:sticky; top:86px} }
+.side h3{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); padding:10px 12px 8px; font-family:var(--body)}
+.side ol{list-style:none; margin:0; padding:0}
+.side a{display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:12px; text-decoration:none; font-size:14.5px; line-height:1.3}
+.side a:hover{background:var(--soft)}
+.side a.act{background:var(--navy); color:#fff}
+.side a .n{flex:none; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; font:700 12px var(--display); background:var(--soft); color:var(--navy)}
+.side a.ok .n{background:var(--ok); color:#fff}
+.side a.act .n{background:var(--orange); color:#fff}
+.side a.lock{color:var(--muted)}
+.side .sep{height:1px; background:var(--line); margin:8px 12px}
+.side .tog{display:none; width:100%; align-items:center; justify-content:space-between; gap:10px; background:none; border:0; padding:10px 12px; cursor:pointer; font-weight:600; color:var(--navy)}
+.curso .wrap > *{min-width:0}
+@media (max-width:979px){
+  .side h3{display:none}
+  .side.open .tog .ico{transform:rotate(180deg)}
+  .side ol.mods{display:none}
+  .side.open ol.mods{display:block}
+  .side .tog{display:flex}
+}
+
+.lec h1{font-size:clamp(24px,3.2vw,34px); color:var(--navy); margin:10px 0 16px}
+.player{position:relative; aspect-ratio:16/9; border-radius:var(--r); overflow:hidden; background:var(--navy3); box-shadow:var(--sh)}
+.player iframe,.player video{position:absolute; inset:0; width:100%; height:100%; border:0}
+.player .pend{position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#C9D6EA; padding:20px;
+  background:radial-gradient(600px 300px at 80% 0%, #1F4A86 0%, transparent 70%), var(--navy3)}
+.player .pend b{display:block; color:#fff; font:700 20px var(--display); margin:12px 0 4px}
+.player .pend .ico{width:54px; height:54px; color:var(--orange); stroke-width:1.5}
+.claves{margin-top:22px}
+.claves h2{font-size:19px; color:var(--navy); margin-bottom:12px; display:flex; align-items:center; gap:10px}
+.claves ul{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+.claves li{position:relative; padding:12px 14px 12px 44px; background:var(--soft); border-radius:12px; line-height:1.5}
+.claves li::before{content:""; position:absolute; left:15px; top:16px; width:16px; height:16px; border-radius:50%; background:var(--orange) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/10px no-repeat}
+.alerta{display:flex; gap:12px; margin-top:14px; padding:14px 16px; border-radius:12px; background:#FFF3EC; border:1px solid #F6C9B3; color:#7A3416; font-size:15px}
+.alerta .ico{color:var(--orange)}
+.pie{display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; margin-top:26px; padding-top:20px; border-top:1px solid var(--line)}
+.pie .est{font-size:14px; color:var(--muted); display:flex; align-items:center; gap:8px}
+.pie .est.ok{color:var(--ok); font-weight:600}
+
+/* ============ Examen ============ */
+.exam{max-width:820px}
+.exam h1{font-size:clamp(26px,3.4vw,36px); color:var(--navy); margin:10px 0 10px}
+.exam .intro{color:var(--muted); margin:0 0 20px}
+.preg{background:#fff; border:1px solid var(--line); border-radius:var(--r2); padding:20px; margin-bottom:14px}
+.preg p.q{margin:0 0 12px; font-weight:600; color:var(--navy)}
+.preg p.q small{display:block; font-weight:500; color:var(--muted); font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:4px}
+.opc{display:flex; gap:12px; align-items:flex-start; padding:10px 12px; border:1.5px solid var(--line); border-radius:12px; margin-top:8px; cursor:pointer; transition:border-color .15s, background .15s; line-height:1.45}
+.opc:hover{border-color:var(--sky)}
+.opc input{margin-top:4px; accent-color:var(--orange); flex:none}
+.opc.sel{border-color:var(--orange); background:#FFF6F1}
+.corr .opc{cursor:default}
+.corr .opc.bien{border-color:var(--ok); background:#ECF8F1}
+.corr .opc.mal{border-color:var(--bad); background:#FDEEEE}
+.preg .exp{margin:10px 0 0; font-size:14.5px; color:var(--muted)}
+.res{border-radius:var(--r); padding:26px; margin-bottom:20px; color:#fff}
+.res.ok{background:linear-gradient(135deg,#178C47,#1FA855)}
+.res.no{background:linear-gradient(135deg,var(--navy),var(--navy2))}
+.res .nota{font:800 54px/1 var(--display)}
+.res p{margin:8px 0 16px}
+.res .btn.sec{background:rgba(255,255,255,.16); color:#fff}
+.lockbox{text-align:center; padding:40px 26px}
+.lockbox .ico{width:48px; height:48px; color:var(--orange)}
+.lockbox h1{font-size:26px; color:var(--navy); margin:12px 0 8px}
+
+/* ============ Certificado ============ */
+.certv{max-width:880px}
+.certprev{aspect-ratio:297/210; background:#fff; border-radius:8px; box-shadow:var(--sh); position:relative; overflow:hidden; container-type:inline-size; margin:18px 0 22px}
+.certprev .fr{position:absolute; inset:2.7%; border:.45cqw solid var(--navy)}
+.certprev .fr2{position:absolute; inset:3.9%; border:.15cqw solid var(--orange)}
+.certprev .in{position:absolute; inset:7% 8%; display:flex; flex-direction:column; align-items:center; text-align:center; color:var(--ink)}
+.certprev .lg{position:absolute; left:0; top:0; display:flex; gap:1.2cqw; align-items:center; text-align:left}
+.certprev .lg svg{width:3.4cqw; height:5.1cqw}
+.certprev .lg b{display:block; font:800 1.7cqw/1 var(--display); color:var(--navy)}
+.certprev .lg small{display:block; font-size:1.2cqw; color:var(--muted)}
+.certprev .t1{font:800 5.4cqw/1 var(--display); color:var(--navy); letter-spacing:.06em; margin-top:7cqw}
+.certprev .t2{font-size:1.7cqw; color:var(--orange); letter-spacing:.3em; text-transform:uppercase; margin-top:.8cqw; font-weight:600}
+.certprev .tx{font-size:1.7cqw; margin-top:3cqw; color:var(--muted)}
+.certprev .nm{font:700 3.8cqw/1.1 var(--display); color:var(--ink); margin-top:1cqw; padding:0 3cqw .6cqw; border-bottom:.15cqw solid var(--line)}
+.certprev .tx2{font-size:1.7cqw; margin-top:1.4cqw; line-height:1.5; max-width:70cqw}
+.certprev .tx2 b{color:var(--orange)}
+.certprev .bot{position:absolute; left:0; right:0; bottom:0; display:flex; justify-content:space-between; align-items:flex-end; font-size:1.3cqw; color:var(--muted)}
+.certprev .fi{border-top:.12cqw solid var(--ink); padding-top:.6cqw; min-width:22cqw; color:var(--ink)}
+.certprev .cod{text-align:right}
+.certprev .cod b{display:block; color:var(--navy); font-size:1.5cqw; letter-spacing:.05em}
+.acc{display:flex; flex-wrap:wrap; gap:10px}
+
+.verif{max-width:640px; margin:0 auto}
+.verif .est{display:flex; align-items:center; gap:14px; padding:18px; border-radius:var(--r2); margin:18px 0; font-weight:600}
+.verif .est.ok{background:#ECF8F1; color:#126B37}
+.verif .est.no{background:#FDEEEE; color:#9B2224}
+.verif .est.warn{background:#FFF6E5; color:#8A5A00}
+.verif .reg{font-size:14px; color:var(--muted); margin:-6px 0 16px}
+.verif .est .ico{width:34px; height:34px}
+.verif dl{display:grid; grid-template-columns:auto 1fr; gap:8px 18px; margin:0}
+.verif dt{color:var(--muted)}
+.verif dd{margin:0; font-weight:600; color:var(--navy)}
+
+footer.pf{background:var(--navy3); color:#9FB0CC; font-size:13.5px; padding:26px 0}
+footer.pf .wrap{display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between}
+footer.pf a{color:#fff}
+
+.toast{position:fixed; left:50%; bottom:22px; transform:translate(-50%,30px); opacity:0; background:var(--ink); color:#fff; padding:12px 18px; border-radius:12px; font-size:14.5px; z-index:50; transition:all .3s var(--ease); pointer-events:none; max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0); opacity:1}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gs1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="29.5" y2="0"><stop offset="0" stop-color="#A0D5DC"/><stop offset="1" stop-color="#5A9EC8"/></linearGradient>
+    <linearGradient id="gs2" gradientUnits="userSpaceOnUse" x1="29.5" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#5598C0"/><stop offset="1" stop-color="#006EB0"/></linearGradient>
+    <linearGradient id="gs3" gradientUnits="userSpaceOnUse" x1="37" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#0B6EAE"/><stop offset="1" stop-color="#9DD4DB"/></linearGradient>
+    <linearGradient id="gs4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#0070AD"/><stop offset="1" stop-color="#A0D7DC"/></linearGradient>
+    <linearGradient id="gs5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="22" y2="0"><stop offset="0" stop-color="#0870B0"/><stop offset="1" stop-color="#9CD3DE"/></linearGradient>
+    <linearGradient id="gs6" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="29.5" y2="0"><stop offset="0" stop-color="#96D2DB"/><stop offset="1" stop-color="#5A9BC4"/></linearGradient>
+    <linearGradient id="gs7" gradientUnits="userSpaceOnUse" x1="29.5" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#5598C5"/><stop offset="1" stop-color="#00669E"/></linearGradient>
+  </defs>
+  <symbol id="gs-iso" viewBox="0 0 59 88.5">
+    <path fill="url(#gs1)" stroke="url(#gs1)" stroke-width=".25" d="M0 17.5 29.5 0v18.5l-13.91 8.25z"/>
+    <path fill="url(#gs2)" stroke="url(#gs2)" stroke-width=".25" d="M29.5 0 59 17.5l-15.59 9.25L29.5 18.5z"/>
+    <path fill="url(#gs3)" stroke="url(#gs3)" stroke-width=".25" d="M59 17.5 37.09 30.5l16.01 9.5L59 36.5z"/>
+    <path fill="url(#gs4)" stroke="url(#gs4)" stroke-width=".25" d="M0 17.5 59 52.5V71L0 36z"/>
+    <path fill="url(#gs5)" stroke="url(#gs5)" stroke-width=".25" d="M0 71 21.91 58 5.9 48.5 0 52z"/>
+    <path fill="url(#gs6)" stroke="url(#gs6)" stroke-width=".25" d="M29.5 88.5 0 71l15.59-9.25L29.5 70z"/>
+    <path fill="url(#gs7)" stroke="url(#gs7)" stroke-width=".25" d="M59 71 29.5 88.5V70l13.91-8.25z"/>
+  </symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+  <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14 -1.5 8 5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-quiz" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17.5v.01"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Inicio del curso">
+      <svg aria-hidden="true"><use href="#gs-iso"/></svg>
+      <span><b>GS. CONSULTORES</b><small>Capacitación</small></span>
+    </a>
+    <div class="prog" id="prog" hidden><span id="progTxt">0/10</span><span class="bar"><i id="progBar"></i></span></div>
+    <button class="salir" id="salir" type="button" hidden title="Cerrar el acceso en este dispositivo">Salir</button>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="pf">
+  <div class="wrap">
+    <span>© GS. Consultores · Seguridad e Higiene</span>
+    <span><a href="https://gsconsultores.github.io/">gsconsultores.github.io</a> · <a href="mailto:Contacto@gsconsultoresargentina.com">Contacto@gsconsultoresargentina.com</a></span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+/* =====================================================================
+   CONFIGURACIÓN DEL CURSO
+   Los videos, los textos y las preguntas NO están acá: viajan cifrados
+   en contenido.enc.json y solo se abren con el usuario y la contraseña
+   del curso. Para editarlos o cambiar la clave: GS-cursos/primeros-auxilios
+   (contenido.js + armar-acceso.html).
+   ===================================================================== */
+var CURSO = {
+  titulo: 'Primeros Auxilios y RCP',
+  horas: 2,
+  aprobacion: 0.7,           // 70 % para aprobar
+  preguntasExamen: 15,       // una por módulo + el resto al azar
+  instructor: 'Lic. Gonzalo D. Sacchiero',
+  cargo: 'Instructor · GS. Consultores',
+  firma: '',                 // opcional: imagen PNG en base64 (data:image/png;base64,...)
+  urlPublica: 'https://gsconsultores.github.io/primeros-auxilios/',
+  sal: 'GS-PA-2026'          // si la cambiás, los certificados ya emitidos dejan de verificar
+};
+
+/* API_URL: la misma dirección de Apps Script que usa index.html de la web
+   (termina en /exec). Con ella cada aprobación queda en la hoja
+   «Certificados» y el QR confirma contra ese registro. Vacía = el curso
+   anda igual, pero sin registro central.                               */
+var API_URL = "https://script.google.com/macros/s/AKfycbz2WvlHX4MuI8La5S-SsHoa8RwcPdsoybEi2ioN0Xamcw48BTG8hwCehpyIfrjKYXhfgw/exec";
+(function(){
+  var h = location.hostname, m = /[?&]api=([^&]+)/.exec(location.search);
+  if((h === "localhost" || h === "127.0.0.1") && m) API_URL = decodeURIComponent(m[1]);   // solo para pruebas
+})();
+
+var MODULOS = [], PREGUNTAS = [];   // se completan al descifrar contenido.enc.json
+
+
+/* ============ Estado ============ */
+var KEY = 'gs-primeros-auxilios-v1';
+var st = cargar();
+var examenActual = null;
+
+function cargar(){
+  try{ var s = JSON.parse(localStorage.getItem(KEY)); if(s && s.hechos) return s; }catch(e){}
+  return { alumno:null, hechos:{}, intentos:[], cert:null };
+}
+function guardar(){ try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} }
+
+/* ============ Utilidades ============ */
+function $(s){ return document.querySelector(s); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function toast(t){ var el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function(){ el.classList.remove('on'); }, 2800); }
+function hechos(){ var n = 0; MODULOS.forEach(function(m){ if(st.hechos[m.id]) n++; }); return n; }
+function todoVisto(){ return hechos() === MODULOS.length; }
+function nombreCompleto(a){ return (a.nombre + ' ' + a.apellido).replace(/\s+/g, ' ').trim(); }
+function fmtDni(d){ return String(d).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function fmtFecha(iso){ var p = iso.split('-'); return (+p[2]) + ' de ' + MESES[+p[1] - 1] + ' de ' + p[0]; }
+function hoyIso(){ var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+function mezclar(a){ a = a.slice(); for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+// Hash cyrb53: no es criptográfico, alcanza para detectar certificados adulterados a mano.
+function cyrb53(str){
+  var h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+  for(var i = 0; i < str.length; i++){ var ch = str.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+}
+function normNombre(n){ return String(n).toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim(); }
+function codigoCert(nombre, dni, fecha, nota){
+  var h = cyrb53(CURSO.sal + '|' + normNombre(nombre) + '|' + dni + '|' + fecha + '|' + nota).toString(36).toUpperCase();
+  h = ('0000000000' + h).slice(-10);
+  return 'PA-' + h.slice(0, 5) + '-' + h.slice(5);
+}
+function urlVerificacion(c){
+  var base = /^https?:/.test(location.protocol) ? location.origin + location.pathname : CURSO.urlPublica;
+  return base + '#verificar?c=' + encodeURIComponent(c.codigo) + '&n=' + encodeURIComponent(c.nombre) + '&d=' + c.dni + '&f=' + c.fecha + '&p=' + c.nota;
+}
+
+/* ============ Acceso (usuario y contraseña únicos) ============
+   El contenido viaja cifrado (AES-GCM, clave derivada con PBKDF2 del
+   usuario + contraseña). Sin la clave correcta no hay nada legible.  */
+var ACCESO = { ok:false, enc:null };
+var KEY_ACC = 'gs-primeros-auxilios-acceso';
+
+function b64aBytes(s){ var b = atob(s), u = new Uint8Array(b.length); for(var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+function bytesAB64(u){ var s = ''; u = new Uint8Array(u); for(var i = 0; i < u.length; i++) s += String.fromCharCode(u[i]); return btoa(s); }
+function cargarEnc(){
+  if(ACCESO.enc) return Promise.resolve(ACCESO.enc);
+  return fetch('contenido.enc.json', { cache:'no-cache' }).then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(j){ return (ACCESO.enc = j); });
+}
+function derivarLlave(usuario, clave, enc){
+  var te = new TextEncoder();
+  return crypto.subtle.importKey('raw', te.encode(usuario.trim().toLowerCase() + '\u0000' + clave), 'PBKDF2', false, ['deriveKey'])
+    .then(function(base){
+      return crypto.subtle.deriveKey({ name:'PBKDF2', salt:b64aBytes(enc.salt), iterations:enc.iter, hash:'SHA-256' }, base,
+        { name:'AES-GCM', length:256 }, true, ['decrypt']);
+    });
+}
+function abrirCon(llave, enc){
+  return crypto.subtle.decrypt({ name:'AES-GCM', iv:b64aBytes(enc.iv) }, llave, b64aBytes(enc.data)).then(function(buf){
+    var c = JSON.parse(new TextDecoder().decode(buf));
+    MODULOS = c.MODULOS; PREGUNTAS = c.PREGUNTAS; ACCESO.ok = true;
+    return llave;
+  });
+}
+function accesoGuardado(){
+  var g; try{ g = JSON.parse(localStorage.getItem(KEY_ACC)); }catch(e){}
+  if(!g || !g.k) return Promise.resolve(false);
+  return cargarEnc().then(function(enc){
+    if(g.salt !== enc.salt) throw new Error('clave cambiada');
+    return crypto.subtle.importKey('raw', b64aBytes(g.k), 'AES-GCM', true, ['decrypt']).then(function(l){ return abrirCon(l, enc); });
+  }).then(function(){ return true; }, function(){ try{ localStorage.removeItem(KEY_ACC); }catch(e){} return false; });
+}
+function salirAcceso(){
+  try{ localStorage.removeItem(KEY_ACC); }catch(e){}
+  ACCESO.ok = false; MODULOS = []; PREGUNTAS = []; examenActual = null;
+  ir('#inicio');
+}
+
+function vLogin(){
+  return '<section class="hero" style="min-height:calc(100vh - 66px - 76px)"><div class="wrap"><div>' +
+      '<span class="eyebrow">Campus de alumnos</span>' +
+      '<h1>Primeros Auxilios <em>y RCP</em></h1>' +
+      '<p class="lead">Curso para grupos capacitados por GS. Consultores. Ingresá con el usuario y la contraseña que te pasó tu instructor.</p>' +
+      '<ul class="facts">' +
+        '<li><svg class="ico"><use href="#i-film"/></svg>Videos cortos</li>' +
+        '<li><svg class="ico"><use href="#i-quiz"/></svg>Examen final</li>' +
+        '<li><svg class="ico"><use href="#i-cert"/></svg>Certificado en PDF</li>' +
+      '</ul></div>' +
+    '<form class="card form" id="fLogin" novalidate><h2><svg class="ico" style="color:var(--orange);vertical-align:-4px"><use href="#i-lock"/></svg> Ingresar</h2>' +
+      '<p class="sub">Acceso exclusivo para alumnos.</p>' +
+      '<label class="fld"><span>Usuario</span><input name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>' +
+      '<label class="fld"><span>Contraseña</span><input name="clave" type="password" autocomplete="current-password" required></label>' +
+      '<button class="btn" type="submit" id="btnLogin">Entrar</button>' +
+      '<p class="fine" id="loginMsg">¿No tenés los datos? Pedíselos a tu instructor o escribinos a Contacto@gsconsultoresargentina.com.</p></form>' +
+    '</div></section>';
+}
+function bindLogin(){
+  var f = $('#fLogin'); if(!f) return;
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var u = f.usuario.value, c = f.clave.value, b = $('#btnLogin');
+    if(!u.trim() || !c){ toast('Completá el usuario y la contraseña.'); return; }
+    b.disabled = true; b.textContent = 'Verificando…';
+    cargarEnc().then(function(enc){
+      return derivarLlave(u, c, enc).then(function(l){ return abrirCon(l, enc); }).then(function(l){
+        return crypto.subtle.exportKey('raw', l).then(function(raw){
+          try{ localStorage.setItem(KEY_ACC, JSON.stringify({ salt:enc.salt, k:bytesAB64(raw) })); }catch(e){}
+        });
+      }, function(){ throw new Error('clave'); });
+    }).then(function(){ render(); }, function(e){
+      b.disabled = false; b.textContent = 'Entrar';
+      if(e && e.message === 'clave'){ f.clave.value = ''; f.clave.classList.add('err'); toast('Usuario o contraseña incorrectos.'); f.clave.focus(); }
+      else toast('No se pudo cargar el curso. Revisá tu conexión y probá de nuevo.');
+    });
+  });
+}
+
+/* ============ Registro central de aprobaciones (Apps Script) ============ */
+function registrarCert(){
+  var c = st.cert;
+  if(!API_URL || !c || c.registrado) return;
+  var datos = { accion:'certificado', codigo:c.codigo, nombre:c.nombre, dni:c.dni, empresa:c.empresa || '', fecha:c.fecha, nota:c.nota,
+    curso:CURSO.titulo, horas:CURSO.horas, intentos:st.intentos.length };
+  fetch(API_URL, { method:'POST', body:JSON.stringify(datos) }).then(function(r){ return r.json(); }).then(function(j){
+    if(j && j.ok && st.cert && st.cert.codigo === c.codigo){ st.cert.registrado = true; guardar(); }
+  }).catch(function(){});
+}
+
+/* ============ Ruteo ============ */
+function ir(h){ if(location.hash === h) render(); else location.hash = h; }
+window.addEventListener('hashchange', render);
+
+function render(){
+  var h = location.hash.replace(/^#/, '') || 'inicio';
+  var app = $('#app');
+  var vista = h.split(/[/?]/)[0];
+  $('#prog').hidden = !ACCESO.ok || !st.alumno || vista === 'verificar';
+  $('#salir').hidden = !ACCESO.ok || vista === 'verificar';
+  actualizarProgreso();
+  if(vista === 'verificar'){ app.innerHTML = vVerificar(h); consultarRegistro(h); }
+  else if(!ACCESO.ok){ app.innerHTML = vLogin(); bindLogin(); }
+  else if(!st.alumno || vista === 'inicio'){ app.innerHTML = vInicio(); bindInicio(); }
+  else if(vista === 'curso'){ var id = h.split('/')[1]; app.innerHTML = vCurso(id); bindCurso(); }
+  else if(vista === 'examen'){ app.innerHTML = vExamen(); bindExamen(); }
+  else if(vista === 'certificado'){ app.innerHTML = vCertificado(); bindCertificado(); }
+  else { app.innerHTML = vInicio(); bindInicio(); }
+  window.scrollTo(0, 0);
+}
+function actualizarProgreso(){
+  var n = hechos();
+  if(!MODULOS.length) return;
+  $('#progTxt').innerHTML = n + '/' + MODULOS.length + '<span class="pl"> lecciones</span>';
+  $('#progBar').style.width = (n / MODULOS.length * 100) + '%';
+}
+function siguienteDestino(){
+  if(st.cert) return '#certificado';
+  for(var i = 0; i < MODULOS.length; i++) if(!st.hechos[MODULOS[i].id]) return '#curso/' + MODULOS[i].id;
+  return '#examen';
+}
+
+/* ============ Vista: inicio ============ */
+function vInicio(){
+  var a = st.alumno;
+  var form = a ?
+    '<div class="card form"><h2>¡Hola, ' + esc(a.nombre) + '!</h2>' +
+      '<div class="hola">Llevás <b>' + hechos() + ' de ' + MODULOS.length + '</b> lecciones' + (st.cert ? ' y ya <b>aprobaste el examen</b>.' : '.') + '</div>' +
+      '<a class="btn" href="' + siguienteDestino() + '">' + (st.cert ? 'Ver mi certificado' : hechos() ? 'Seguir donde quedé' : 'Empezar el curso') + '</a>' +
+      '<p class="fine">¿No sos ' + esc(nombreCompleto(a)) + '? <a href="#" id="otroAlumno">Empezar con otros datos</a></p></div>'
+    :
+    '<form class="card form" id="fAlta" novalidate><h2>Tus datos</h2><p class="sub">Tus datos van a figurar en el certificado. Escribilos tal cual tu DNI.</p>' +
+      '<div class="row2"><label class="fld"><span>Nombre</span><input name="nombre" autocomplete="given-name" required></label>' +
+      '<label class="fld"><span>Apellido</span><input name="apellido" autocomplete="family-name" required></label></div>' +
+      '<label class="fld"><span>DNI (sin puntos)</span><input name="dni" inputmode="numeric" maxlength="9" required></label>' +
+      '<label class="fld"><span>Empresa (opcional)</span><input name="empresa" autocomplete="organization"></label>' +
+      '<button class="btn" type="submit">Empezar el curso</button>' +
+      '<p class="fine">Tu avance se guarda en este navegador. Si cambiás de dispositivo, empezás de nuevo.</p></form>';
+
+  var mods = MODULOS.map(function(m, i){
+    return '<div class="mcard' + (st.hechos[m.id] ? ' ok' : '') + '"><span class="n">' + (st.hechos[m.id] ? '✓' : i + 1) + '</span><span><b>' + esc(m.titulo) + '</b><small>Video de ' + esc(m.dur) + '</small></span></div>';
+  }).join('');
+
+  return '<section class="hero"><div class="wrap"><div>' +
+      '<span class="eyebrow">Curso online</span>' +
+      '<h1>Primeros Auxilios <em>y RCP</em></h1>' +
+      '<p class="lead">Aprendé a actuar en los primeros minutos de una emergencia, con lecciones cortas en video. Al terminar rendís un examen y descargás tu certificado.</p>' +
+      '<ul class="facts">' +
+        '<li><svg class="ico"><use href="#i-film"/></svg>' + MODULOS.length + ' videos cortos</li>' +
+        '<li><svg class="ico"><use href="#i-clock"/></svg>' + CURSO.horas + ' horas</li>' +
+        '<li><svg class="ico"><use href="#i-quiz"/></svg>Examen de ' + CURSO.preguntasExamen + ' preguntas</li>' +
+        '<li><svg class="ico"><use href="#i-cert"/></svg>Certificado en PDF</li>' +
+      '</ul></div>' + form + '</div></section>' +
+    '<section class="temario"><div class="wrap"><span class="eyebrow">Temario</span><h2>Qué vas a aprender</h2><div class="grid-m">' + mods + '</div></div></section>';
+}
+function bindInicio(){
+  var f = $('#fAlta');
+  if(f) f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var d = {}, ok = true;
+    ['nombre','apellido','dni','empresa'].forEach(function(k){ d[k] = f[k].value.trim().replace(/\s+/g, ' '); f[k].classList.remove('err'); });
+    d.dni = d.dni.replace(/\D/g, '');
+    if(d.nombre.length < 2){ f.nombre.classList.add('err'); ok = false; }
+    if(d.apellido.length < 2){ f.apellido.classList.add('err'); ok = false; }
+    if(!/^\d{6,9}$/.test(d.dni)){ f.dni.classList.add('err'); ok = false; }
+    if(!ok){ toast('Revisá los campos marcados en rojo.'); return; }
+    st = { alumno:d, hechos:{}, intentos:[], cert:null };
+    guardar();
+    ir('#curso/' + MODULOS[0].id);
+  });
+  var s = $('#otroAlumno');
+  if(s) s.addEventListener('click', function(ev){
+    ev.preventDefault();
+    if(!confirm('Se va a borrar el avance guardado en este navegador. ¿Seguimos?')) return;
+    st = { alumno:null, hechos:{}, intentos:[], cert:null }; guardar(); render();
+  });
+}
+
+/* ============ Vista: curso ============ */
+function lateral(actual){
+  var items = MODULOS.map(function(m, i){
+    var c = (m.id === actual ? 'act' : '') + (st.hechos[m.id] ? ' ok' : '');
+    return '<li><a class="' + c + '" href="#curso/' + m.id + '"><span class="n">' + (st.hechos[m.id] && m.id !== actual ? '✓' : i + 1) + '</span>' + esc(m.titulo) + '</a></li>';
+  }).join('');
+  var lockEx = todoVisto() ? '' : ' lock';
+  return '<aside class="side" id="side">' +
+    '<button class="tog" id="tog" type="button">Lecciones (' + hechos() + '/' + MODULOS.length + ')<svg class="ico"><use href="#i-chev"/></svg></button>' +
+    '<h3>Lecciones</h3><ol class="mods">' + items + '</ol><div class="sep"></div>' +
+    '<ol><li><a class="' + (actual === 'examen' ? 'act' : '') + lockEx + '" href="#examen"><span class="n"><svg class="ico" style="width:14px;height:14px"><use href="#' + (todoVisto() ? 'i-quiz' : 'i-lock') + '"/></svg></span>Examen final</a></li>' +
+    '<li><a class="' + (actual === 'certificado' ? 'act' : '') + (st.cert ? ' ok' : ' lock') + '" href="#certificado"><span class="n"><svg class="ico" style="width:14px;height:14px"><use href="#' + (st.cert ? 'i-cert' : 'i-lock') + '"/></svg></span>Certificado</a></li></ol></aside>';
+}
+function videoHtml(v){
+  if(!v) return '<div class="pend"><div><svg class="ico"><use href="#i-film"/></svg><b>Video en producción</b>Mientras tanto, estudiá con los puntos clave de abajo.</div></div>';
+  var yt = v.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/) || (/^[\w-]{11}$/.test(v) ? [0, v] : null);
+  if(yt) return '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '?rel=0&modestbranding=1" title="Video de la lección" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  return '<video id="vid" src="' + esc(v) + '" controls playsinline preload="metadata"></video>';
+}
+function vCurso(id){
+  var i = 0;
+  for(var k = 0; k < MODULOS.length; k++) if(MODULOS[k].id === id) i = k;
+  var m = MODULOS[i], ok = !!st.hechos[m.id];
+  var ant = i > 0 ? '<a class="btn sec" href="#curso/' + MODULOS[i - 1].id + '">Anterior</a>' : '<span></span>';
+  var sigTxt = i < MODULOS.length - 1 ? 'Siguiente lección' : 'Ir al examen';
+  return '<section class="curso"><div class="wrap">' + lateral(m.id) +
+    '<article class="lec" data-id="' + m.id + '" data-i="' + i + '">' +
+      '<span class="eyebrow">Lección ' + (i + 1) + ' de ' + MODULOS.length + ' · ' + esc(m.dur) + '</span>' +
+      '<h1>' + esc(m.titulo) + '</h1>' +
+      '<div class="player">' + videoHtml(m.video) + '</div>' +
+      '<div class="claves"><h2><svg class="ico" style="color:var(--orange)"><use href="#i-key"/></svg>Puntos clave</h2><ul>' +
+        m.claves.map(function(c){ return '<li>' + c + '</li>'; }).join('') + '</ul>' +
+        (m.alerta ? '<div class="alerta"><svg class="ico"><use href="#i-warn"/></svg><span>' + esc(m.alerta) + '</span></div>' : '') +
+      '</div>' +
+      '<div class="pie">' + ant +
+        '<span class="est' + (ok ? ' ok' : '') + '" id="est">' + (ok ? '<svg class="ico"><use href="#i-check"/></svg>Lección completada' : 'Mirá el video y leé los puntos clave') + '</span>' +
+        '<button class="btn" id="btnSig" type="button">' + (ok ? sigTxt : 'Completar y seguir') + '</button>' +
+      '</div></article></div></section>';
+}
+function bindCurso(){
+  var lec = $('.lec'); if(!lec) return;
+  var id = lec.getAttribute('data-id'), i = +lec.getAttribute('data-i');
+  $('#tog').addEventListener('click', function(){ $('#side').classList.toggle('open'); });
+  var v = $('#vid'); if(v) v.addEventListener('ended', function(){ marcar(id); });
+  $('#btnSig').addEventListener('click', function(){
+    marcar(id);
+    if(i < MODULOS.length - 1) ir('#curso/' + MODULOS[i + 1].id);
+    else ir(todoVisto() ? '#examen' : siguienteDestino());
+  });
+}
+function marcar(id){
+  if(st.hechos[id]) return;
+  st.hechos[id] = true; guardar(); actualizarProgreso();
+  var e = $('#est'); if(e){ e.className = 'est ok'; e.innerHTML = '<svg class="ico"><use href="#i-check"/></svg>Lección completada'; }
+  if(todoVisto()) toast('¡Completaste todas las lecciones! Ya podés rendir el examen.');
+}
+
+/* ============ Vista: examen ============ */
+function armarExamen(){
+  var porMod = {}, elegidas = [], resto = [];
+  mezclar(PREGUNTAS).forEach(function(p){ if(!porMod[p.m]){ porMod[p.m] = 1; elegidas.push(p); } else resto.push(p); });
+  elegidas = elegidas.concat(resto.slice(0, Math.max(0, CURSO.preguntasExamen - elegidas.length)));
+  return mezclar(elegidas).map(function(p){
+    var orden = mezclar([0, 1, 2, 3]);
+    return { q:p.q, e:p.e, o:orden.map(function(k){ return p.o[k]; }), r:orden.indexOf(p.r), resp:null };
+  });
+}
+function vExamen(){
+  var head = '<section class="curso"><div class="wrap">' + lateral('examen') + '<div class="exam">';
+  if(!todoVisto()){
+    return head + '<div class="card lockbox"><svg class="ico"><use href="#i-lock"/></svg><h1>Examen bloqueado</h1>' +
+      '<p class="intro">Completá las ' + MODULOS.length + ' lecciones para habilitarlo. Te faltan ' + (MODULOS.length - hechos()) + '.</p>' +
+      '<a class="btn" href="' + siguienteDestino() + '">Ir a la próxima lección</a></div></div></div></section>';
+  }
+  if(!examenActual) examenActual = { preguntas:armarExamen(), corregido:false };
+  var ex = examenActual, res = '';
+  if(ex.corregido){
+    var ok = ex.nota >= CURSO.aprobacion * 100;
+    res = '<div class="res ' + (ok ? 'ok' : 'no') + '"><div class="nota">' + ex.nota + '%</div>' +
+      '<p>' + (ok ? '¡Aprobaste! Respondiste bien ' + ex.bien + ' de ' + ex.preguntas.length + ' preguntas.' :
+        'Respondiste bien ' + ex.bien + ' de ' + ex.preguntas.length + '. Necesitás ' + Math.round(CURSO.aprobacion * 100) + '% para aprobar. Repasá las respuestas y volvé a intentarlo: las preguntas cambian.') + '</p>' +
+      '<div class="acc">' + (ok ? '<a class="btn nav" href="#certificado"><svg class="ico"><use href="#i-cert"/></svg>Obtener mi certificado</a>' :
+        '<button class="btn" id="otra" type="button">Rendir de nuevo</button>') + '</div></div>';
+  }
+  var pregs = ex.preguntas.map(function(p, qi){
+    var ops = p.o.map(function(o, oi){
+      var c = '';
+      if(ex.corregido){ if(oi === p.r) c = ' bien'; else if(oi === p.resp) c = ' mal'; }
+      else if(oi === p.resp) c = ' sel';
+      return '<label class="opc' + c + '"><input type="radio" name="q' + qi + '" value="' + oi + '"' + (oi === p.resp ? ' checked' : '') + (ex.corregido ? ' disabled' : '') + '><span>' + esc(o) + '</span></label>';
+    }).join('');
+    var exp = ex.corregido && p.resp !== p.r ? '<p class="exp">' + esc(p.e) + '</p>' : '';
+    return '<fieldset class="preg" style="margin:0 0 14px"><p class="q"><small>Pregunta ' + (qi + 1) + ' de ' + ex.preguntas.length + '</small>' + esc(p.q) + '</p>' + ops + exp + '</fieldset>';
+  }).join('');
+  return head + '<span class="eyebrow">Evaluación final</span><h1>Examen</h1>' +
+    (ex.corregido ? '' : '<p class="intro">' + ex.preguntas.length + ' preguntas de opción múltiple. Aprobás con ' + Math.round(CURSO.aprobacion * 100) + '% o más. Si no aprobás, podés volver a rendir las veces que necesites.</p>') +
+    res + '<form id="fEx" class="' + (ex.corregido ? 'corr' : '') + '">' + pregs +
+    (ex.corregido ? '' : '<div class="pie"><span class="est" id="cuenta">0 de ' + ex.preguntas.length + ' respondidas</span><button class="btn" type="submit">Entregar examen</button></div>') +
+    '</form></div></div></section>';
+}
+function bindExamen(){
+  var t = $('#tog'); if(t) t.addEventListener('click', function(){ $('#side').classList.toggle('open'); });
+  var otra = $('#otra'); if(otra) otra.addEventListener('click', function(){ examenActual = null; render(); });
+  var f = $('#fEx'); if(!f || examenActual.corregido) return;
+  f.addEventListener('change', function(ev){
+    var n = +ev.target.name.slice(1);
+    examenActual.preguntas[n].resp = +ev.target.value;
+    ev.target.closest('.preg').querySelectorAll('.opc').forEach(function(l){ l.classList.toggle('sel', l.querySelector('input').checked); });
+    var r = examenActual.preguntas.filter(function(p){ return p.resp !== null; }).length;
+    $('#cuenta').textContent = r + ' de ' + examenActual.preguntas.length + ' respondidas';
+  });
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var ex = examenActual;
+    var falta = ex.preguntas.findIndex(function(p){ return p.resp === null; });
+    if(falta >= 0){ toast('Te falta responder la pregunta ' + (falta + 1) + '.'); f.querySelectorAll('.preg')[falta].scrollIntoView({behavior:'smooth', block:'center'}); return; }
+    ex.bien = ex.preguntas.filter(function(p){ return p.resp === p.r; }).length;
+    ex.nota = Math.round(ex.bien / ex.preguntas.length * 100);
+    ex.corregido = true;
+    var aprobado = ex.nota >= CURSO.aprobacion * 100;
+    st.intentos.push({ fecha:new Date().toISOString(), nota:ex.nota, ok:aprobado });
+    if(aprobado && (!st.cert || ex.nota > st.cert.nota)){
+      var a = st.alumno, f2 = hoyIso(), nom = nombreCompleto(a);
+      st.cert = { nombre:nom, dni:a.dni, empresa:a.empresa, fecha:f2, nota:ex.nota, codigo:codigoCert(nom, a.dni, f2, ex.nota) };
+    }
+    guardar(); render(); registrarCert();
+  });
+}
+
+/* ============ Vista: certificado ============ */
+function vCertificado(){
+  var head = '<section class="curso"><div class="wrap">' + lateral('certificado') + '<div class="certv">';
+  if(!st.cert){
+    return head + '<div class="card lockbox"><svg class="ico"><use href="#i-lock"/></svg><h1>Todavía no hay certificado</h1>' +
+      '<p class="intro">Se habilita cuando aprobás el examen final.</p><a class="btn" href="' + siguienteDestino() + '">Continuar el curso</a></div></div></div></section>';
+  }
+  var c = st.cert;
+  return head + '<span class="eyebrow">¡Felicitaciones!</span><h1 style="font-size:clamp(26px,3.4vw,36px);color:var(--navy);margin:10px 0 6px">Tu certificado</h1>' +
+    '<p style="color:var(--muted);margin:0">Revisá que tus datos estén bien escritos y descargalo en PDF. Incluye un código QR para verificarlo.</p>' +
+    '<div class="certprev" aria-label="Vista previa del certificado"><div class="fr"></div><div class="fr2"></div><div class="in">' +
+      '<div class="lg"><svg aria-hidden="true"><use href="#gs-iso"/></svg><span><b>GS. CONSULTORES</b><small>Seguridad e Higiene</small></span></div>' +
+      '<div class="t1">CERTIFICADO</div><div class="t2">de aprobación</div>' +
+      '<div class="tx">Se certifica que</div><div class="nm">' + esc(c.nombre) + '</div>' +
+      '<div class="tx2">DNI ' + fmtDni(c.dni) + (c.empresa ? ' · ' + esc(c.empresa) : '') + '<br>aprobó el curso <b>' + esc(CURSO.titulo) + '</b><br>con una carga horaria de ' + CURSO.horas + ' horas y una calificación de ' + c.nota + '%, el ' + fmtFecha(c.fecha) + '.</div>' +
+      '<div class="bot"><div class="fi">' + esc(CURSO.instructor) + '<br>' + esc(CURSO.cargo) + '</div><div class="cod">Código de verificación<b>' + c.codigo + '</b></div></div>' +
+    '</div></div>' +
+    '<div class="acc"><button class="btn" id="dl" type="button"><svg class="ico"><use href="#i-dl"/></svg>Descargar PDF</button>' +
+    '<a class="btn sec" href="' + esc(urlVerificacion(c)) + '" target="_blank" rel="noopener">Ver página de verificación</a></div>' +
+    '<p class="fine">¿Hay un error en tu nombre o DNI? Escribinos a Contacto@gsconsultoresargentina.com.</p></div></div></section>';
+}
+function bindCertificado(){
+  registrarCert();
+  var t = $('#tog'); if(t) t.addEventListener('click', function(){ $('#side').classList.toggle('open'); });
+  var b = $('#dl'); if(b) b.addEventListener('click', function(){
+    b.disabled = true;
+    generarPdf(st.cert).then(function(){ b.disabled = false; }, function(e){ b.disabled = false; console.error(e); toast('No se pudo generar el PDF. Revisá tu conexión y probá de nuevo.'); });
+  });
+}
+
+// Isotipo a PNG para el PDF
+function logoPng(px){
+  return new Promise(function(res, rej){
+    var defs = document.querySelector('svg defs').outerHTML;
+    var sym = document.getElementById('gs-iso').innerHTML;
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 88.5" width="' + px + '" height="' + Math.round(px * 1.5) + '">' + defs + sym + '</svg>';
+    var img = new Image();
+    img.onload = function(){
+      var cv = document.createElement('canvas'); cv.width = px; cv.height = Math.round(px * 1.5);
+      cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+      res(cv.toDataURL('image/png'));
+    };
+    img.onerror = rej;
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  });
+}
+
+function generarPdf(c){
+  if(!window.jspdf) return Promise.reject(new Error('jsPDF no cargó'));
+  return logoPng(240).then(function(logo){
+    var doc = new window.jspdf.jsPDF({ orientation:'landscape', unit:'mm', format:'a4', compress:true });
+    var W = 297, H = 210, cx = W / 2;
+    var NAVY = [22, 48, 92], ORANGE = [226, 101, 58], INK = [14, 26, 48], MUTED = [91, 103, 130], LINE = [220, 226, 236];
+
+    // Marco
+    doc.setDrawColor.apply(doc, NAVY); doc.setLineWidth(1.3); doc.rect(8, 8, W - 16, H - 16);
+    doc.setDrawColor.apply(doc, ORANGE); doc.setLineWidth(0.4); doc.rect(11.5, 11.5, W - 23, H - 23);
+    // Esquinas decorativas
+    doc.setFillColor.apply(doc, NAVY);
+    doc.triangle(W - 11.5, 11.5, W - 11.5, 46, W - 46, 11.5, 'F');
+    doc.setFillColor.apply(doc, ORANGE);
+    doc.triangle(W - 11.5, 11.5, W - 11.5, 30, W - 30, 11.5, 'F');
+
+    // Marca
+    doc.addImage(logo, 'PNG', 24, 22, 12, 18);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(13); doc.setTextColor.apply(doc, NAVY);
+    doc.text('GS. CONSULTORES', 40, 30);
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor.apply(doc, MUTED);
+    doc.text('Seguridad e Higiene · Capacitación', 40, 35);
+
+    // Título
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(40); doc.setTextColor.apply(doc, NAVY);
+    doc.text('CERTIFICADO', cx, 66, { align:'center', charSpace:2 });
+    doc.setFontSize(11); doc.setTextColor.apply(doc, ORANGE);
+    doc.text('D E   A P R O B A C I Ó N', cx, 75, { align:'center' });
+
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(13); doc.setTextColor.apply(doc, MUTED);
+    doc.text('Se certifica que', cx, 92, { align:'center' });
+
+    // Nombre (achica si es largo)
+    var fs = 30; doc.setFont('helvetica', 'bold'); doc.setTextColor.apply(doc, INK);
+    doc.setFontSize(fs); while(doc.getTextWidth(c.nombre) > 200 && fs > 16){ fs--; doc.setFontSize(fs); }
+    doc.text(c.nombre, cx, 106, { align:'center' });
+    doc.setDrawColor.apply(doc, LINE); doc.setLineWidth(0.4); doc.line(cx - 80, 110, cx + 80, 110);
+
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(12); doc.setTextColor.apply(doc, INK);
+    doc.text('DNI ' + fmtDni(c.dni) + (c.empresa ? '  ·  ' + c.empresa : ''), cx, 118, { align:'center' });
+    doc.text('aprobó el curso', cx, 128, { align:'center' });
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(17); doc.setTextColor.apply(doc, ORANGE);
+    doc.text(CURSO.titulo.toUpperCase(), cx, 137, { align:'center' });
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(12); doc.setTextColor.apply(doc, INK);
+    doc.text('con una carga horaria de ' + CURSO.horas + ' horas y una calificación de ' + c.nota + '%, el ' + fmtFecha(c.fecha) + '.', cx, 146, { align:'center' });
+
+    // Firma
+    var fx = 40, fy = 178;
+    if(CURSO.firma){ try{ doc.addImage(CURSO.firma, 'PNG', fx + 8, fy - 20, 44, 18); }catch(e){} }
+    doc.setDrawColor.apply(doc, INK); doc.setLineWidth(0.3); doc.line(fx, fy, fx + 60, fy);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); doc.text(CURSO.instructor, fx + 30, fy + 5, { align:'center' });
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(9); doc.setTextColor.apply(doc, MUTED);
+    doc.text(CURSO.cargo, fx + 30, fy + 9.5, { align:'center' });
+
+    // QR de verificación (vectorial)
+    var qr = qrcode(0, 'M'); qr.addData(urlVerificacion(c)); qr.make();
+    var n = qr.getModuleCount(), size = 30, ms = size / n, qx = W - 26 - size, qy = 152;
+    doc.setFillColor.apply(doc, INK);
+    for(var r = 0; r < n; r++) for(var k = 0; k < n; k++) if(qr.isDark(r, k)) doc.rect(qx + k * ms, qy + r * ms, ms + 0.02, ms + 0.02, 'F');
+    doc.setFontSize(8.5); doc.setTextColor.apply(doc, MUTED);
+    doc.text('Código de verificación', qx - 4, qy + 20, { align:'right' });
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(11); doc.setTextColor.apply(doc, NAVY);
+    doc.text(c.codigo, qx - 4, qy + 25, { align:'right' });
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor.apply(doc, MUTED);
+    doc.text('Escaneá el QR para verificarlo', qx - 4, qy + 29.5, { align:'right' });
+
+    doc.setFontSize(7.5);
+    doc.text('Capacitación teórica a distancia. Se recomienda complementarla con práctica presencial de RCP y uso de DEA.', cx, H - 15.5, { align:'center' });
+
+    doc.setProperties({ title:'Certificado ' + CURSO.titulo + ' - ' + c.nombre, author:'GS. Consultores', subject:c.codigo });
+    doc.save('Certificado Primeros Auxilios - ' + c.nombre + '.pdf');
+  });
+}
+
+/* ============ Vista: verificar ============ */
+function paramsVerif(h){
+  var q = {}; (h.split('?')[1] || '').split('&').forEach(function(kv){ var p = kv.split('='); if(p[0]) q[p[0]] = decodeURIComponent((p[1] || '').replace(/\+/g, ' ')); });
+  q.valido = !!(q.c && q.n && q.d && q.f && q.p && codigoCert(q.n, q.d, q.f, +q.p) === q.c);
+  return q;
+}
+function estVerif(clase, ico, texto){ return '<div class="est ' + clase + '"><svg class="ico"><use href="#' + ico + '"/></svg>' + texto + '</div>'; }
+function vVerificar(h){
+  var q = paramsVerif(h);
+  var cuerpo = q.valido ?
+    '<div id="vEst">' + (API_URL ? estVerif('warn', 'i-clock', 'Consultando el registro de GS. Consultores…') : estVerif('ok', 'i-ok', 'Certificado válido, emitido por GS. Consultores.')) + '</div>' +
+    '<dl><dt>Alumno</dt><dd>' + esc(q.n) + '</dd><dt>DNI</dt><dd>' + fmtDni(q.d) + '</dd><dt>Curso</dt><dd>' + esc(CURSO.titulo) + ' (' + CURSO.horas + ' h)</dd>' +
+    '<dt>Fecha</dt><dd>' + fmtFecha(q.f) + '</dd><dt>Calificación</dt><dd>' + esc(q.p) + '%</dd><dt>Código</dt><dd>' + esc(q.c) + '</dd></dl>'
+    :
+    estVerif('no', 'i-x', 'No pudimos verificar este certificado.') +
+    '<p style="color:var(--muted)">Los datos no coinciden con el código o el enlace está incompleto. Escaneá el QR del certificado original o escribinos a Contacto@gsconsultoresargentina.com.</p>';
+  return '<section class="curso"><div class="wrap" style="display:block"><div class="card verif"><span class="eyebrow">Verificación</span>' +
+    '<h1 style="font-size:28px;color:var(--navy);margin:10px 0 0">Certificado de ' + esc(CURSO.titulo) + '</h1>' + cuerpo + '</div></div></section>';
+}
+// Con API_URL, el certificado además tiene que figurar (y no estar anulado) en la hoja «Certificados».
+function consultarRegistro(h){
+  var q = paramsVerif(h);
+  if(!q.valido || !API_URL) return;
+  function poner(html){ var el = $('#vEst'); if(el) el.innerHTML = html; }
+  fetch(API_URL + (API_URL.indexOf('?') < 0 ? '?' : '&') + 'verificar=' + encodeURIComponent(q.c)).then(function(r){ return r.json(); }).then(function(j){
+    if(!j || !j.ok) throw new Error('respuesta');
+    if(j.registrado && j.anulado) poner(estVerif('no', 'i-x', 'Este certificado fue anulado por GS. Consultores.'));
+    else if(j.registrado && j.dni === String(q.d) && +j.nota === +q.p && j.fecha === q.f) poner(estVerif('ok', 'i-ok', 'Certificado válido y registrado por GS. Consultores.'));
+    else if(j.registrado) poner(estVerif('no', 'i-x', 'Los datos de este enlace no coinciden con los registrados.'));
+    else poner(estVerif('warn', 'i-warn', 'El código es correcto, pero el certificado no figura en nuestro registro. Escribinos a Contacto@gsconsultoresargentina.com para confirmarlo.'));
+  }).catch(function(){
+    poner(estVerif('ok', 'i-ok', 'Certificado válido, emitido por GS. Consultores.') + '<p class="reg">No pudimos consultar el registro en este momento; el código coincide con los datos.</p>');
+  });
+}
+
+$('#salir').addEventListener('click', function(){ if(confirm('¿Cerrar el acceso al curso en este dispositivo? Tu avance queda guardado.')) salirAcceso(); });
+if(/^#verificar/.test(location.hash)) render();
+else { $('#app').innerHTML = '<div style="min-height:60vh"></div>'; accesoGuardado().then(render); }
+</script>
+</body>
+</html>

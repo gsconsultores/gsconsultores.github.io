@@ -320,6 +320,14 @@ section{position:relative}
 .dea .card-d b.k{display:flex; align-items:center; gap:10px; font:800 20px/1.2 var(--display); font-stretch:108%}
 .dea .card-d b.k .ico{color:#FF6B70}
 .dea .ticks li{color:#D4DEEE}
+.dea .campus{display:flex; align-items:center; gap:14px; margin-top:22px; padding:16px 18px; border-radius:16px; background:rgba(226,101,58,.12); border:1px solid rgba(226,101,58,.38); color:#fff; text-decoration:none; transition:background .2s, transform .25s var(--ease)}
+.dea .campus:hover{background:rgba(226,101,58,.2); transform:translateY(-2px)}
+.dea .campus .ic{flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--orange)}
+.dea .campus .ic .ico{color:#fff}
+.dea .campus b{display:block; font:700 16px/1.25 var(--display)}
+.dea .campus small{display:block; color:#C9D6EA; font-size:13.5px; line-height:1.4; margin-top:2px}
+.dea .campus .arr{margin-left:auto; flex:none; transition:transform .25s var(--ease)}
+.dea .campus:hover .arr{transform:translateX(4px)}
 
 /* ============ Sectores ============ */
 .sect{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
@@ -835,7 +843,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
             <li>Capacitaciones obligatorias del programa anual, adaptadas al rubro del cliente.</li>
             <li>Manejo seguro de autoelevador, manipulación de alimentos y trabajo en altura.</li>
           </ul>
-          <div class="acts"><a class="btn pri sm" href="#cotizar" data-cotizar="puntual:g-cap">Cotizar capacitaciones <svg class="ico arr"><use href="#i-arr"/></svg></a></div>
+          <div class="acts" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri sm" href="#cotizar" data-cotizar="puntual:g-cap">Cotizar capacitaciones <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="primeros-auxilios/"><svg class="ico"><use href="#i-lock"/></svg> Campus de alumnos</a></div>
         </div>
       </div>
     </div>
@@ -983,6 +991,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
         <li>Capacitación en uso de DEA con práctica sobre maniquí y recertificación anual.</li>
         <li>Cursos de primeros auxilios y RCP con certificación AIDER International.</li>
       </ul>
+      <a class="campus" href="primeros-auxilios/"><span class="ic"><svg class="ico"><use href="#i-lock"/></svg></span><span><b>Campus de alumnos</b><small>Curso online de Primeros Auxilios y RCP. Ingresá con el usuario de tu grupo.</small></span><svg class="ico arr"><use href="#i-arr"/></svg></a>
     </div>
   </div>
 </section>
@@ -1149,7 +1158,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
       </div>
       <div>
         <h4>Secciones</h4>
-        <ul><li><a href="#servicios">Servicios</a></li><li><a href="#abono">Abono mensual</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#cotizar">Cotizador online</a></li></ul>
+        <ul><li><a href="#servicios">Servicios</a></li><li><a href="#abono">Abono mensual</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#cotizar">Cotizador online</a></li><li><a href="clientes/">Campus de clientes</a></li></ul>
       </div>
       <div>
         <h4>Contacto</h4>
@@ -1169,7 +1178,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
    API_URL: la dirección de la aplicación web de Google Apps Script
    (termina en /exec). Mientras esté vacía, el cotizador ofrece enviar
    el pedido por WhatsApp o por mail.                                   */
-var API_URL = "";
+var API_URL = "https://script.google.com/macros/s/AKfycbz2WvlHX4MuI8La5S-SsHoa8RwcPdsoybEi2ioN0Xamcw48BTG8hwCehpyIfrjKYXhfgw/exec";
 var WHATSAPP = "5491178295509";
 var EMAIL = "Contacto@gsconsultoresargentina.com";
 var PLAZO = "dentro de las 48 h hábiles";
