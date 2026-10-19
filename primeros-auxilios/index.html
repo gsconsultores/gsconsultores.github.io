@@ -96,6 +96,9 @@ header.top .wrap{display:flex; align-items:center; gap:16px; min-height:66px}
 .mcard.ok .n{background:var(--ok); color:#fff}
 .mcard b{display:block; color:var(--navy); line-height:1.3}
 .mcard small{color:var(--muted)}
+.mcard small .ob{color:var(--orange); font-weight:600}
+.side a small.op{display:block; font-size:11.5px; color:var(--muted); letter-spacing:.04em}
+.side a.act small.op{color:#C9D6EA}
 
 /* ============ Curso ============ */
 .curso{padding:28px 0 60px}
@@ -278,7 +281,7 @@ var CURSO = {
   titulo: 'Primeros Auxilios y RCP',
   horas: 2,
   aprobacion: 0.7,           // 70 % para aprobar
-  preguntasExamen: 15,       // una por módulo + el resto al azar
+  preguntasExamen: 15,       // solo de las lecciones obligatorias: una de cada una + el resto al azar
   instructor: 'Lic. Gonzalo D. Sacchiero',
   cargo: 'Instructor · GS. Consultores',
   firma: '',                 // opcional: imagen PNG en base64 (data:image/png;base64,...)
@@ -315,7 +318,12 @@ function $(s){ return document.querySelector(s); }
 function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 function toast(t){ var el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function(){ el.classList.remove('on'); }, 2800); }
 function hechos(){ var n = 0; MODULOS.forEach(function(m){ if(st.hechos[m.id]) n++; }); return n; }
-function todoVisto(){ return hechos() === MODULOS.length; }
+// Las lecciones con oblig:true habilitan el examen; las demás son opcionales.
+function obligatorias(){ return MODULOS.filter(function(m){ return m.oblig; }); }
+function faltanOblig(){ return obligatorias().filter(function(m){ return !st.hechos[m.id]; }); }
+function todoVisto(){ return MODULOS.length > 0 && faltanOblig().length === 0; }
+// Una obligatoria con video se completa solo viéndolo entero, sin adelantarlo.
+function pideVideoCompleto(m){ return !!(m.oblig && m.video); }
 function nombreCompleto(a){ return (a.nombre + ' ' + a.apellido).replace(/\s+/g, ' ').trim(); }
 function fmtDni(d){ return String(d).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
 var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -442,6 +450,7 @@ function render(){
   var h = location.hash.replace(/^#/, '') || 'inicio';
   var app = $('#app');
   var vista = h.split(/[/?]/)[0];
+  cortarSeguimiento();
   $('#prog').hidden = !ACCESO.ok || !st.alumno || vista === 'verificar';
   $('#salir').hidden = !ACCESO.ok || vista === 'verificar';
   actualizarProgreso();
@@ -455,15 +464,20 @@ function render(){
   window.scrollTo(0, 0);
 }
 function actualizarProgreso(){
-  var n = hechos();
   if(!MODULOS.length) return;
-  $('#progTxt').innerHTML = n + '/' + MODULOS.length + '<span class="pl"> lecciones</span>';
-  $('#progBar').style.width = (n / MODULOS.length * 100) + '%';
+  var t = obligatorias().length, n = t - faltanOblig().length;
+  $('#progTxt').innerHTML = n + '/' + t + '<span class="pl"> obligatorias</span>';
+  $('#progBar').style.width = (t ? n / t * 100 : 0) + '%';
 }
+// Próxima lección: la primera sin hacer después de la última hecha, sin pasar de la próxima obligatoria pendiente.
 function siguienteDestino(){
   if(st.cert) return '#certificado';
-  for(var i = 0; i < MODULOS.length; i++) if(!st.hechos[MODULOS[i].id]) return '#curso/' + MODULOS[i].id;
-  return '#examen';
+  if(todoVisto()) return '#examen';
+  var k = 0, ult = -1, i;
+  while(!(MODULOS[k].oblig && !st.hechos[MODULOS[k].id])) k++;
+  for(i = 0; i < k; i++) if(st.hechos[MODULOS[i].id]) ult = i;
+  for(i = ult + 1; i < k; i++) if(!st.hechos[MODULOS[i].id]) break;
+  return '#curso/' + MODULOS[i].id;
 }
 
 /* ============ Vista: inicio ============ */
@@ -471,7 +485,7 @@ function vInicio(){
   var a = st.alumno;
   var form = a ?
     '<div class="card form"><h2>¡Hola, ' + esc(a.nombre) + '!</h2>' +
-      '<div class="hola">Llevás <b>' + hechos() + ' de ' + MODULOS.length + '</b> lecciones' + (st.cert ? ' y ya <b>aprobaste el examen</b>.' : '.') + '</div>' +
+      '<div class="hola">Llevás <b>' + (obligatorias().length - faltanOblig().length) + ' de ' + obligatorias().length + '</b> lecciones obligatorias' + (st.cert ? ' y ya <b>aprobaste el examen</b>.' : '.') + '</div>' +
       '<a class="btn" href="' + siguienteDestino() + '">' + (st.cert ? 'Ver mi certificado' : hechos() ? 'Seguir donde quedé' : 'Empezar el curso') + '</a>' +
       '<p class="fine">¿No sos ' + esc(nombreCompleto(a)) + '? <a href="#" id="otroAlumno">Empezar con otros datos</a></p></div>'
     :
@@ -484,7 +498,7 @@ function vInicio(){
       '<p class="fine">Tu avance se guarda en este navegador. Si cambiás de dispositivo, empezás de nuevo.</p></form>';
 
   var mods = MODULOS.map(function(m, i){
-    return '<div class="mcard' + (st.hechos[m.id] ? ' ok' : '') + '"><span class="n">' + (st.hechos[m.id] ? '✓' : i + 1) + '</span><span><b>' + esc(m.titulo) + '</b><small>Video de ' + esc(m.dur) + '</small></span></div>';
+    return '<div class="mcard' + (st.hechos[m.id] ? ' ok' : '') + '"><span class="n">' + (st.hechos[m.id] ? '✓' : i + 1) + '</span><span><b>' + esc(m.titulo) + '</b><small>Video de ' + esc(m.dur) + ' · ' + (m.oblig ? '<span class="ob">Obligatoria</span>' : 'Opcional') + '</small></span></div>';
   }).join('');
 
   return '<section class="hero"><div class="wrap"><div>' +
@@ -526,7 +540,7 @@ function bindInicio(){
 function lateral(actual){
   var items = MODULOS.map(function(m, i){
     var c = (m.id === actual ? 'act' : '') + (st.hechos[m.id] ? ' ok' : '');
-    return '<li><a class="' + c + '" href="#curso/' + m.id + '"><span class="n">' + (st.hechos[m.id] && m.id !== actual ? '✓' : i + 1) + '</span>' + esc(m.titulo) + '</a></li>';
+    return '<li><a class="' + c + '" href="#curso/' + m.id + '"><span class="n">' + (st.hechos[m.id] && m.id !== actual ? '✓' : i + 1) + '</span><span>' + esc(m.titulo) + (m.oblig ? '' : '<small class="op">Opcional</small>') + '</span></a></li>';
   }).join('');
   var lockEx = todoVisto() ? '' : ' lock';
   return '<aside class="side" id="side">' +
@@ -538,18 +552,92 @@ function lateral(actual){
 function videoHtml(v){
   if(!v) return '<div class="pend"><div><svg class="ico"><use href="#i-film"/></svg><b>Video en producción</b>Mientras tanto, estudiá con los puntos clave de abajo.</div></div>';
   var yt = v.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/) || (/^[\w-]{11}$/.test(v) ? [0, v] : null);
-  if(yt) return '<iframe src="https://www.youtube-nocookie.com/embed/' + yt[1] + '?rel=0&modestbranding=1" title="Video de la lección" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  if(yt) return '<div id="ytp" data-v="' + yt[1] + '"></div>';
   return '<video id="vid" src="' + esc(v) + '" controls playsinline preload="metadata"></video>';
+}
+
+/* ---- Seguimiento del video: cuánto se vio sin adelantar ----
+   st.avance[id] guarda el segundo más lejano visto de corrido. Si el
+   alumno adelanta más allá de eso, el video vuelve a ese punto.        */
+var seg = { timer:null, yt:null };
+function cortarSeguimiento(){
+  clearInterval(seg.timer); seg.timer = null;
+  if(seg.yt){ try{ seg.yt.destroy(); }catch(e){} seg.yt = null; }
+}
+function cargarApiYT(){
+  if(window.YT && YT.Player) return Promise.resolve();
+  if(!cargarApiYT.p) cargarApiYT.p = new Promise(function(ok){
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function(){ if(prev) prev(); ok(); };
+    var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+  });
+  return cargarApiYT.p;
+}
+function seguirVideo(m){
+  var exige = pideVideoCompleto(m) && !st.hechos[m.id];
+  if(!st.avance) st.avance = {};
+  var visto = st.avance[m.id] || 0, dur = 0, avisado = 0;
+  function aviso(){ if(Date.now() - avisado > 4000){ avisado = Date.now(); toast('Es una lección obligatoria: mirá el video sin adelantarlo.'); } }
+  function pinta(){
+    if(!exige || !dur || st.hechos[m.id]) return;
+    var e = $('#est'); if(e) e.textContent = 'Obligatoria: llevás ' + Math.min(99, Math.floor(visto / dur * 100)) + '% del video';
+  }
+  function avanza(t){            // t = segundo actual; devuelve false si adelantó
+    if(t > visto + 2.5) return false;
+    if(t > visto){ visto = t; st.avance[m.id] = Math.floor(visto); }
+    return true;
+  }
+  function fin(){
+    if(!exige || st.hechos[m.id]) return;
+    if(dur && visto >= dur - 3){ guardar(); marcar(m.id); }
+    else aviso();
+  }
+  var v = $('#vid');
+  if(v){
+    v.addEventListener('loadedmetadata', function(){ dur = v.duration || 0; if(exige && visto > 5 && visto < dur - 3) v.currentTime = visto; pinta(); });
+    v.addEventListener('timeupdate', function(){ if(!v.seeking && avanza(v.currentTime)) pinta(); });
+    v.addEventListener('seeking', function(){ if(exige && v.currentTime > visto + 1){ v.currentTime = visto; aviso(); } });
+    v.addEventListener('ended', fin);
+    v.addEventListener('pause', guardar);
+    return;
+  }
+  var d = $('#ytp'); if(!d) return;
+  cargarApiYT().then(function(){
+    if(!document.body.contains(d)) return;      // el alumno ya cambió de lección
+    seg.yt = new YT.Player('ytp', {
+      host:'https://www.youtube-nocookie.com', videoId:d.getAttribute('data-v'),
+      playerVars:{ rel:0, modestbranding:1, playsinline:1, start:(exige && visto > 5 ? Math.floor(visto) : 0) },
+      events:{
+        onReady:function(ev){ dur = ev.target.getDuration() || 0; pinta(); },
+        onStateChange:function(ev){
+          if(ev.data === YT.PlayerState.PLAYING && !dur) dur = ev.target.getDuration() || 0;
+          if(ev.data === YT.PlayerState.PAUSED) guardar();
+          if(ev.data === YT.PlayerState.ENDED){ if(exige && visto < dur - 3){ ev.target.seekTo(visto, true); } fin(); }
+        }
+      }
+    });
+    clearInterval(seg.timer);
+    seg.timer = setInterval(function(){
+      var p = seg.yt; if(!p || !p.getCurrentTime || !p.getPlayerState) return;
+      if(p.getPlayerState() !== YT.PlayerState.PLAYING) return;
+      var t = p.getCurrentTime();
+      if(avanza(t)) pinta();
+      else if(exige){ p.seekTo(visto, true); aviso(); }
+    }, 500);
+  });
 }
 function vCurso(id){
   var i = 0;
   for(var k = 0; k < MODULOS.length; k++) if(MODULOS[k].id === id) i = k;
-  var m = MODULOS[i], ok = !!st.hechos[m.id];
+  var m = MODULOS[i], ok = !!st.hechos[m.id], espera = pideVideoCompleto(m) && !ok;
   var ant = i > 0 ? '<a class="btn sec" href="#curso/' + MODULOS[i - 1].id + '">Anterior</a>' : '<span></span>';
   var sigTxt = i < MODULOS.length - 1 ? 'Siguiente lección' : 'Ir al examen';
+  var estTxt = ok ? '<svg class="ico"><use href="#i-check"/></svg>Lección completada' :
+    espera ? 'Obligatoria: mirá el video completo para completarla' :
+    m.oblig ? 'Obligatoria: leé los puntos clave' : 'Lección opcional: no entra en el examen';
   return '<section class="curso"><div class="wrap">' + lateral(m.id) +
     '<article class="lec" data-id="' + m.id + '" data-i="' + i + '">' +
-      '<span class="eyebrow">Lección ' + (i + 1) + ' de ' + MODULOS.length + ' · ' + esc(m.dur) + '</span>' +
+      '<span class="eyebrow">Lección ' + (i + 1) + ' de ' + MODULOS.length + ' · ' + esc(m.dur) + ' · ' + (m.oblig ? 'Obligatoria' : 'Opcional') + '</span>' +
       '<h1>' + esc(m.titulo) + '</h1>' +
       '<div class="player">' + videoHtml(m.video) + '</div>' +
       '<div class="claves"><h2><svg class="ico" style="color:var(--orange)"><use href="#i-key"/></svg>Puntos clave</h2><ul>' +
@@ -557,32 +645,38 @@ function vCurso(id){
         (m.alerta ? '<div class="alerta"><svg class="ico"><use href="#i-warn"/></svg><span>' + esc(m.alerta) + '</span></div>' : '') +
       '</div>' +
       '<div class="pie">' + ant +
-        '<span class="est' + (ok ? ' ok' : '') + '" id="est">' + (ok ? '<svg class="ico"><use href="#i-check"/></svg>Lección completada' : 'Mirá el video y leé los puntos clave') + '</span>' +
-        '<button class="btn" id="btnSig" type="button">' + (ok ? sigTxt : 'Completar y seguir') + '</button>' +
+        '<span class="est' + (ok ? ' ok' : '') + '" id="est">' + estTxt + '</span>' +
+        '<button class="btn" id="btnSig" type="button">' + (ok || espera ? sigTxt : 'Completar y seguir') + '</button>' +
       '</div></article></div></section>';
 }
 function bindCurso(){
   var lec = $('.lec'); if(!lec) return;
   var id = lec.getAttribute('data-id'), i = +lec.getAttribute('data-i');
   $('#tog').addEventListener('click', function(){ $('#side').classList.toggle('open'); });
-  var v = $('#vid'); if(v) v.addEventListener('ended', function(){ marcar(id); });
+  var m = MODULOS[i];
+  seguirVideo(m);
   $('#btnSig').addEventListener('click', function(){
-    marcar(id);
+    if(!pideVideoCompleto(m)) marcar(id);
+    else guardar();
     if(i < MODULOS.length - 1) ir('#curso/' + MODULOS[i + 1].id);
     else ir(todoVisto() ? '#examen' : siguienteDestino());
   });
 }
 function marcar(id){
   if(st.hechos[id]) return;
+  var antes = todoVisto();
   st.hechos[id] = true; guardar(); actualizarProgreso();
   var e = $('#est'); if(e){ e.className = 'est ok'; e.innerHTML = '<svg class="ico"><use href="#i-check"/></svg>Lección completada'; }
-  if(todoVisto()) toast('¡Completaste todas las lecciones! Ya podés rendir el examen.');
+  var b = $('#btnSig'); if(b && /Completar/.test(b.textContent)) b.textContent = +$('.lec').getAttribute('data-i') < MODULOS.length - 1 ? 'Siguiente lección' : 'Ir al examen';
+  if(!antes && todoVisto()) toast('¡Completaste las lecciones obligatorias! Ya podés rendir el examen.');
 }
 
 /* ============ Vista: examen ============ */
+// Solo entran preguntas de las lecciones obligatorias (salvo las marcadas examen:false): una de cada una y el resto al azar.
 function armarExamen(){
-  var porMod = {}, elegidas = [], resto = [];
-  mezclar(PREGUNTAS).forEach(function(p){ if(!porMod[p.m]){ porMod[p.m] = 1; elegidas.push(p); } else resto.push(p); });
+  var porMod = {}, elegidas = [], resto = [], oblig = {};
+  obligatorias().forEach(function(m){ if(m.examen !== false) oblig[m.id] = 1; });   // examen:false = obligatoria que no se evalúa
+  mezclar(PREGUNTAS.filter(function(p){ return oblig[p.m]; })).forEach(function(p){ if(!porMod[p.m]){ porMod[p.m] = 1; elegidas.push(p); } else resto.push(p); });
   elegidas = elegidas.concat(resto.slice(0, Math.max(0, CURSO.preguntasExamen - elegidas.length)));
   return mezclar(elegidas).map(function(p){
     var orden = mezclar([0, 1, 2, 3]);
@@ -593,7 +687,9 @@ function vExamen(){
   var head = '<section class="curso"><div class="wrap">' + lateral('examen') + '<div class="exam">';
   if(!todoVisto()){
     return head + '<div class="card lockbox"><svg class="ico"><use href="#i-lock"/></svg><h1>Examen bloqueado</h1>' +
-      '<p class="intro">Completá las ' + MODULOS.length + ' lecciones para habilitarlo. Te faltan ' + (MODULOS.length - hechos()) + '.</p>' +
+      '<p class="intro">Se habilita cuando completás las ' + obligatorias().length + ' lecciones obligatorias' +
+        (obligatorias().some(pideVideoCompleto) ? ', viendo sus videos completos' : '') + '. Te ' + (faltanOblig().length === 1 ? 'falta' : 'faltan') + ': ' +
+        faltanOblig().map(function(m){ return '<b>' + esc(m.titulo) + '</b>'; }).join(', ') + '.</p>' +
       '<a class="btn" href="' + siguienteDestino() + '">Ir a la próxima lección</a></div></div></div></section>';
   }
   if(!examenActual) examenActual = { preguntas:armarExamen(), corregido:false };
@@ -617,7 +713,7 @@ function vExamen(){
     return '<fieldset class="preg" style="margin:0 0 14px"><p class="q"><small>Pregunta ' + (qi + 1) + ' de ' + ex.preguntas.length + '</small>' + esc(p.q) + '</p>' + ops + exp + '</fieldset>';
   }).join('');
   return head + '<span class="eyebrow">Evaluación final</span><h1>Examen</h1>' +
-    (ex.corregido ? '' : '<p class="intro">' + ex.preguntas.length + ' preguntas de opción múltiple. Aprobás con ' + Math.round(CURSO.aprobacion * 100) + '% o más. Si no aprobás, podés volver a rendir las veces que necesites.</p>') +
+    (ex.corregido ? '' : '<p class="intro">' + ex.preguntas.length + ' preguntas de opción múltiple sobre los temas de las lecciones obligatorias. Aprobás con ' + Math.round(CURSO.aprobacion * 100) + '% o más. Si no aprobás, podés volver a rendir las veces que necesites.</p>') +
     res + '<form id="fEx" class="' + (ex.corregido ? 'corr' : '') + '">' + pregs +
     (ex.corregido ? '' : '<div class="pie"><span class="est" id="cuenta">0 de ' + ex.preguntas.length + ' respondidas</span><button class="btn" type="submit">Entregar examen</button></div>') +
     '</form></div></div></section>';
