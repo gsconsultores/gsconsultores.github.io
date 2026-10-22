@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rescue Life · Espacios cardioseguros, DEA, primeros auxilios y cobertura de eventos</title>
+<meta name="description" content="Habilitación de espacios cardioseguros, venta e instalación de desfibriladores (DEA), capacitación en primeros auxilios y RCP para empresas y cobertura preventiva en eventos. CABA y Gran Buenos Aires.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rescue Life — Cardioprotección y primera respuesta">
+<meta property="og:description" content="Espacios cardioseguros, desfibriladores, capacitación en RCP y primeros auxilios, y cobertura médica preventiva en eventos.">
+<meta property="og:image" content="logo.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="theme-color" content="#111216">
+<link rel="icon" type="image/png" href="icono.png">
+<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rescue Life","description":"Habilitación de espacios cardioseguros, venta de desfibriladores (DEA), capacitación en primeros auxilios y RCP para empresas y cobertura preventiva en eventos.","telephone":"+54 9 11 7829-5509","email":"info@rescuelifeargentina.com","areaServed":["Ciudad Autónoma de Buenos Aires","Gran Buenos Aires"],"knowsAbout":["Cardioprotección","Desfibriladores","RCP","Primeros auxilios","Cobertura de eventos"]}
+</script>
+<style>
+/* ============ Tokens ============ */
+:root{
+  --red:#E52624; --red2:#C81D1B; --red3:#9E1412; --rose:#FFECEB;
+  --ink:#16171B; --char:#111216; --char2:#1A1B20; --char3:#0B0B0E;
+  --bg:#F6F5F3; --card:#FFFFFF; --muted:#5E626C; --line:#E4E1DC; --soft:#F0EEEA;
+  --ok:#1FA855; --wa:#25D366; --aed:#0B8A4A;
+  --r:20px; --r2:14px;
+  --sh:0 1px 2px rgba(20,16,16,.05), 0 14px 34px rgba(20,16,16,.08);
+  --sh2:0 30px 70px rgba(10,8,8,.3);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --display:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); overflow-x:hidden; -webkit-font-smoothing:antialiased}
+img{max-width:100%; display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit; color:inherit}
+[hidden]{display:none !important}
+.wrap{width:100%; max-width:1200px; margin:0 auto; padding:0 20px}
+@media (min-width:768px){ .wrap{padding:0 32px} }
+.sr{position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.skip{position:absolute; left:12px; top:-60px; z-index:100; background:var(--red); color:#fff; padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none}
+.skip:focus{top:12px}
+.ico{width:24px; height:24px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.ico.f{fill:currentColor; stroke:none}
+:focus-visible{outline:3px solid var(--red); outline-offset:3px}
+
+/* ============ Tipografía ============ */
+.eyebrow{display:inline-flex; align-items:center; gap:12px; font:600 12.5px/1.2 var(--body); letter-spacing:.16em; text-transform:uppercase; color:var(--red)}
+.eyebrow::before{content:""; width:30px; height:2px; background:currentColor; flex:none}
+h1,h2,h3,h4{font-family:var(--display); margin:0}
+.t2{font-weight:800; text-transform:uppercase; font-size:clamp(24px,6.6vw,48px); line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:16px 0 18px; text-wrap:balance; overflow-wrap:break-word}
+@media (min-width:768px){ .t2{font-size:clamp(30px,4vw,48px)} }
+.t2 em{font-style:normal; color:var(--red)}
+.lead{font-size:clamp(16px,1.5vw,18px); color:var(--muted); max-width:64ch; margin:0}
+section{position:relative}
+.sec{padding:clamp(76px,10vw,128px) 0}
+.head{max-width:780px; margin-bottom:clamp(36px,5vw,56px)}
+.head.c{margin-left:auto; margin-right:auto; text-align:center}
+.head.c .eyebrow::after{content:""; width:30px; height:2px; background:currentColor}
+.head.c .lead{margin:0 auto}
+.dark{background:var(--char); color:#fff}
+.dark .t2{color:#fff}
+.dark .lead{color:#B8BAC2}
+
+/* ============ Botones ============ */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:50px; padding:0 22px; border-radius:13px; font:600 15.5px/1.1 var(--body); text-decoration:none; border:1px solid transparent; cursor:pointer; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background-color .2s, border-color .2s, color .2s; white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn .ico{width:20px; height:20px}
+.btn .arr{transition:transform .25s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn.pri{background:var(--red); color:#fff; box-shadow:0 12px 26px -8px rgba(229,38,36,.6)}
+.btn.pri:hover{background:#F0332F; box-shadow:0 16px 32px -8px rgba(229,38,36,.72)}
+.btn.ghost{background:rgba(255,255,255,.08); color:#fff; border-color:rgba(255,255,255,.3); backdrop-filter:blur(6px)}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+.btn.dk{background:var(--ink); color:#fff}
+.btn.dk:hover{background:#2A2B31}
+.btn.line{background:var(--card); color:var(--ink); border-color:var(--line)}
+.btn.line:hover{border-color:var(--ink)}
+.btn.wa{background:var(--wa); color:#06351A}
+.btn.sm{min-height:42px; padding:0 16px; font-size:14.5px; border-radius:11px}
+.btn.wide{width:100%}
+
+/* ============ Navegación ============ */
+.nav{position:fixed; z-index:60; left:0; right:0; top:14px; padding:0 12px; transition:top .35s var(--ease)}
+.nav .bar{max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:12px; padding:8px 8px 8px 12px; background:rgba(255,255,255,.92); -webkit-backdrop-filter:saturate(1.5) blur(16px); backdrop-filter:saturate(1.5) blur(16px); border:1px solid rgba(255,255,255,.7); border-radius:18px; box-shadow:0 10px 30px rgba(10,8,8,.16)}
+.nav.mini{top:8px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); margin-right:auto; min-width:0}
+.brand img{width:50px; height:auto; flex:none}
+.brand .wm{display:block; font:800 18px/1 var(--display); letter-spacing:.06em; white-space:nowrap}
+.brand .wm i{font-style:normal; color:var(--red)}
+.brand .wm span{font-weight:400}
+.brand small{display:block; font:600 10px/1 var(--body); letter-spacing:.17em; text-transform:uppercase; color:var(--muted); margin-top:5px; white-space:nowrap}
+.links{display:none; align-items:center; gap:2px}
+.links a{position:relative; padding:10px 12px; border-radius:10px; text-decoration:none; font-weight:500; font-size:15px; color:var(--ink); transition:color .2s, background-color .2s}
+.links a:hover{background:var(--soft)}
+.links a.on{color:var(--red)}
+.links a.on::after{content:""; position:absolute; left:12px; right:12px; bottom:5px; height:2px; border-radius:2px; background:var(--red)}
+.nav .cta{display:none}
+.burger{width:46px; height:46px; display:grid; place-items:center; border:0; border-radius:12px; background:var(--ink); color:#fff; cursor:pointer}
+@media (min-width:1080px){ .links{display:flex} .burger{display:none} .nav .cta{display:inline-flex} }
+@media (min-width:520px) and (max-width:1079px){ .nav .cta{display:inline-flex} }
+.menu{position:fixed; inset:0; z-index:70; background:var(--char); color:#fff; padding:96px 24px 32px; display:flex; flex-direction:column; gap:6px; opacity:0; visibility:hidden; transition:opacity .3s var(--ease), visibility .3s; overflow:auto}
+.menu.open{opacity:1; visibility:visible}
+.menu a.l{font:800 28px/1.25 var(--display); text-transform:uppercase; text-decoration:none; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.08); opacity:0; transform:translateY(12px); transition:opacity .4s var(--ease), transform .4s var(--ease)}
+.menu.open a.l{opacity:1; transform:none}
+.menu .x{position:absolute; top:22px; right:20px; width:46px; height:46px; border-radius:12px; border:0; background:rgba(255,255,255,.1); color:#fff; display:grid; place-items:center; cursor:pointer}
+.menu .acts{margin-top:auto; padding-top:24px; display:grid; gap:10px}
+
+/* ============ Hero ============ */
+.hero{min-height:100vh; min-height:100svh; display:flex; align-items:center; color:#fff; background:var(--char3); overflow:hidden; padding:128px 0 120px}
+.hero .bg{position:absolute; inset:0; background:#0B0B0E url("https://images.unsplash.com/photo-1755549746563-a7c0a391af36?auto=format&fit=crop&w=1000&h=1500&q=70") center/cover no-repeat; transform:scale(1.1); animation:kb 20s var(--ease) forwards}
+@media (min-width:900px){ .hero .bg{background-image:url("https://images.unsplash.com/photo-1755549746563-a7c0a391af36?auto=format&fit=crop&w=2200&h=1400&q=70"); background-position:center 40%} }
+@keyframes kb{to{transform:scale(1)}}
+.hero .shade{position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,14,.88) 0%, rgba(11,11,14,.8) 50%, rgba(11,11,14,.95) 100%)}
+@media (min-width:900px){ .hero .shade{background:linear-gradient(100deg, rgba(11,11,14,.97) 0%, rgba(14,12,14,.9) 40%, rgba(40,10,10,.62) 72%, rgba(60,10,10,.45) 100%)} }
+.hero .glow{position:absolute; right:-10%; top:10%; width:60vw; height:60vw; max-width:780px; max-height:780px; border-radius:50%; background:radial-gradient(circle, rgba(229,38,36,.28), transparent 62%); filter:blur(10px); animation:latido 1.6s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1); opacity:.75} 14%{transform:scale(1.05); opacity:1} 28%{transform:scale(1)} 42%{transform:scale(1.03); opacity:.95}}
+.hero .ecg-h{position:absolute; left:0; right:0; bottom:30px; height:90px; width:100%; opacity:.9}
+.hero .ecg-h path{fill:none; stroke:var(--red); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:2600; stroke-dashoffset:2600; animation:ecgH 4.2s linear infinite; filter:drop-shadow(0 0 6px rgba(229,38,36,.9))}
+@keyframes ecgH{0%{stroke-dashoffset:2600} 75%{stroke-dashoffset:0; opacity:1} 100%{stroke-dashoffset:0; opacity:0}}
+.hero-in{position:relative; display:grid; gap:56px; align-items:center}
+@media (min-width:1024px){ .hero-in{grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr)} }
+.pill{display:inline-flex; align-items:center; gap:10px; padding:8px 14px 8px 10px; border-radius:99px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); font-size:13.5px; font-weight:500; color:#E9E3E3; backdrop-filter:blur(6px); max-width:100%}
+.pill .dot{width:9px; height:9px; border-radius:50%; background:var(--red); flex:none; box-shadow:0 0 0 0 rgba(229,38,36,.6); animation:ping 1.6s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(229,38,36,.6)} 80%,100%{box-shadow:0 0 0 10px rgba(229,38,36,0)}}
+.hero h1{margin:22px 0 0; font-weight:900; text-transform:uppercase; font-size:clamp(40px,12.4vw,92px); line-height:.94; letter-spacing:-.025em}
+@media (min-width:1024px){ .hero h1{font-size:clamp(52px,7vw,92px)} }
+.hero h1 .g{display:block; color:var(--red); text-shadow:0 0 40px rgba(229,38,36,.35)}
+.rotator{display:flex; align-items:baseline; flex-wrap:wrap; gap:0 .32em; margin:18px 0 0; font:700 clamp(22px,3.2vw,34px)/1.2 var(--display); color:#F1ECEC; min-height:1.25em}
+.rotator .w{color:var(--red); position:relative; white-space:nowrap}
+.rotator .w::after{content:""; display:inline-block; width:3px; height:.95em; margin-left:4px; background:var(--red); vertical-align:-.08em; animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.hero .lead{color:#CFC9CA; margin-top:22px; max-width:56ch}
+.hero .acts{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.trust{display:flex; flex-wrap:wrap; gap:10px 22px; margin:30px 0 0; padding:0; list-style:none; font-size:14.5px; color:#D9D3D4}
+.trust li{display:flex; align-items:center; gap:8px}
+.trust .ico{width:20px; height:20px; color:var(--red)}
+
+/* Tarjeta de la cadena de supervivencia */
+.hcard-wrap{position:relative; display:none}
+@media (min-width:1024px){ .hcard-wrap{display:block} }
+.hcard-wrap .iso-bg{position:absolute; right:-60px; top:50%; width:380px; transform:translateY(-50%); opacity:.12}
+.hcard{position:relative; margin-left:auto; max-width:420px; padding:24px; border-radius:24px; background:linear-gradient(160deg, rgba(255,255,255,.14), rgba(255,255,255,.05)); border:1px solid rgba(255,255,255,.2); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); box-shadow:var(--sh2); animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.hcard .top{display:flex; align-items:center; gap:12px; margin-bottom:16px}
+.hcard .top .ic{width:42px; height:42px; border-radius:12px; background:rgba(229,38,36,.2); display:grid; place-items:center; color:#FF6B69}
+.hcard .top b{display:block; font:700 16.5px/1.2 var(--display)}
+.hcard .top small{display:block; font-size:12.5px; color:#C3BCBD}
+.reloj{display:flex; align-items:baseline; justify-content:space-between; margin:0 0 14px; padding:12px 14px; border-radius:14px; background:rgba(0,0,0,.28); border:1px solid rgba(255,255,255,.08)}
+.reloj b{font:800 34px/1 var(--display); font-variant-numeric:tabular-nums; letter-spacing:.02em}
+.reloj span{font-size:12.5px; color:#C3BCBD; text-align:right; line-height:1.35}
+.hc-list{list-style:none; margin:0; padding:0; display:grid; gap:9px}
+.hc-item{display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.07); font-size:14px; color:#E2DCDC; transition:background-color .4s, border-color .4s}
+.hc-item .ck{width:22px; height:22px; border-radius:7px; border:1.6px solid rgba(255,255,255,.35); display:grid; place-items:center; flex:none; transition:all .35s var(--ease)}
+.hc-item .ck .ico{width:14px; height:14px; stroke-width:3; color:#fff; opacity:0; transform:scale(.4); transition:all .35s var(--ease)}
+.hc-item small{margin-left:auto; color:#A9A1A2; font-size:12px; white-space:nowrap}
+.hc-item.ok{background:rgba(229,38,36,.14); border-color:rgba(229,38,36,.4)}
+.hc-item.ok .ck{background:var(--red); border-color:var(--red)}
+.hc-item.ok .ck .ico{opacity:1; transform:none}
+.hc-done{position:absolute; left:-34px; bottom:-24px; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; background:#fff; color:var(--ink); font-weight:600; font-size:14px; box-shadow:var(--sh2); opacity:0; transform:translateY(10px) scale(.96); transition:all .5s var(--ease)}
+.hc-done.on{opacity:1; transform:none}
+.hc-done .ico{color:var(--ok)}
+.hc-chip{position:absolute; right:-14px; top:-22px; padding:9px 14px; border-radius:12px; background:var(--red); color:#fff; font-weight:600; font-size:13px; box-shadow:0 14px 30px -10px rgba(229,38,36,.75); animation:float 6s ease-in-out infinite reverse}
+
+/* ============ Cinta ============ */
+.ticker{background:var(--red); color:#fff; overflow:hidden; padding:16px 0}
+.ticker .tr{display:flex; width:max-content; animation:tick 44s linear infinite}
+.ticker:hover .tr{animation-play-state:paused}
+.ticker span{display:flex; align-items:center; gap:28px; padding-right:28px; font:800 14px/1 var(--display); letter-spacing:.1em; text-transform:uppercase; white-space:nowrap}
+.ticker span::after{content:""; width:16px; height:14px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 21'%3E%3Cpath fill='%23fff' d='M12 21 2.4 11.6A6 6 0 0 1 12 3.9a6 6 0 0 1 9.6 7.7z'/%3E%3C/svg%3E") center/contain no-repeat; opacity:.7}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ============ Reveal ============ */
+.js [data-rv]{opacity:0; transform:translateY(26px); transition:opacity .9s var(--ease), transform .9s var(--ease); transition-delay:var(--d,0s)}
+.js [data-rv="l"]{transform:translateX(-30px)}
+.js [data-rv="r"]{transform:translateX(30px)}
+.js [data-rv].in{opacity:1; transform:none}
+@media (max-width:900px){ .js [data-rv="l"]:not(.in), .js [data-rv="r"]:not(.in){transform:translateY(26px)} }
+
+/* ============ Por qué ============ */
+.why{display:grid; gap:48px; align-items:center}
+@media (min-width:980px){ .why{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:72px} }
+.why .ph{position:relative}
+.why .ph .img{border-radius:28px; overflow:hidden; aspect-ratio:4/4.4; background:var(--soft); box-shadow:var(--sh)}
+.why .ph img{width:100%; height:100%; object-fit:cover; transition:transform 1.2s var(--ease)}
+.why .ph:hover img{transform:scale(1.04)}
+.why .ph .deco{position:absolute; inset:auto auto -22px -22px; width:140px; height:140px; border-radius:24px; background:repeating-linear-gradient(135deg, var(--red) 0 10px, transparent 10px 20px); opacity:.18; z-index:-1}
+.badge-c{position:absolute; right:-10px; bottom:28px; max-width:300px; padding:18px 18px 18px 16px; border-radius:18px; background:var(--card); box-shadow:var(--sh2); display:flex; gap:14px}
+@media (min-width:980px){ .badge-c{right:-40px} }
+.badge-c .ic{width:44px; height:44px; border-radius:12px; background:var(--rose); color:var(--red); display:grid; place-items:center; flex:none}
+.badge-c b{display:block; font:700 15.5px/1.25 var(--display); color:var(--ink)}
+.badge-c p{margin:4px 0 0; font-size:13.5px; color:var(--muted); line-height:1.5}
+.solves{list-style:none; margin:28px 0 0; padding:0; display:grid; gap:12px}
+.solves li{display:flex; gap:16px; align-items:flex-start; padding:16px 18px; border-radius:16px; background:var(--card); border:1px solid var(--line); transition:transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s}
+.solves li:hover{transform:translateX(6px); box-shadow:var(--sh); border-color:transparent}
+.solves .ic{width:44px; height:44px; border-radius:12px; background:var(--ink); color:#fff; display:grid; place-items:center; flex:none}
+.solves b{display:block; font-weight:600; color:var(--ink)}
+.solves span{display:block; font-size:14.5px; color:var(--muted)}
+.stats{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:clamp(56px,7vw,88px)}
+@media (min-width:900px){ .stats{grid-template-columns:repeat(4,minmax(0,1fr))} }
+.stat{padding:24px 22px; border-radius:20px; background:var(--card); border:1px solid var(--line); position:relative; overflow:hidden}
+.stat::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(var(--red),#FF7A5C)}
+.stat .n{font:800 clamp(34px,4.6vw,50px)/1 var(--display); color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:-.02em; white-space:nowrap}
+.stat .n small{font-size:.5em; font-weight:700; margin-left:2px}
+.stat p{margin:10px 0 0; font-size:14.5px; color:var(--muted); line-height:1.45}
+.fuente{margin:14px 0 0; font-size:12.5px; color:var(--muted)}
+
+/* ============ Servicios ============ */
+.svc{display:grid; gap:12px}
+.svc-tab{display:flex; align-items:center; gap:16px; width:100%; text-align:left; padding:18px 18px; border-radius:18px; border:1px solid var(--line); background:var(--card); cursor:pointer; position:relative; overflow:hidden; transition:border-color .25s, box-shadow .25s, background-color .25s}
+.svc-tab .n{font:800 15px/1 var(--display); color:var(--red); width:30px; flex:none}
+.svc-tab .tt{flex:1; min-width:0}
+.svc-tab b{display:block; font:700 16.5px/1.25 var(--display); color:var(--ink)}
+.svc-tab small{display:block; font-size:13.5px; color:var(--muted); margin-top:3px}
+.svc-tab .chev{width:22px; height:22px; color:var(--muted); transition:transform .3s var(--ease)}
+.svc-tab[aria-expanded="true"]{border-color:var(--ink); box-shadow:var(--sh); background:var(--ink)}
+.svc-tab[aria-expanded="true"] b{color:#fff}
+.svc-tab[aria-expanded="true"] small{color:#B8BAC2}
+.svc-tab[aria-expanded="true"] .chev{transform:rotate(90deg); color:#fff}
+.svc-tab .pg{position:absolute; left:0; bottom:0; height:3px; width:0; background:var(--red)}
+.svc-tab.run .pg{animation:pg var(--t,7s) linear forwards}
+@keyframes pg{to{width:100%}}
+.svc-panel{border-radius:24px; background:var(--card); border:1px solid var(--line); overflow:hidden; box-shadow:var(--sh); animation:pin .55s var(--ease)}
+@keyframes pin{from{opacity:0; transform:translateY(14px)}}
+.svc-panel .ph{position:relative; height:200px; overflow:hidden; background:var(--ink)}
+.svc-panel .ph img{width:100%; height:100%; object-fit:cover; transform:scale(1.06); animation:phz 1.4s var(--ease) forwards}
+@keyframes phz{to{transform:scale(1)}}
+.svc-panel .ph::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(17,18,22,0) 30%, rgba(17,18,22,.78))}
+.svc-panel .ph .tag{position:absolute; left:22px; bottom:18px; z-index:1; color:#fff; font:700 13px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; display:flex; align-items:center; gap:10px}
+.svc-panel .ph .tag::before{content:""; width:24px; height:2px; background:var(--red)}
+.svc-panel .bd{padding:24px 22px 26px}
+.svc-panel h3{font-weight:800; text-transform:uppercase; font-size:clamp(21px,2.4vw,28px); line-height:1.1; color:var(--ink)}
+.svc-panel .bd > p{margin:10px 0 0; color:var(--muted)}
+.ticks{list-style:none; margin:20px 0 0; padding:0; display:grid; gap:10px}
+.ticks li{position:relative; padding-left:30px; font-size:15px; line-height:1.5}
+.ticks li::before{content:""; position:absolute; left:0; top:3px; width:19px; height:19px; border-radius:6px; background:rgba(229,38,36,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E52624' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/12px no-repeat}
+.dark .ticks li::before{background-color:rgba(229,38,36,.22)}
+.svc-panel .acts{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+@media (min-width:640px){ .ticks.two{grid-template-columns:1fr 1fr; column-gap:28px} .svc-panel .ph{height:240px} .svc-panel .bd{padding:30px 32px 32px} }
+@media (min-width:1000px){
+  .svc{grid-template-columns:minmax(300px,370px) minmax(0,1fr); grid-template-rows:repeat(4,auto) 1fr; column-gap:28px; row-gap:10px; align-items:start}
+  .svc-tab{grid-column:1}
+  .svc-panel{grid-column:2; grid-row:1 / span 5}
+  .svc-tab .chev{transform:none}
+  .svc-tab[aria-expanded="true"] .chev{transform:translateX(4px)}
+  .svc-panel .ph{height:270px}
+}
+.svc-aside{display:none}
+@media (min-width:1000px){ .svc-aside{display:flex; grid-column:1; flex-direction:column; gap:12px; margin-top:8px; padding:20px; border-radius:18px; background:var(--rose); color:var(--red3); font-size:14.5px; line-height:1.5} .svc-aside b{font:700 16px/1.3 var(--display); color:var(--ink)} }
+
+/* ============ Espacio cardioseguro ============ */
+.cardio{background:var(--char); color:#fff; overflow:hidden}
+.cardio .bgimg{position:absolute; inset:0; background:url("https://images.unsplash.com/photo-1645954090072-6f3c8cec7c1f?auto=format&fit=crop&w=1800&q=60") 75% center/cover no-repeat; opacity:.22}
+.cardio .bgimg::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, var(--char) 30%, rgba(17,18,22,.75) 70%, rgba(17,18,22,.5))}
+.cardio .wrap{position:relative}
+.ecg{width:100%; max-width:560px; height:100px; display:block; margin-bottom:6px}
+.ecg path{fill:none; stroke:#FF4D4A; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1400; stroke-dashoffset:1400; animation:ecg 3.6s linear infinite; filter:drop-shadow(0 0 6px rgba(255,77,74,.85))}
+@keyframes ecg{0%{stroke-dashoffset:1400} 70%{stroke-dashoffset:0; opacity:1} 100%{stroke-dashoffset:0; opacity:0}}
+.kit{display:grid; gap:14px; margin-top:8px}
+@media (min-width:640px){ .kit{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (min-width:1080px){ .kit{grid-template-columns:repeat(4,minmax(0,1fr))} }
+.kc{position:relative; padding:24px 20px 22px; border-radius:20px; background:linear-gradient(170deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.1); transition:transform .35s var(--ease), border-color .35s}
+.kc:hover{transform:translateY(-6px); border-color:rgba(229,38,36,.55)}
+.kc .ic{width:48px; height:48px; border-radius:14px; background:rgba(229,38,36,.18); color:#FF6B69; display:grid; place-items:center}
+.kc .k{position:absolute; top:22px; right:20px; font:800 13px/1 var(--display); color:rgba(255,255,255,.28)}
+.kc h3{margin:16px 0 6px; font:700 17px/1.25 var(--display); color:#fff}
+.kc p{margin:0; font-size:14.5px; color:#B8BAC2; line-height:1.5}
+.ley{margin-top:18px; display:grid; gap:20px; padding:28px 26px; border-radius:24px; background:linear-gradient(120deg, var(--red) 0%, #D11F1D 55%, #A91614 100%); position:relative; overflow:hidden}
+.ley::after{content:""; position:absolute; right:-80px; top:-80px; width:300px; height:300px; border-radius:50%; border:44px solid rgba(255,255,255,.08)}
+@media (min-width:900px){ .ley{grid-template-columns:minmax(0,1fr) auto; align-items:center; padding:36px 40px} }
+.ley b{display:block; font:800 clamp(22px,2.8vw,30px)/1.1 var(--display); text-transform:uppercase}
+.ley p{margin:10px 0 0; color:#FFE3E2; max-width:70ch}
+.ley .btn{position:relative; z-index:1; background:#fff; color:var(--red2)}
+.ley .btn:hover{background:#FFF4F3}
+
+/* ============ DEA ============ */
+.dea-g{display:grid; gap:40px; align-items:center}
+@media (min-width:980px){ .dea-g{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:64px} }
+.dev{position:relative; aspect-ratio:1/1; max-width:520px; margin:0 auto; width:100%}
+.dev .disc{position:absolute; inset:6%; border-radius:50%; background:radial-gradient(circle at 50% 40%, #fff 0%, var(--rose) 55%, rgba(255,236,235,0) 72%)}
+.dev svg.equipo{position:absolute; left:50%; top:50%; width:54%; transform:translate(-50%,-50%); filter:drop-shadow(0 30px 40px rgba(120,10,10,.28)); animation:float 7s ease-in-out infinite}
+.dev .chip{position:absolute; display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:14px; background:#fff; box-shadow:var(--sh); font-weight:600; font-size:14px; white-space:nowrap}
+.dev .chip .ico{width:20px; height:20px; color:var(--red)}
+.dev .c1{left:0; top:12%} .dev .c2{right:0; top:22%} .dev .c3{left:0; bottom:20%} .dev .c4{right:2%; bottom:9%}
+@media (max-width:520px){ .dev .chip{font-size:12.5px; padding:8px 10px} }
+.specs{display:grid; gap:12px; margin-top:24px}
+@media (min-width:560px){ .specs{grid-template-columns:1fr 1fr} }
+.spec{display:flex; gap:14px; align-items:flex-start; padding:16px; border-radius:16px; background:var(--card); border:1px solid var(--line)}
+.spec .ic{width:42px; height:42px; border-radius:12px; background:var(--rose); color:var(--red); display:grid; place-items:center; flex:none}
+.spec b{display:block; font-weight:600; color:var(--ink); line-height:1.3}
+.spec span{display:block; font-size:14px; color:var(--muted); line-height:1.45; margin-top:2px}
+.dea-acts{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+
+/* ============ Capacitación ============ */
+.capa{background:#fff}
+.cap-g{display:grid; gap:40px; align-items:start}
+@media (min-width:980px){ .cap-g{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:64px; align-items:center} }
+.temas{display:grid; gap:10px; margin-top:24px}
+@media (min-width:560px){ .temas{grid-template-columns:1fr 1fr} }
+.tema{display:flex; gap:12px; align-items:center; padding:14px 16px; border-radius:14px; background:var(--bg); border:1px solid var(--line); font-weight:500; font-size:15px; line-height:1.35; transition:border-color .25s, background-color .25s}
+.tema:hover{border-color:var(--red); background:#fff}
+.tema .ic{width:36px; height:36px; border-radius:10px; background:#fff; color:var(--red); display:grid; place-items:center; flex:none; border:1px solid var(--line)}
+.tema .ic .ico{width:20px; height:20px}
+.cap-ph{position:relative}
+.cap-ph .img{border-radius:28px; overflow:hidden; box-shadow:var(--sh2); aspect-ratio:686/673; background:var(--soft)}
+.cap-ph img{width:100%; height:100%; object-fit:cover}
+.cert{position:absolute; left:-12px; bottom:-26px; display:flex; gap:12px; align-items:center; padding:14px 18px; border-radius:16px; background:var(--ink); color:#fff; box-shadow:var(--sh2); max-width:300px}
+@media (min-width:980px){ .cert{left:-36px} }
+.cert .ic{width:42px; height:42px; border-radius:12px; background:var(--red); display:grid; place-items:center; flex:none}
+.cert b{display:block; font:700 15px/1.25 var(--display)}
+.cert small{display:block; color:#B8BAC2; font-size:13px; line-height:1.4}
+.modal{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+.modal span{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; border-radius:99px; background:var(--rose); color:var(--red3); font-size:13.5px; font-weight:600}
+.modal span .ico{width:16px; height:16px}
+.campus{display:flex; align-items:center; gap:14px; margin-top:26px; padding:16px 18px; border-radius:16px; background:var(--ink); color:#fff; text-decoration:none; transition:transform .25s var(--ease), background-color .2s}
+.campus:hover{transform:translateY(-2px); background:#24252B}
+.campus .ic{flex:none; width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--red)}
+.campus b{display:block; font:700 16px/1.25 var(--display)}
+.campus small{display:block; color:#B8BAC2; font-size:13.5px; line-height:1.4; margin-top:2px}
+.campus .arr{margin-left:auto; flex:none; transition:transform .25s var(--ease)}
+.campus:hover .arr{transform:translateX(4px)}
+
+/* ============ Eventos ============ */
+.eventos{background:var(--char3); color:#fff; overflow:hidden}
+.eventos .bgimg{position:absolute; inset:0; background:url("https://images.unsplash.com/photo-1537228783107-df09e892bdbb?auto=format&fit=crop&w=1800&q=60") center/cover no-repeat; opacity:.3}
+.eventos .bgimg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,11,14,.75), rgba(11,11,14,.96) 60%)}
+.eventos .wrap{position:relative}
+.ev-g{display:grid; gap:16px}
+@media (min-width:900px){ .ev-g{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.ev{padding:28px 24px; border-radius:22px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); transition:transform .35s var(--ease), border-color .35s}
+.ev:hover{transform:translateY(-6px); border-color:rgba(229,38,36,.55)}
+.ev .ic{width:52px; height:52px; border-radius:15px; background:var(--red); color:#fff; display:grid; place-items:center}
+.ev h3{margin:18px 0 8px; font:800 20px/1.2 var(--display); text-transform:uppercase}
+.ev p{margin:0; color:#C2BEC0; font-size:15px}
+.ev-tipos{display:flex; flex-wrap:wrap; gap:8px; margin:28px 0 0}
+.ev-tipos span{padding:9px 14px; border-radius:99px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); font-size:14px; color:#E6E1E1}
+.ev-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+
+/* ============ Sectores ============ */
+.sect{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
+@media (min-width:700px){ .sect{grid-template-columns:repeat(4,minmax(0,1fr))} }
+.sct{position:relative; padding:24px 20px; border-radius:20px; background:var(--card); border:1px solid var(--line); display:flex; flex-direction:column; gap:14px; min-height:150px; overflow:hidden; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background-color .35s}
+.sct .ic{width:50px; height:50px; border-radius:14px; background:var(--rose); color:var(--red); display:grid; place-items:center; transition:background-color .35s, color .35s, transform .5s var(--ease)}
+.sct b{font:700 16px/1.3 var(--display); color:var(--ink); transition:color .35s}
+.sct small{display:block; color:var(--muted); font-size:13.5px; line-height:1.4; margin-top:-6px; transition:color .35s}
+.sct:hover{transform:translateY(-6px); background:var(--ink); box-shadow:var(--sh2)}
+.sct:hover .ic{background:var(--red); color:#fff; transform:rotate(-8deg) scale(1.06)}
+.sct:hover b{color:#fff}
+.sct:hover small{color:#B8BAC2}
+
+/* ============ Proceso ============ */
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:0; position:relative}
+.step{position:relative; padding:0 0 34px 76px}
+.step:last-child{padding-bottom:0}
+.step .num{position:absolute; left:0; top:0; width:54px; height:54px; border-radius:16px; display:grid; place-items:center; background:var(--card); border:2px solid var(--line); font:800 20px/1 var(--display); color:var(--muted); transition:all .5s var(--ease); z-index:1}
+.step::before{content:""; position:absolute; left:26px; top:54px; bottom:0; width:2px; background:var(--line)}
+.step:last-child::before{display:none}
+.step::after{content:""; position:absolute; left:26px; top:54px; width:2px; height:0; background:var(--red); transition:height .9s var(--ease) .2s}
+.step:last-child::after{display:none}
+.step.in .num{background:var(--red); border-color:var(--red); color:#fff; box-shadow:0 12px 26px -8px rgba(229,38,36,.6)}
+.step.in::after{height:calc(100% - 54px)}
+.step h3{font:800 19px/1.2 var(--display); color:var(--ink); padding-top:4px}
+.step p{margin:8px 0 0; color:var(--muted); font-size:15px}
+@media (min-width:980px){
+  .steps{grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px}
+  .step{padding:84px 0 0}
+  .step::before{left:66px; right:-28px; top:26px; bottom:auto; width:auto; height:2px}
+  .step::after{left:66px; top:26px; width:0; height:2px; transition:width .9s var(--ease) .2s}
+  .step.in::after{width:calc(100% - 38px); height:2px}
+}
+
+/* ============ Preguntas ============ */
+.faq{max-width:860px; margin:0 auto; display:grid; gap:10px}
+.faq details{border:1px solid var(--line); border-radius:16px; background:var(--card); overflow:hidden; transition:border-color .25s, box-shadow .25s}
+.faq details[open]{border-color:var(--ink); box-shadow:var(--sh)}
+.faq summary{list-style:none; display:flex; align-items:center; gap:14px; padding:18px 20px; cursor:pointer; font:700 16.5px/1.35 var(--display); color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:""; margin-left:auto; flex:none; width:28px; height:28px; border-radius:9px; background:var(--rose) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E52624' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") center/16px no-repeat; transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 20px 20px; color:var(--muted); font-size:15.5px}
+.faq .a p{margin:0}
+
+/* ============ Propuesta (formulario) ============ */
+.prop{background:var(--char); color:#fff; overflow:hidden}
+.prop::before{content:""; position:absolute; inset:0; background:radial-gradient(900px 500px at 90% 0%, rgba(229,38,36,.22), transparent 60%), radial-gradient(700px 500px at 0% 100%, rgba(229,38,36,.1), transparent 60%)}
+.prop .wrap{position:relative; display:grid; gap:40px; align-items:start}
+@media (min-width:1080px){ .prop .wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:56px} .prop-intro{position:sticky; top:110px} }
+.pts{list-style:none; margin:28px 0 0; padding:0; display:grid; gap:14px}
+.pts li{display:flex; gap:14px; align-items:flex-start}
+.pts .ic{width:40px; height:40px; border-radius:12px; background:rgba(229,38,36,.18); color:#FF6B69; display:grid; place-items:center; flex:none}
+.pts b{display:block; color:#fff}
+.pts span{display:block; font-size:14.5px; color:#B8BAC2}
+.frm{background:var(--card); color:var(--ink); border-radius:28px; box-shadow:var(--sh2); padding:24px 22px; scroll-margin-top:96px}
+@media (min-width:640px){ .frm{padding:32px} }
+.frm h3{font:800 22px/1.2 var(--display); text-transform:uppercase; margin:0 0 4px}
+.frm .sub{margin:0 0 22px; color:var(--muted); font-size:15px}
+.fld{margin-bottom:18px}
+.fld > label, .fld > .lb{display:block; font-weight:600; font-size:14.5px; margin-bottom:8px}
+.fld .opc{font-weight:400; color:var(--muted)}
+.inp, .sel, .ta{width:100%; padding:13px 14px; border-radius:12px; border:1.5px solid var(--line); background:#fff; font-size:15.5px; transition:border-color .2s, box-shadow .2s; -webkit-appearance:none; appearance:none}
+.sel{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235E626C' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 12px center/18px no-repeat; padding-right:40px}
+.ta{min-height:110px; resize:vertical}
+.inp:focus, .sel:focus, .ta:focus{outline:0; border-color:var(--ink); box-shadow:0 0 0 4px rgba(22,23,27,.08)}
+.inp.bad, .sel.bad{border-color:#D93B3B; box-shadow:0 0 0 4px rgba(217,59,59,.1)}
+.grid2{display:grid; gap:0 14px}
+@media (min-width:560px){ .grid2{grid-template-columns:1fr 1fr} }
+.srvs{display:grid; gap:10px}
+@media (min-width:560px){ .srvs{grid-template-columns:1fr 1fr} }
+.srv{position:relative; display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:14px; border:1.5px solid var(--line); cursor:pointer; transition:border-color .2s, background-color .2s, box-shadow .2s}
+.srv input{position:absolute; opacity:0; pointer-events:none}
+.srv .ic{width:40px; height:40px; border-radius:11px; background:var(--soft); color:var(--ink); display:grid; place-items:center; flex:none; transition:all .2s}
+.srv b{display:block; font:700 14.5px/1.3 var(--display)}
+.srv small{display:block; color:var(--muted); font-size:13px; line-height:1.4; margin-top:2px}
+.srv:has(input:checked){border-color:var(--red); background:#FFF6F5; box-shadow:0 0 0 4px rgba(229,38,36,.1)}
+.srv:has(input:checked) .ic{background:var(--red); color:#fff}
+.srv:has(input:focus-visible){outline:3px solid var(--red); outline-offset:2px}
+.srvs.bad .srv{border-color:#E9A3A2}
+.msg{margin:0 0 16px; padding:12px 14px; border-radius:12px; background:#FDECEC; color:#9B1C1C; font-size:14.5px}
+.envios{display:grid; gap:10px; margin-top:6px}
+@media (min-width:520px){ .envios{grid-template-columns:1fr 1fr} }
+.priv{font-size:12.5px; color:var(--muted); margin:14px 0 0}
+
+/* ============ Contacto ============ */
+.contact{display:grid; gap:16px}
+@media (min-width:760px){ .contact{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (min-width:1100px){ .contact{grid-template-columns:repeat(4,minmax(0,1fr))} }
+.ccard{display:flex; flex-direction:column; gap:14px; padding:26px 22px; border-radius:22px; background:var(--card); border:1px solid var(--line); text-decoration:none; transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s}
+a.ccard:hover{transform:translateY(-6px); box-shadow:var(--sh); border-color:transparent}
+.ccard .ic{width:52px; height:52px; border-radius:15px; display:grid; place-items:center; background:var(--rose); color:var(--red)}
+.ccard.wa .ic{background:rgba(37,211,102,.14); color:#159A4A}
+.ccard small{font:600 12px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.ccard b{font:700 17px/1.3 var(--display); color:var(--ink); word-break:break-word}
+.ccard span.go{margin-top:auto; display:inline-flex; align-items:center; gap:6px; color:var(--red); font-weight:600; font-size:14.5px}
+
+/* ============ GS. Consultores ============ */
+.gs{margin-top:18px; display:grid; gap:20px; align-items:center; padding:26px; border-radius:24px; background:#0A1830; color:#fff; position:relative; overflow:hidden; text-decoration:none}
+.gs::after{content:""; position:absolute; right:-60px; bottom:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(90,158,200,.28), transparent 65%)}
+@media (min-width:860px){ .gs{grid-template-columns:auto minmax(0,1fr) auto; padding:28px 32px} }
+.gs .iso{width:46px; height:69px}
+.gs b{display:block; font:800 20px/1.2 var(--display); letter-spacing:.02em}
+.gs span.t{display:block; color:#B9C6DC; font-size:15px; margin-top:4px}
+.gs .btn{position:relative; z-index:1; background:#E2653A; color:#fff; box-shadow:0 12px 26px -8px rgba(226,101,58,.6)}
+.gs:hover .btn{background:#EE7247}
+
+/* ============ Footer ============ */
+footer{background:var(--char3); color:#A6A3A8; padding:64px 0 28px; font-size:14.5px}
+.ft{display:grid; gap:36px}
+@media (min-width:900px){ .ft{grid-template-columns:1.4fr 1fr 1fr} }
+.ft .brand{color:#fff}
+.ft .brand small{color:#8F8B92}
+.ft p{margin:16px 0 0; max-width:42ch}
+.ft h4{font:700 12.5px/1 var(--body); letter-spacing:.16em; text-transform:uppercase; color:#fff; margin:0 0 16px}
+.ft ul{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.ft a{text-decoration:none; transition:color .2s}
+.ft a:hover{color:#fff}
+.legal{margin-top:48px; padding-top:22px; border-top:1px solid rgba(255,255,255,.08); display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; font-size:13px; color:#7E7A82}
+
+/* ============ WhatsApp flotante ============ */
+.wa-f{position:fixed; right:18px; bottom:18px; z-index:55; width:60px; height:60px; border-radius:50%; background:var(--wa); color:#fff; display:grid; place-items:center; box-shadow:0 14px 30px -8px rgba(37,211,102,.7); transition:transform .3s var(--ease)}
+.wa-f:hover{transform:scale(1.08)}
+.wa-f::before{content:""; position:absolute; inset:0; border-radius:50%; border:2px solid var(--wa); animation:ring 2.4s var(--ease) infinite}
+@keyframes ring{from{transform:scale(.85); opacity:1} to{transform:scale(1.35); opacity:0}}
+.wa-f .ico{width:30px; height:30px}
+.wa-f .tip{position:absolute; right:72px; top:50%; transform:translateY(-50%) translateX(8px); background:#fff; color:var(--ink); padding:9px 13px; border-radius:11px; font-size:14px; font-weight:600; white-space:nowrap; box-shadow:var(--sh); opacity:0; pointer-events:none; transition:all .3s var(--ease)}
+.wa-f:hover .tip{opacity:1; transform:translateY(-50%)}
+@media (max-width:640px){ .wa-f{width:56px; height:56px; right:14px; bottom:14px} }
+
+/* ============ Movimiento reducido ============ */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+  .js [data-rv]{opacity:1; transform:none}
+  .ticker .tr{animation:none}
+  .hero .ecg-h path, .ecg path{stroke-dashoffset:0}
+}
+</style>
+<script>document.documentElement.className = "js";</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- ============ Íconos ============ -->
+<svg width="0" height="0" style="position:absolute; overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="gs1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="29.5" y2="0"><stop offset="0" stop-color="#A0D5DC"/><stop offset="1" stop-color="#5A9EC8"/></linearGradient>
+    <linearGradient id="gs2" gradientUnits="userSpaceOnUse" x1="29.5" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#5598C0"/><stop offset="1" stop-color="#006EB0"/></linearGradient>
+    <linearGradient id="gs3" gradientUnits="userSpaceOnUse" x1="37" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#0B6EAE"/><stop offset="1" stop-color="#9DD4DB"/></linearGradient>
+    <linearGradient id="gs4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#0070AD"/><stop offset="1" stop-color="#A0D7DC"/></linearGradient>
+    <linearGradient id="gs5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="22" y2="0"><stop offset="0" stop-color="#0870B0"/><stop offset="1" stop-color="#9CD3DE"/></linearGradient>
+    <linearGradient id="gs6" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="29.5" y2="0"><stop offset="0" stop-color="#96D2DB"/><stop offset="1" stop-color="#5A9BC4"/></linearGradient>
+    <linearGradient id="gs7" gradientUnits="userSpaceOnUse" x1="29.5" y1="0" x2="59" y2="0"><stop offset="0" stop-color="#5598C5"/><stop offset="1" stop-color="#00669E"/></linearGradient>
+  </defs>
+  <symbol id="gs-iso" viewBox="0 0 59 88.5">
+    <path fill="url(#gs1)" stroke="url(#gs1)" stroke-width=".25" d="M0 17.5 29.5 0v18.5l-13.91 8.25z"/>
+    <path fill="url(#gs2)" stroke="url(#gs2)" stroke-width=".25" d="M29.5 0 59 17.5l-15.59 9.25L29.5 18.5z"/>
+    <path fill="url(#gs3)" stroke="url(#gs3)" stroke-width=".25" d="M59 17.5 37.09 30.5l16.01 9.5L59 36.5z"/>
+    <path fill="url(#gs4)" stroke="url(#gs4)" stroke-width=".25" d="M0 17.5 59 52.5V71L0 36z"/>
+    <path fill="url(#gs5)" stroke="url(#gs5)" stroke-width=".25" d="M0 71 21.91 58 5.9 48.5 0 52z"/>
+    <path fill="url(#gs6)" stroke="url(#gs6)" stroke-width=".25" d="M29.5 88.5 0 71l15.59-9.25L29.5 70z"/>
+    <path fill="url(#gs7)" stroke="url(#gs7)" stroke-width=".25" d="M59 71 29.5 88.5V70l13.91-8.25z"/>
+  </symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1 7.8 7.8 7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12H8l1.6-2.6 2.8 5.2 1.8-2.6H20.5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.6 3.4 8.1 8 9 4.6-.9 8-4.4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.4A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="i-cab" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M4 7h16"/><path d="M12 17.5s-3.6-2.2-3.6-4.4c0-1.6 1.9-2.5 3.6-1 1.7-1.5 3.6-.6 3.6 1 0 2.2-3.6 4.4-3.6 4.4z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-vest" viewBox="0 0 24 24"><path d="M8.5 3 5 5.5V21h5.5v-6.5h3V21H19V5.5L15.5 3 14 7.5h-4z"/><path d="M5 12h5.5M13.5 12H19"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.6 13.9-1.6 8.1 5-3 5 3-1.6-8.1"/><path d="m9.8 9 1.5 1.5 3-3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 2M9.5 2.5h5M18.5 6.5 20 5"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M5.5 3H4v6a5 5 0 0 0 10 0V3h-1.5"/><path d="M9 14v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="20" cy="11" r="2"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 16.5V10h4.5l2.5-5h7.5l1.5 5H21v6.5"/><path d="M10 5v5M3 10h18"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/><path d="M9 17.5h6"/></symbol>
+  <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 6.5v11M3.5 9v6M17.5 6.5v11M20.5 9v6M6.5 12h11"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V3.5M5 4h12l-2.5 4.5L17 13H5"/></symbol>
+  <symbol id="i-school" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3.2 2.6 8.8 2.6 12 0v-5M22 9v6"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 6v13M3 15h18v4M21 15v-2.5A3.5 3.5 0 0 0 17.5 9H11v6"/><circle cx="7" cy="11.5" r="1.8"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10l-1.2 7a3.8 3.8 0 0 1-7.6 0zM12 14v7M8.5 21h7"/></symbol>
+  <symbol id="i-office" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/></symbol>
+  <symbol id="i-fact" viewBox="0 0 24 24"><path d="M3 21V11l5 3v-3l5 3v-3l5 3V4h3v17H3z"/><path d="M7 18h2M12 18h2"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 22v-6M8 16h8l-2.5-4H16l-4-7-4 7h2.5z"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 3.5h8v5.5a4 4 0 0 1-8 0zM8 5.5H4.5a3.5 3.5 0 0 0 3.6 4.4M16 5.5h3.5a3.5 3.5 0 0 1-3.6 4.4M12 13v4M8.5 21h7M9.5 17h5v4h-5z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-10-2 2-2.5 4-2.5 5.5C11 9 10 7.5 10 5.5 7 8 5 11.5 5 15a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.5"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M10 7h.01M14 7h.01"/></symbol>
+  <symbol id="i-lungs" viewBox="0 0 24 24"><path d="M12 3v8m0 0-3 2m3-2 3 2"/><path d="M8.5 7C5.5 7 3 11 3 16c0 2.5 1 4 3 4 2.5 0 3-2 3-4.5V9.5"/><path d="M15.5 7c3 0 5.5 4 5.5 9 0 2.5-1 4-3 4-2.5 0-3-2-3-4.5V9.5"/></symbol>
+  <symbol id="i-bone" viewBox="0 0 24 24"><path d="M17 10c.7.7 1.7.9 2.6.5a2.5 2.5 0 0 0-1-4.6 2.5 2.5 0 0 0-4.6-1c-.4.9-.2 1.9.5 2.6L7.5 14c-.7-.7-1.7-.9-2.6-.5a2.5 2.5 0 0 0 1 4.6 2.5 2.5 0 0 0 4.6 1c.4-.9.2-1.9-.5-2.6z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2.5"/><path d="M8 2v4M16 2v4M3 10h18M8 14h2M14 14h2M8 17.5h2"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M9 3h6v3H9z"/><path d="M7 4.5H5V22h14V4.5h-2"/><path d="m8.5 12 2 2 4-4M8.5 18h7"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+</svg>
+
+<!-- ============ Navegación ============ -->
+<header class="nav" id="nav">
+  <div class="bar">
+    <a class="brand" href="#inicio" aria-label="Rescue Life, ir al inicio">
+      <img src="isotipo.png" alt="" width="410" height="293">
+      <span><span class="wm"><i>RESCUE</i> <span>LIFE</span></span><small>Cardioprotección</small></span>
+    </a>
+    <nav class="links" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#cardioseguro">Espacio cardioseguro</a>
+      <a href="#dea">Desfibriladores</a>
+      <a href="#capacitacion">Capacitación</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn pri sm cta" href="#propuesta">Pedí tu propuesta</a>
+    <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <button class="x" id="menuX" type="button" aria-label="Cerrar menú"><svg class="ico"><use href="#i-x"/></svg></button>
+  <a class="l" href="#servicios" style="transition-delay:.05s">Servicios</a>
+  <a class="l" href="#cardioseguro" style="transition-delay:.1s">Espacio cardioseguro</a>
+  <a class="l" href="#dea" style="transition-delay:.15s">Desfibriladores</a>
+  <a class="l" href="#capacitacion" style="transition-delay:.2s">Capacitación</a>
+  <a class="l" href="#eventos" style="transition-delay:.25s">Eventos</a>
+  <a class="l" href="#contacto" style="transition-delay:.3s">Contacto</a>
+  <div class="acts">
+    <a class="btn pri" href="#propuesta">Pedí tu propuesta <svg class="ico arr"><use href="#i-arr"/></svg></a>
+    <a class="btn wa" href="https://wa.me/5491178295509" target="_blank" rel="noopener"><svg class="ico f"><use href="#i-wa"/></svg> WhatsApp</a>
+    <a class="btn ghost" href="https://gsconsultores.github.io/">Conocé GS. Consultores</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="inicio">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <svg class="ecg-h" viewBox="0 0 1600 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50h260l14-14 12 14h50l14-40 18 72 16-32h60l14-10 14 10h330l14-14 12 14h50l14-40 18 72 16-32h60l14-10 14 10h566"/></svg>
+  <div class="wrap hero-in">
+    <div>
+      <span class="pill" data-rv><span class="dot"></span> Cardioprotección · Primeros auxilios · Cobertura de eventos</span>
+      <h1 data-rv style="--d:.08s">Cada minuto <span class="g">cuenta</span></h1>
+      <p class="rotator" data-rv style="--d:.16s"><span class="sr">Protegé tu empresa</span><span aria-hidden="true">Protegé tu</span> <span class="w" id="rot" aria-hidden="true">empresa</span></p>
+      <p class="lead" data-rv style="--d:.24s">Instalamos desfibriladores, capacitamos a tu gente y cubrimos tus eventos para que, ante una emergencia, la ayuda llegue en los primeros minutos. Para empresas, gimnasios, clubes, colegios e instituciones.</p>
+      <div class="acts" data-rv style="--d:.32s">
+        <a class="btn pri" href="#propuesta">Pedí tu propuesta <svg class="ico arr"><use href="#i-arr"/></svg></a>
+        <a class="btn ghost" href="#servicios">Ver servicios</a>
+      </div>
+      <ul class="trust" data-rv style="--d:.4s">
+        <li><svg class="ico"><use href="#i-check"/></svg> Asesoría sin cargo</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> Certificación AIDER International</li>
+        <li><svg class="ico"><use href="#i-check"/></svg> Ley 27.159</li>
+      </ul>
+    </div>
+
+    <div class="hcard-wrap" aria-hidden="true" data-rv="r" style="--d:.3s">
+      <img class="iso-bg" src="isotipo-blanco.png" alt="">
+      <div class="hcard">
+        <span class="hc-chip">Respuesta en minutos</span>
+        <div class="top">
+          <span class="ic"><svg class="ico"><use href="#i-heart"/></svg></span>
+          <div><b>Cadena de supervivencia</b><small>Así actúa un espacio cardioseguro</small></div>
+        </div>
+        <div class="reloj"><b id="hcTime">00:00</b><span>desde que la<br>persona se desvanece</span></div>
+        <ul class="hc-list" id="hcList">
+          <li class="hc-item" data-t="10"><span class="ck"><svg class="ico"><use href="#i-check"/></svg></span>Reconocer y llamar al 107<small>0:10</small></li>
+          <li class="hc-item" data-t="40"><span class="ck"><svg class="ico"><use href="#i-check"/></svg></span>RCP de inmediato<small>0:40</small></li>
+          <li class="hc-item" data-t="150"><span class="ck"><svg class="ico"><use href="#i-check"/></svg></span>DEA colocado y descarga<small>2:30</small></li>
+          <li class="hc-item" data-t="240"><span class="ck"><svg class="ico"><use href="#i-check"/></svg></span>Llega la emergencia médica<small>4:00</small></li>
+        </ul>
+        <div class="hc-done" id="hcDone"><svg class="ico"><use href="#i-shield"/></svg> Dentro de la ventana crítica</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Lo que hacemos">
+  <div class="tr">
+    <span>Espacios cardioseguros</span><span>Desfibriladores DEA</span><span>RCP y primeros auxilios</span><span>Cobertura de eventos</span><span>Ley 27.159</span><span>Certificación AIDER</span><span>Simulacros</span><span>Plan de emergencias</span>
+    <span aria-hidden="true">Espacios cardioseguros</span><span aria-hidden="true">Desfibriladores DEA</span><span aria-hidden="true">RCP y primeros auxilios</span><span aria-hidden="true">Cobertura de eventos</span><span aria-hidden="true">Ley 27.159</span><span aria-hidden="true">Certificación AIDER</span><span aria-hidden="true">Simulacros</span><span aria-hidden="true">Plan de emergencias</span>
+  </div>
+</div>
+
+<!-- ============ Por qué ============ -->
+<section class="sec" id="nosotros">
+  <div class="wrap">
+    <div class="why">
+      <div class="ph" data-rv="l">
+        <div class="img"><img src="https://images.unsplash.com/photo-1622551546704-36926ae49878?auto=format&fit=crop&w=1000&h=1100&q=70" alt="Grupo practicando RCP sobre maniquíes en un gimnasio" width="1000" height="1100" loading="lazy"></div>
+        <div class="deco" aria-hidden="true"></div>
+        <div class="badge-c" data-rv style="--d:.25s">
+          <span class="ic"><svg class="ico"><use href="#i-clip"/></svg></span>
+          <div><b>Asesoría sin cargo</b><p>Recorremos tu espacio y te proponemos dónde ubicar el DEA, cómo armar el plan de respuesta y a quién capacitar.</p></div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow" data-rv>Quiénes somos</span>
+        <h2 class="t2" data-rv style="--d:.06s">Transformamos espacios comunes en <em>entornos protegidos</em></h2>
+        <p class="lead" data-rv style="--d:.12s"><b style="color:var(--ink)">Rescue Life</b> acompaña a empresas e instituciones para que estén preparadas ante una emergencia médica: con el equipamiento correcto, un protocolo claro y personas entrenadas para actuar.</p>
+        <ul class="solves">
+          <li data-rv style="--d:.05s"><span class="ic"><svg class="ico"><use href="#i-heart"/></svg></span><div><b>Espacios cardioseguros</b><span>DEA, señalización, plan de emergencias y certificación.</span></div></li>
+          <li data-rv style="--d:.1s"><span class="ic"><svg class="ico"><use href="#i-bolt"/></svg></span><div><b>Desfibriladores</b><span>Venta, instalación, cabina con alarma y mantenimiento.</span></div></li>
+          <li data-rv style="--d:.15s"><span class="ic"><svg class="ico"><use href="#i-users"/></svg></span><div><b>Capacitación para empresas</b><span>Primeros auxilios, RCP y DEA, con práctica y certificado.</span></div></li>
+          <li data-rv style="--d:.2s"><span class="ic"><svg class="ico"><use href="#i-steth"/></svg></span><div><b>Prevención en eventos</b><span>Médico en el lugar y unidad de primera respuesta.</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat" data-rv><div class="n"><span data-count="10">10</span><small>%</small></div><p>menos chances de sobrevivir por cada minuto sin RCP ni desfibrilación</p></div>
+      <div class="stat" data-rv style="--d:.08s"><div class="n">3–5<small>min</small></div><p>es la ventana en la que un DEA logra los mejores resultados</p></div>
+      <div class="stat" data-rv style="--d:.16s"><div class="n">2<small>años</small></div><p>de vigencia del certificado de espacio cardioseguro, con actualización anual</p></div>
+      <div class="stat" data-rv style="--d:.24s"><div class="n"><span data-count="8">8</span><small>años</small></div><p>de garantía en los desfibriladores que instalamos</p></div>
+    </div>
+    <p class="fuente">Datos de referencia de las guías internacionales de reanimación (AHA y ERC).</p>
+  </div>
+</section>
+
+<!-- ============ Servicios ============ -->
+<section class="sec" id="servicios" style="background:#fff">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-rv>Servicios</span>
+      <h2 class="t2" data-rv style="--d:.06s">Todo para responder a tiempo <em>ante una emergencia</em></h2>
+      <p class="lead" data-rv style="--d:.12s">Podés contratar el programa completo o cada servicio por separado. Siempre empezamos con una asesoría sin cargo.</p>
+    </div>
+
+    <div class="svc" id="svc">
+      <button class="svc-tab" type="button" aria-expanded="true" aria-controls="sp1" id="st1"><span class="n">01</span><span class="tt"><b>Habilitación de espacios cardioseguros</b><small>Programa integral con certificación</small></span><svg class="ico chev"><use href="#i-chev"/></svg><span class="pg"></span></button>
+      <div class="svc-panel" id="sp1" role="region" aria-labelledby="st1">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1593354338446-3e42e6630399?auto=format&fit=crop&w=1400&h=640&q=70" alt="Cartel que señala la ubicación de un desfibrilador" loading="lazy"><span class="tag">Espacio cardioseguro</span></div>
+        <div class="bd">
+          <h3>Habilitación de espacios cardioseguros</h3>
+          <p>Dejamos tu espacio preparado para actuar ante un paro cardíaco, con todo lo que pide un espacio cardioprotegido.</p>
+          <ul class="ticks two">
+            <li>Desfibrilador (DEA) en un lugar visible y accesible.</li>
+            <li>Cabina con alarma sonora y señalización.</li>
+            <li>Plan de emergencias sanitarias con roles para el personal.</li>
+            <li>Curso de RCP y uso del DEA para tu equipo.</li>
+            <li>Simulacro supervisado para medir tiempos de respuesta.</li>
+            <li>Certificado de espacio cardioseguro (aval AIDER), por 2 años.</li>
+          </ul>
+          <div class="acts"><a class="btn pri sm" href="#propuesta" data-srv="cardio">Pedir propuesta <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="#cardioseguro">Qué incluye</a></div>
+        </div>
+      </div>
+
+      <button class="svc-tab" type="button" aria-expanded="false" aria-controls="sp2" id="st2"><span class="n">02</span><span class="tt"><b>Venta de desfibriladores</b><small>DEA, cabina, instalación y mantenimiento</small></span><svg class="ico chev"><use href="#i-chev"/></svg><span class="pg"></span></button>
+      <div class="svc-panel" id="sp2" role="region" aria-labelledby="st2" hidden>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1617257484989-9f8ab411c362?auto=format&fit=crop&crop=top&w=1400&h=640&q=70" alt="Desfibrilador externo automático en su gabinete de pared" loading="lazy"><span class="tag">Desfibriladores</span></div>
+        <div class="bd">
+          <h3>Venta de desfibriladores</h3>
+          <p>Te asesoramos sobre el equipo y la cantidad que necesitás según tu espacio, y te lo dejamos instalado y funcionando.</p>
+          <ul class="ticks two">
+            <li>DEA de tecnología alemana, 100 % automático.</li>
+            <li>Modo pediátrico sin cambiar los parches.</li>
+            <li>Gabinete con alarma sonora al abrirse.</li>
+            <li>Instalación, señalización y puesta en marcha.</li>
+            <li>Control periódico, parches y baterías.</li>
+            <li>Garantía de 8 años.</li>
+          </ul>
+          <div class="acts"><a class="btn pri sm" href="#propuesta" data-srv="dea">Consultar por un DEA <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="#dea">Ver el equipo</a></div>
+        </div>
+      </div>
+
+      <button class="svc-tab" type="button" aria-expanded="false" aria-controls="sp3" id="st3"><span class="n">03</span><span class="tt"><b>Capacitación en primeros auxilios</b><small>Cursos para empresas, con certificado</small></span><svg class="ico chev"><use href="#i-chev"/></svg><span class="pg"></span></button>
+      <div class="svc-panel" id="sp3" role="region" aria-labelledby="st3" hidden>
+        <div class="ph"><img src="capacitacion.jpg" alt="Capacitación de Rescue Life: práctica de RCP sobre maniquí en una oficina" loading="lazy" style="object-position:center 30%"><span class="tag">Capacitación</span></div>
+        <div class="bd">
+          <h3>Capacitación en primeros auxilios para empresas</h3>
+          <p>Cursos prácticos en tu empresa, adaptados al rubro y al tipo de riesgo, para que tu gente sepa qué hacer en los primeros minutos.</p>
+          <ul class="ticks two">
+            <li>RCP en adultos, niños y bebés.</li>
+            <li>Uso del DEA con equipo de entrenamiento.</li>
+            <li>Atragantamiento, hemorragias y quemaduras.</li>
+            <li>Formación de brigadas de primera respuesta.</li>
+            <li>Simulacros en tu lugar de trabajo.</li>
+            <li>Certificado internacional AIDER.</li>
+          </ul>
+          <div class="acts"><a class="btn pri sm" href="#propuesta" data-srv="capa">Pedir propuesta <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="#capacitacion">Ver temario</a></div>
+        </div>
+      </div>
+
+      <button class="svc-tab" type="button" aria-expanded="false" aria-controls="sp4" id="st4"><span class="n">04</span><span class="tt"><b>Prevención en eventos</b><small>Médico y unidad de primera respuesta</small></span><svg class="ico chev"><use href="#i-chev"/></svg><span class="pg"></span></button>
+      <div class="svc-panel" id="sp4" role="region" aria-labelledby="st4" hidden>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1558151748-f2621b5e52f0?auto=format&fit=crop&w=1400&h=640&q=70" alt="Público en las tribunas durante un evento deportivo" loading="lazy"><span class="tag">Eventos</span></div>
+        <div class="bd">
+          <h3>Cobertura preventiva en eventos</h3>
+          <p>Un equipo médico dentro del evento, en movimiento, que llega en minutos a cualquier sector y da la primera respuesta en el lugar.</p>
+          <ul class="ticks two">
+            <li>Médico con experiencia en emergencias.</li>
+            <li>Unidad de primera respuesta ágil y equipada.</li>
+            <li>DEA, vía aérea, inmovilización y bolso de trauma.</li>
+            <li>Coordinación con el área protegida o la ambulancia.</li>
+            <li>Eventos puntuales o abono de fines de semana.</li>
+            <li>Clubes, countries, eventos deportivos y sociales.</li>
+          </ul>
+          <div class="acts"><a class="btn pri sm" href="#propuesta" data-srv="eventos">Cotizar un evento <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="#eventos">Cómo trabajamos</a></div>
+        </div>
+      </div>
+
+      <div class="svc-aside"><b>¿No sabés por dónde empezar?</b>Contanos cómo es tu espacio y cuánta gente circula. Te recomendamos lo que hace falta y nada más.<a class="btn dk sm" href="#propuesta" style="align-self:flex-start">Pedir asesoría</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Espacio cardioseguro ============ -->
+<section class="sec dark cardio" id="cardioseguro" aria-labelledby="cardioT">
+  <div class="bgimg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="head">
+      <svg class="ecg" viewBox="0 0 600 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 55h150l14-18 12 18h40l12-46 16 86 14-40h40l16-14 14 14h268"/></svg>
+      <span class="eyebrow" data-rv>Programa integral</span>
+      <h2 class="t2" id="cardioT" data-rv style="--d:.06s">Qué incluye tu <em>espacio cardioseguro</em></h2>
+      <p class="lead" data-rv style="--d:.12s">No es solo un equipo colgado en la pared: es un sistema de respuesta. Equipamiento, protocolo, personas entrenadas y un certificado que lo respalda.</p>
+    </div>
+    <div class="kit">
+      <div class="kc" data-rv><span class="k">01</span><span class="ic"><svg class="ico"><use href="#i-bolt"/></svg></span><h3>Desfibrilador DEA</h3><p>Automático, con modo pediátrico y resistente al polvo y al agua.</p></div>
+      <div class="kc" data-rv style="--d:.05s"><span class="k">02</span><span class="ic"><svg class="ico"><use href="#i-cab"/></svg></span><h3>Cabina con alarma</h3><p>Resguarda el equipo y, al abrirse, avisa a todos que hay una emergencia.</p></div>
+      <div class="kc" data-rv style="--d:.1s"><span class="k">03</span><span class="ic"><svg class="ico"><use href="#i-map"/></svg></span><h3>Plan de emergencias</h3><p>Mapa de respuesta de tus instalaciones, con roles claros para cada turno.</p></div>
+      <div class="kc" data-rv style="--d:.15s"><span class="k">04</span><span class="ic"><svg class="ico"><use href="#i-vest"/></svg></span><h3>Chaleco de respuesta</h3><p>Alta visibilidad y kit de primera respuesta para identificar al líder de la emergencia.</p></div>
+      <div class="kc" data-rv><span class="k">05</span><span class="ic"><svg class="ico"><use href="#i-users"/></svg></span><h3>Capacitación</h3><p>RCP y uso del DEA para profesores, recepcionistas, administrativos y quien haga falta.</p></div>
+      <div class="kc" data-rv style="--d:.05s"><span class="k">06</span><span class="ic"><svg class="ico"><use href="#i-timer"/></svg></span><h3>Simulacro real</h3><p>Práctica supervisada en tu espacio para medir tiempos y ajustar el protocolo.</p></div>
+      <div class="kc" data-rv style="--d:.1s"><span class="k">07</span><span class="ic"><svg class="ico"><use href="#i-award"/></svg></span><h3>Certificación AIDER</h3><p>Certificado de espacio cardioseguro con aval internacional, por dos años.</p></div>
+      <div class="kc" data-rv style="--d:.15s"><span class="k">08</span><span class="ic"><svg class="ico"><use href="#i-wrench"/></svg></span><h3>Seguimiento</h3><p>Control del equipo y actualización anual obligatoria de la capacitación.</p></div>
+    </div>
+    <div class="ley" data-rv>
+      <div><b>Ley 27.159 de muerte súbita</b><p>La ley nacional promueve que los espacios públicos y privados de acceso público sean cardioprotegidos: con DEA accesible, señalizado y personal capacitado para usarlo. Te asesoramos sobre lo que corresponde en tu caso.</p></div>
+      <a class="btn" href="#propuesta" data-srv="cardio">Quiero mi espacio cardioseguro <svg class="ico arr"><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEA ============ -->
+<section class="sec" id="dea">
+  <div class="wrap dea-g">
+    <div class="dev" data-rv="l" aria-hidden="true">
+      <div class="disc"></div>
+      <svg class="equipo" viewBox="0 0 300 330">
+        <defs>
+          <linearGradient id="cuerpo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0342F"/><stop offset="1" stop-color="#B8171A"/></linearGradient>
+          <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A2B31"/><stop offset="1" stop-color="#16171B"/></linearGradient>
+        </defs>
+        <path d="M95 40a25 25 0 0 1 25-25h60a25 25 0 0 1 25 25v8h-20v-6a9 9 0 0 0-9-9h-52a9 9 0 0 0-9 9v6H95z" fill="#16171B"/>
+        <rect x="20" y="44" width="260" height="270" rx="40" fill="url(#cuerpo)"/>
+        <rect x="20" y="44" width="260" height="270" rx="40" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2"/>
+        <rect x="48" y="72" width="204" height="150" rx="22" fill="url(#panel)"/>
+        <rect x="66" y="88" width="168" height="70" rx="10" fill="#0B8A4A"/>
+        <path d="M76 124h34l7-12 8 24 9-30 8 18h68" fill="none" stroke="#C9F7DD" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="96" cy="190" r="16" fill="#E52624" stroke="#fff" stroke-width="3"/>
+        <path d="M98 180l-7 11h6l-2 9 8-12h-6z" fill="#fff"/>
+        <rect x="128" y="182" width="96" height="8" rx="4" fill="#fff" fill-opacity=".35"/>
+        <rect x="128" y="196" width="64" height="8" rx="4" fill="#fff" fill-opacity=".2"/>
+        <text x="150" y="276" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="44" fill="#fff" letter-spacing="4">DEA</text>
+        <circle cx="62" cy="270" r="7" fill="#FFD7D6"><animate attributeName="opacity" values="1;.25;1" dur="1.4s" repeatCount="indefinite"/></circle>
+      </svg>
+      <span class="chip c1"><svg class="ico"><use href="#i-bolt"/></svg>100 % automático</span>
+      <span class="chip c2"><svg class="ico"><use href="#i-baby"/></svg>Modo pediátrico</span>
+      <span class="chip c3"><svg class="ico"><use href="#i-drop"/></svg>Resistencia IP55</span>
+      <span class="chip c4"><svg class="ico"><use href="#i-shield"/></svg>8 años de garantía</span>
+    </div>
+    <div>
+      <span class="eyebrow" data-rv>Desfibriladores</span>
+      <h2 class="t2" data-rv style="--d:.06s">Un equipo que <em>decide por vos</em></h2>
+      <p class="lead" data-rv style="--d:.12s">Trabajamos con el <b style="color:var(--ink)">Primedic HeartSave AS</b>, de tecnología alemana. Es totalmente automático: analiza el ritmo y aplica la descarga sin que nadie tenga que apretar un botón, y guía cada paso por voz.</p>
+      <div class="specs">
+        <div class="spec" data-rv><span class="ic"><svg class="ico"><use href="#i-bolt"/></svg></span><div><b>Descarga automática</b><span>Elimina dudas en el momento de mayor tensión.</span></div></div>
+        <div class="spec" data-rv style="--d:.05s"><span class="ic"><svg class="ico"><use href="#i-baby"/></svg></span><div><b>Modo pediátrico</b><span>Ajuste inmediato para niños, sin cambiar los parches.</span></div></div>
+        <div class="spec" data-rv style="--d:.1s"><span class="ic"><svg class="ico"><use href="#i-drop"/></svg></span><div><b>Protección IP55</b><span>Resiste polvo y agua: ideal para gimnasios, clubes y exteriores.</span></div></div>
+        <div class="spec" data-rv style="--d:.15s"><span class="ic"><svg class="ico"><use href="#i-sound"/></svg></span><div><b>Cabina con alarma</b><span>Avisa al abrirse y evita que lo manipulen sin motivo.</span></div></div>
+      </div>
+      <div class="dea-acts" data-rv>
+        <a class="btn pri" href="#propuesta" data-srv="dea">Consultar precio y disponibilidad <svg class="ico arr"><use href="#i-arr"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Capacitación ============ -->
+<section class="sec capa" id="capacitacion">
+  <div class="wrap cap-g">
+    <div>
+      <span class="eyebrow" data-rv>Capacitación para empresas</span>
+      <h2 class="t2" data-rv style="--d:.06s">Tu equipo, preparado para <em>los primeros minutos</em></h2>
+      <p class="lead" data-rv style="--d:.12s">Cursos teórico-prácticos con maniquíes y DEA de entrenamiento, dictados en tu empresa y adaptados a tu rubro. Cada participante recibe su certificado.</p>
+      <div class="temas">
+        <div class="tema" data-rv><span class="ic"><svg class="ico"><use href="#i-heart"/></svg></span>RCP en adultos, niños y bebés</div>
+        <div class="tema" data-rv style="--d:.04s"><span class="ic"><svg class="ico"><use href="#i-bolt"/></svg></span>Uso del desfibrilador (DEA)</div>
+        <div class="tema" data-rv style="--d:.08s"><span class="ic"><svg class="ico"><use href="#i-lungs"/></svg></span>Atragantamiento</div>
+        <div class="tema" data-rv style="--d:.12s"><span class="ic"><svg class="ico"><use href="#i-drop"/></svg></span>Hemorragias y heridas</div>
+        <div class="tema" data-rv style="--d:.16s"><span class="ic"><svg class="ico"><use href="#i-flame"/></svg></span>Quemaduras</div>
+        <div class="tema" data-rv style="--d:.2s"><span class="ic"><svg class="ico"><use href="#i-bone"/></svg></span>Fracturas y traumatismos</div>
+        <div class="tema" data-rv style="--d:.24s"><span class="ic"><svg class="ico"><use href="#i-users"/></svg></span>Brigadas de primera respuesta</div>
+        <div class="tema" data-rv style="--d:.28s"><span class="ic"><svg class="ico"><use href="#i-timer"/></svg></span>Simulacros en el lugar de trabajo</div>
+      </div>
+      <div class="modal" data-rv>
+        <span><svg class="ico"><use href="#i-pin"/></svg>En tu empresa</span>
+        <span><svg class="ico"><use href="#i-award"/></svg>Certificado AIDER</span>
+        <span><svg class="ico"><use href="#i-cal"/></svg>Recertificación anual</span>
+      </div>
+      <a class="campus" href="../primeros-auxilios/" data-rv><span class="ic"><svg class="ico"><use href="#i-lock"/></svg></span><span><b>Campus de alumnos</b><small>Curso online de Primeros Auxilios y RCP. Ingresá con el usuario de tu grupo.</small></span><svg class="ico arr"><use href="#i-arr"/></svg></a>
+    </div>
+    <div class="cap-ph" data-rv="r">
+      <div class="img"><img src="capacitacion.jpg" alt="Instructor de Rescue Life corrigiendo la técnica de RCP de una participante" width="686" height="673" loading="lazy"></div>
+      <div class="cert"><span class="ic"><svg class="ico"><use href="#i-award"/></svg></span><div><b>Certificación internacional</b><small>Cursos avalados por AIDER International.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Eventos ============ -->
+<section class="sec dark eventos" id="eventos">
+  <div class="bgimg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-rv>Prevención en eventos</span>
+      <h2 class="t2" data-rv style="--d:.06s">Un médico donde está <em>la gente</em></h2>
+      <p class="lead" data-rv style="--d:.12s">A diferencia de una ambulancia estacionada en un punto fijo, nuestra unidad de primera respuesta circula por el predio y llega en minutos a canchas, tribunas, senderos y salones, adonde un vehículo convencional no entra o tarda más.</p>
+    </div>
+    <div class="ev-g">
+      <div class="ev" data-rv><span class="ic"><svg class="ico"><use href="#i-steth"/></svg></span><h3>Médico en el lugar</h3><p>Un médico con experiencia en emergencias evalúa, atiende y estabiliza al paciente desde el primer minuto. Lo acompaña un chofer que asiste en la atención.</p></div>
+      <div class="ev" data-rv style="--d:.08s"><span class="ic"><svg class="ico"><use href="#i-cart"/></svg></span><h3>Unidad de primera respuesta</h3><p>Vehículo liviano y ágil, equipado con DEA, vía aérea, inmovilización, bolso de trauma, medicación de emergencia y control de signos vitales.</p></div>
+      <div class="ev" data-rv style="--d:.16s"><span class="ic"><svg class="ico"><use href="#i-shield"/></svg></span><h3>Trabajo en red</h3><p>Si hace falta una UTIM o un traslado, coordinamos con el área protegida o la ambulancia del evento y hacemos el traspaso con la información de lo actuado.</p></div>
+    </div>
+    <div class="ev-tipos" data-rv>
+      <span>Clubes y countries</span><span>Torneos y eventos deportivos</span><span>Maratones y carreras</span><span>Eventos corporativos</span><span>Fiestas y eventos sociales</span><span>Abono de fines de semana</span>
+    </div>
+    <div class="ev-cta" data-rv>
+      <a class="btn pri" href="#propuesta" data-srv="eventos">Cotizar la cobertura de un evento <svg class="ico arr"><use href="#i-arr"/></svg></a>
+      <a class="btn ghost" href="https://wa.me/5491178295509?text=Hola%20Rescue%20Life%2C%20quiero%20consultar%20por%20la%20cobertura%20de%20un%20evento." target="_blank" rel="noopener"><svg class="ico f"><use href="#i-wa"/></svg> Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Sectores ============ -->
+<section class="sec" id="sectores" style="background:#fff">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-rv>Para quién</span>
+      <h2 class="t2" data-rv style="--d:.06s">Cada espacio tiene <em>su plan</em></h2>
+    </div>
+    <div class="sect">
+      <div class="sct" data-rv><span class="ic"><svg class="ico"><use href="#i-office"/></svg></span><b>Empresas y oficinas</b><small>Entorno corporativo cardioseguro</small></div>
+      <div class="sct" data-rv style="--d:.05s"><span class="ic"><svg class="ico"><use href="#i-gym"/></svg></span><b>Gimnasios y box de CrossFit</b><small>Donde la exigencia física es constante</small></div>
+      <div class="sct" data-rv style="--d:.1s"><span class="ic"><svg class="ico"><use href="#i-flag"/></svg></span><b>Clubes y countries</b><small>Socios, invitados y actividad deportiva</small></div>
+      <div class="sct" data-rv style="--d:.15s"><span class="ic"><svg class="ico"><use href="#i-school"/></svg></span><b>Colegios e institutos</b><small>Alumnos, docentes y familias</small></div>
+      <div class="sct" data-rv><span class="ic"><svg class="ico"><use href="#i-bed"/></svg></span><b>Hoteles</b><small>Huéspedes las 24 horas</small></div>
+      <div class="sct" data-rv style="--d:.05s"><span class="ic"><svg class="ico"><use href="#i-glass"/></svg></span><b>Salones de eventos</b><small>Gran concurrencia en poco tiempo</small></div>
+      <div class="sct" data-rv style="--d:.1s"><span class="ic"><svg class="ico"><use href="#i-fact"/></svg></span><b>Industrias y depósitos</b><small>Brigadas y turnos rotativos</small></div>
+      <div class="sct" data-rv style="--d:.15s"><span class="ic"><svg class="ico"><use href="#i-tree"/></svg></span><b>Espacios de acceso público</b><small>Centros comerciales, consorcios y más</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Proceso ============ -->
+<section class="sec" id="proceso">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-rv>Cómo trabajamos</span>
+      <h2 class="t2" data-rv style="--d:.06s">De la asesoría a la <em>certificación</em></h2>
+    </div>
+    <ol class="steps" id="steps">
+      <li class="step"><span class="num">1</span><h3>Asesoría sin cargo</h3><p>Conocemos tu espacio, cuánta gente circula y qué tenés hoy.</p></li>
+      <li class="step"><span class="num">2</span><h3>Propuesta a medida</h3><p>Te enviamos una propuesta cerrada con equipos, capacitación y plazos.</p></li>
+      <li class="step"><span class="num">3</span><h3>Instalación y capacitación</h3><p>Dejamos el DEA instalado, armamos el plan y entrenamos a tu equipo.</p></li>
+      <li class="step"><span class="num">4</span><h3>Certificación y seguimiento</h3><p>Simulacro, certificado y controles para que todo siga funcionando.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Preguntas ============ -->
+<section class="sec" id="preguntas" style="background:#fff">
+  <div class="wrap">
+    <div class="head c">
+      <span class="eyebrow" data-rv>Preguntas frecuentes</span>
+      <h2 class="t2" data-rv style="--d:.06s">Lo que más <em>nos consultan</em></h2>
+    </div>
+    <div class="faq" data-rv>
+      <details><summary>¿Qué es un espacio cardioseguro?</summary><div class="a"><p>Es un lugar preparado para actuar ante un paro cardíaco: tiene un desfibrilador accesible y señalizado, personal capacitado en RCP y uso del DEA, y un protocolo que define quién hace qué. La certificación lo acredita.</p></div></details>
+      <details><summary>¿Es obligatorio tener un DEA?</summary><div class="a"><p>La Ley 27.159 promueve que los espacios públicos y privados de acceso público sean cardioprotegidos, y cada jurisdicción define en su reglamentación qué lugares tienen que contar con DEA. En la asesoría te decimos qué corresponde para tu espacio.</p></div></details>
+      <details><summary>¿Quién puede usar el desfibrilador?</summary><div class="a"><p>Cualquier persona. El equipo indica cada paso por voz y, al ser automático, decide y aplica la descarga solo. Igual, la capacitación hace que tu equipo actúe más rápido y con confianza.</p></div></details>
+      <details><summary>¿Cuánto dura la certificación?</summary><div class="a"><p>El certificado de espacio cardioseguro tiene una vigencia de dos años e incluye una actualización anual obligatoria de la capacitación del personal.</p></div></details>
+      <details><summary>¿Dónde se dictan los cursos?</summary><div class="a"><p>En tu empresa o institución, con maniquíes y DEA de entrenamiento. Cada participante recibe un certificado internacional AIDER, y tiene además acceso al curso online del campus de alumnos.</p></div></details>
+      <details><summary>¿Cubren eventos de un solo día?</summary><div class="a"><p>Sí. Cubrimos eventos puntuales y también ofrecemos abonos de fines de semana para clubes y countries, con feriados y jornadas adicionales a pedido.</p></div></details>
+      <details><summary>¿En qué zonas trabajan?</summary><div class="a"><p>En la Ciudad de Buenos Aires y el Gran Buenos Aires. Si estás en otra zona, consultanos.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Pedido de propuesta ============ -->
+<section class="sec dark prop" id="propuesta">
+  <div class="wrap">
+    <div class="prop-intro">
+      <span class="eyebrow" data-rv>Propuesta a medida</span>
+      <h2 class="t2" data-rv style="--d:.06s">Pedí tu <em>propuesta</em></h2>
+      <p class="lead" data-rv style="--d:.12s">Contanos qué necesitás y te respondemos con una propuesta cerrada. La asesoría inicial no tiene cargo.</p>
+      <ul class="pts">
+        <li data-rv style="--d:.05s"><span class="ic"><svg class="ico"><use href="#i-clip"/></svg></span><div><b>Elegí uno o varios servicios</b><span>Podés combinarlos o empezar por uno.</span></div></li>
+        <li data-rv style="--d:.1s"><span class="ic"><svg class="ico"><use href="#i-chat"/></svg></span><div><b>Mandalo por WhatsApp o por mail</b><span>El mensaje se arma solo con tus datos.</span></div></li>
+        <li data-rv style="--d:.15s"><span class="ic"><svg class="ico"><use href="#i-send"/></svg></span><div><b>Te respondemos con la propuesta</b><span>Con equipos, capacitación, plazos y valores.</span></div></li>
+      </ul>
+    </div>
+
+    <form class="frm" id="frm" novalidate data-rv>
+      <h3>Tus datos</h3>
+      <p class="sub">Completá lo que sepas. Lo demás lo vemos juntos.</p>
+      <div class="msg" id="msg" role="alert" hidden></div>
+      <div class="fld">
+        <span class="lb" id="lbSrv">¿Qué necesitás?</span>
+        <div class="srvs" id="srvs" role="group" aria-labelledby="lbSrv">
+          <label class="srv"><input type="checkbox" name="srv" value="cardio"><span class="ic"><svg class="ico"><use href="#i-heart"/></svg></span><span><b>Espacio cardioseguro</b><small>Programa integral con certificación</small></span></label>
+          <label class="srv"><input type="checkbox" name="srv" value="dea"><span class="ic"><svg class="ico"><use href="#i-bolt"/></svg></span><span><b>Desfibrilador (DEA)</b><small>Equipo, cabina e instalación</small></span></label>
+          <label class="srv"><input type="checkbox" name="srv" value="capa"><span class="ic"><svg class="ico"><use href="#i-users"/></svg></span><span><b>Capacitación</b><small>Primeros auxilios, RCP y DEA</small></span></label>
+          <label class="srv"><input type="checkbox" name="srv" value="eventos"><span class="ic"><svg class="ico"><use href="#i-steth"/></svg></span><span><b>Cobertura de eventos</b><small>Médico y unidad de primera respuesta</small></span></label>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="fld"><label for="fNom">Nombre y apellido</label><input class="inp" id="fNom" name="nombre" autocomplete="name" required></div>
+        <div class="fld"><label for="fOrg">Empresa o institución</label><input class="inp" id="fOrg" name="org" autocomplete="organization" required></div>
+      </div>
+      <div class="grid2">
+        <div class="fld"><label for="fRub">Tipo de espacio</label>
+          <select class="sel" id="fRub" name="rubro">
+            <option value="">Elegí una opción</option>
+            <option>Empresa u oficina</option><option>Gimnasio o box</option><option>Club o country</option><option>Colegio o instituto</option><option>Hotel</option><option>Salón de eventos</option><option>Industria o depósito</option><option>Organizador de eventos</option><option>Otro</option>
+          </select></div>
+        <div class="fld"><label for="fLoc">Localidad</label><input class="inp" id="fLoc" name="localidad" autocomplete="address-level2"></div>
+      </div>
+      <div class="grid2">
+        <div class="fld"><label for="fCan">Personas <span class="opc">(aprox.)</span></label><input class="inp" id="fCan" name="personas" inputmode="numeric" placeholder="Empleados, socios o asistentes"></div>
+        <div class="fld" id="fldFecha" hidden><label for="fFec">Fecha del evento</label><input class="inp" id="fFec" name="fecha" type="date"></div>
+        <div class="fld" id="fldTel"><label for="fTel">Teléfono <span class="opc">(opcional)</span></label><input class="inp" id="fTel" name="tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="fld"><label for="fMsj">Mensaje <span class="opc">(opcional)</span></label><textarea class="ta" id="fMsj" name="mensaje" placeholder="Contanos lo que necesitás: superficie, cantidad de sedes, horarios, tipo de evento…"></textarea></div>
+      <div class="envios">
+        <button class="btn wa" type="submit" data-via="wa"><svg class="ico f"><use href="#i-wa"/></svg> Enviar por WhatsApp</button>
+        <button class="btn dk" type="submit" data-via="mail"><svg class="ico"><use href="#i-mail"/></svg> Enviar por mail</button>
+      </div>
+      <p class="priv">Usamos tus datos solo para responderte. No los compartimos con nadie.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ Contacto ============ -->
+<section class="sec" id="contacto">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-rv>Contacto</span>
+      <h2 class="t2" data-rv style="--d:.06s">Hablemos</h2>
+      <p class="lead" data-rv style="--d:.12s">Escribinos por el canal que te quede más cómodo. Coordinamos la asesoría sin cargo y te enviamos una propuesta sin compromiso.</p>
+    </div>
+    <div class="contact">
+      <a class="ccard wa" href="https://wa.me/5491178295509?text=Hola%20Rescue%20Life%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" data-rv><span class="ic"><svg class="ico f"><use href="#i-wa"/></svg></span><small>WhatsApp</small><b>11 7829-5509</b><span class="go">Escribinos <svg class="ico" style="width:18px;height:18px"><use href="#i-arr"/></svg></span></a>
+      <a class="ccard" href="mailto:info@rescuelifeargentina.com" data-rv style="--d:.06s"><span class="ic"><svg class="ico"><use href="#i-mail"/></svg></span><small>Email</small><b>info@<wbr>rescuelifeargentina.com</b><span class="go">Enviar un mail <svg class="ico" style="width:18px;height:18px"><use href="#i-arr"/></svg></span></a>
+      <a class="ccard" href="tel:+5491178295509" data-rv style="--d:.12s"><span class="ic"><svg class="ico"><use href="#i-phone"/></svg></span><small>Teléfono</small><b>11 7829-5509</b><span class="go">Llamar <svg class="ico" style="width:18px;height:18px"><use href="#i-arr"/></svg></span></a>
+      <div class="ccard" data-rv style="--d:.18s"><span class="ic"><svg class="ico"><use href="#i-pin"/></svg></span><small>Zona de trabajo</small><b>CABA y Gran Buenos Aires</b><span class="go" style="color:var(--muted);font-weight:500">Consultá por otras zonas</span></div>
+    </div>
+    <a class="gs" href="https://gsconsultores.github.io/" data-rv>
+      <svg class="iso" aria-hidden="true"><use href="#gs-iso"/></svg>
+      <span><b>¿También necesitás Seguridad e Higiene?</b><span class="t">Trabajamos junto con GS. Consultores: habilitaciones, mediciones, planes de evacuación y capacitación para que tu empresa esté en regla.</span></span>
+      <span class="btn">Conocé GS. Consultores <svg class="ico arr"><use href="#i-arr"/></svg></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Pie ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <a class="brand" href="#inicio"><img src="isotipo.png" alt="" width="410" height="293"><span><span class="wm"><i>RESCUE</i> <span>LIFE</span></span><small>Cardioprotección</small></span></a>
+        <p>Espacios cardioseguros, desfibriladores, capacitación en primeros auxilios y cobertura preventiva en eventos.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul><li><a href="#cardioseguro">Espacio cardioseguro</a></li><li><a href="#dea">Desfibriladores</a></li><li><a href="#capacitacion">Capacitación</a></li><li><a href="#eventos">Prevención en eventos</a></li><li><a href="../primeros-auxilios/">Campus de alumnos</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li><a href="tel:+5491178295509">Tel. 11 7829-5509</a></li><li><a href="https://wa.me/5491178295509" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@rescuelifeargentina.com">info@rescuelifeargentina.com</a></li><li><a href="https://gsconsultores.github.io/">GS. Consultores · Seguridad e Higiene</a></li></ul>
+      </div>
+    </div>
+    <div class="legal"><span>© <span id="anio">2026</span> Rescue Life · Cardioprotección</span><span>Ley 27.159 · Certificación AIDER International</span></div>
+  </div>
+</footer>
+
+<a class="wa-f" href="https://wa.me/5491178295509?text=Hola%20Rescue%20Life%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg class="ico f"><use href="#i-wa"/></svg><span class="tip">¿Consultas? Escribinos</span></a>
+
+<script>
+"use strict";
+
+/* ================= Configuración ================= */
+var WHATSAPP = "5491178295509";
+var EMAIL = "info@rescuelifeargentina.com";
+var SERVICIOS = {
+  cardio:"Habilitación de espacio cardioseguro",
+  dea:"Venta de desfibrilador (DEA)",
+  capa:"Capacitación en primeros auxilios para empresas",
+  eventos:"Cobertura preventiva de eventos"
+};
+
+function $(id){ return document.getElementById(id); }
+var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+$("anio").textContent = new Date().getFullYear();
+
+/* ================= Navegación ================= */
+(function(){
+  var nav = $("nav"), menu = $("menu"), burger = $("burger");
+  function onScroll(){ nav.classList.toggle("mini", window.scrollY > 40); }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  function abrir(on){
+    menu.classList.toggle("open", on);
+    burger.setAttribute("aria-expanded", on ? "true" : "false");
+    document.body.style.overflow = on ? "hidden" : "";
+    if(on) $("menuX").focus();
+  }
+  burger.addEventListener("click", function(){ abrir(true); });
+  $("menuX").addEventListener("click", function(){ abrir(false); burger.focus(); });
+  menu.addEventListener("click", function(e){ if(e.target.closest("a")) abrir(false); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && menu.classList.contains("open")){ abrir(false); burger.focus(); } });
+
+  /* Sección activa en el menú */
+  if(!("IntersectionObserver" in window)) return;
+  var links = document.querySelectorAll(".links a");
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(en){
+      if(!en.isIntersecting) return;
+      links.forEach(function(a){ a.classList.toggle("on", a.getAttribute("href") === "#" + en.target.id); });
+    });
+  }, {rootMargin:"-45% 0px -50% 0px"});
+  ["nosotros","servicios","cardioseguro","dea","capacitacion","eventos","sectores","proceso","preguntas","propuesta","contacto"].forEach(function(id){ var el = $(id); if(el) io.observe(el); });
+})();
+
+/* ================= Aparición al hacer scroll ================= */
+(function(){
+  var els = document.querySelectorAll("[data-rv]");
+  if(reduce || !("IntersectionObserver" in window)){ els.forEach(function(el){ el.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, {rootMargin:"0px 0px -8% 0px", threshold:.08});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* ================= Palabra que rota en el título ================= */
+(function(){
+  var el = $("rot");
+  var palabras = ["empresa","gimnasio","club","colegio","hotel","evento","oficina","country"];
+  if(reduce) return;
+  var i = 0, txt = palabras[0], borrando = true;
+  function tick(){
+    if(borrando){
+      txt = txt.slice(0, -1);
+      el.textContent = txt;
+      if(!txt){ borrando = false; i = (i + 1) % palabras.length; }
+      setTimeout(tick, 45);
+    }else{
+      var p = palabras[i];
+      txt = p.slice(0, txt.length + 1);
+      el.textContent = txt;
+      if(txt === p){ borrando = true; setTimeout(tick, 2100); }
+      else setTimeout(tick, 85);
+    }
+  }
+  setTimeout(tick, 2400);
+})();
+
+/* ================= Cadena de supervivencia (hero) =================
+   Un reloj que corre de 0:00 a 4:00 y va encendiendo cada eslabón. */
+(function(){
+  var items = document.querySelectorAll("#hcList .hc-item"), reloj = $("hcTime"), done = $("hcDone");
+  if(!items.length) return;
+  var FIN = 240;
+  function fmt(s){ return ("0" + Math.floor(s / 60)).slice(-2) + ":" + ("0" + (s % 60)).slice(-2); }
+  function pintar(s){
+    reloj.textContent = fmt(s);
+    items.forEach(function(it){ it.classList.toggle("ok", s >= +it.getAttribute("data-t")); });
+    done.classList.toggle("on", s >= FIN);
+  }
+  if(reduce){ pintar(FIN); return; }
+  var s = 0;
+  function paso(){
+    pintar(s);
+    if(s < FIN){ s = Math.min(FIN, s + 4); setTimeout(paso, 55); }
+    else { setTimeout(function(){ s = 0; paso(); }, 4200); }
+  }
+  setTimeout(paso, 1400);
+})();
+
+/* ================= Contadores ================= */
+(function(){
+  var els = document.querySelectorAll("[data-count]");
+  if(reduce || !("IntersectionObserver" in window)) return;
+  els.forEach(function(el){ el.textContent = "0"; });
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(en){
+      if(!en.isIntersecting) return;
+      io.unobserve(en.target);
+      var el = en.target, fin = parseInt(el.getAttribute("data-count"), 10) || 0, t0 = null, dur = 1200;
+      function f(t){
+        if(!t0) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = String(Math.round(fin * e));
+        if(k < 1) requestAnimationFrame(f);
+      }
+      requestAnimationFrame(f);
+    });
+  }, {threshold:.6});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* ================= Servicios: pestañas / acordeón ================= */
+(function(){
+  var cont = $("svc");
+  var tabs = Array.prototype.slice.call(cont.querySelectorAll(".svc-tab"));
+  var actual = 0, timer = null, auto = true, visible = false, encima = false;
+  var ESCRITORIO = window.matchMedia("(min-width:1000px)");
+  var DUR = 7000;
+
+  function activar(i, desdeUsuario){
+    tabs.forEach(function(t, k){
+      var on = k === i;
+      t.setAttribute("aria-expanded", on ? "true" : "false");
+      $(t.getAttribute("aria-controls")).hidden = !on;
+      t.classList.remove("run");
+    });
+    actual = i;
+    if(desdeUsuario){ auto = false; clearTimeout(timer); }
+    programar();
+  }
+  function programar(){
+    clearTimeout(timer);
+    tabs.forEach(function(t){ t.classList.remove("run"); });
+    if(!auto || reduce || !ESCRITORIO.matches || !visible || encima) return;
+    var t = tabs[actual];
+    t.style.setProperty("--t", DUR + "ms");
+    void t.offsetWidth;
+    t.classList.add("run");
+    timer = setTimeout(function(){ activar((actual + 1) % tabs.length, false); }, DUR);
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){
+      var abierto = t.getAttribute("aria-expanded") === "true";
+      if(abierto && !ESCRITORIO.matches){
+        /* en el celular, tocar el abierto lo cierra */
+        t.setAttribute("aria-expanded", "false");
+        $(t.getAttribute("aria-controls")).hidden = true;
+        auto = false; clearTimeout(timer);
+        return;
+      }
+      activar(i, true);
+      if(!ESCRITORIO.matches){
+        setTimeout(function(){
+          var r = t.getBoundingClientRect();
+          if(r.top < 70 || r.top > window.innerHeight * .5) window.scrollTo({top:window.scrollY + r.top - 96, behavior:reduce ? "auto" : "smooth"});
+        }, 30);
+      }
+    });
+  });
+  cont.addEventListener("mouseenter", function(){ encima = true; programar(); });
+  cont.addEventListener("mouseleave", function(){ encima = false; programar(); });
+  /* Las fotos de las pestañas cerradas se bajan antes de que se abran */
+  var precargadas = false;
+  function precargar(){
+    if(precargadas) return;
+    precargadas = true;
+    cont.querySelectorAll(".svc-panel img").forEach(function(i){ var x = new Image(); x.src = i.currentSrc || i.src; });
+  }
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(ents){ visible = ents[0].isIntersecting; if(visible) precargar(); programar(); }, {threshold:.35}).observe(cont);
+    new IntersectionObserver(function(ents, o){ if(ents[0].isIntersecting){ precargar(); o.disconnect(); } }, {rootMargin:"600px 0px"}).observe(cont);
+  }else{
+    precargar();
+  }
+  if(ESCRITORIO.addEventListener) ESCRITORIO.addEventListener("change", function(){ if(ESCRITORIO.matches && !tabs.some(function(t){ return t.getAttribute("aria-expanded") === "true"; })) activar(actual, false); programar(); });
+})();
+
+/* ================= Proceso: pasos que se encienden ================= */
+(function(){
+  var steps = document.querySelectorAll("#steps .step");
+  if(reduce || !("IntersectionObserver" in window)){ steps.forEach(function(s){ s.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(en){
+      if(!en.isIntersecting) return;
+      io.disconnect();
+      steps.forEach(function(s, k){ setTimeout(function(){ s.classList.add("in"); }, 250 + k * 450); });
+    });
+  }, {threshold:.4});
+  io.observe($("steps"));
+})();
+
+/* ================= Pedido de propuesta =================
+   No hay servidor: el pedido se arma como texto y se manda por
+   WhatsApp o por mail desde el teléfono o la compu del cliente.       */
+(function(){
+  var f = $("frm"), msg = $("msg"), srvs = $("srvs");
+  var marcados = function(){ return Array.prototype.filter.call(f.querySelectorAll('input[name="srv"]'), function(i){ return i.checked; }); };
+
+  /* Los botones «Pedir propuesta» de cada servicio lo dejan marcado */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("[data-srv]"); if(!a) return;
+    var inp = f.querySelector('input[name="srv"][value="' + a.getAttribute("data-srv") + '"]');
+    if(inp){ inp.checked = true; actualizar(); }
+  });
+
+  function actualizar(){
+    var ev = f.querySelector('input[value="eventos"]').checked;
+    $("fldFecha").hidden = !ev;
+    if(marcados().length) srvs.classList.remove("bad");
+  }
+  f.addEventListener("change", actualizar);
+  f.addEventListener("input", function(e){ if(e.target.classList) e.target.classList.remove("bad"); });
+
+  function texto(){
+    var v = function(id){ return $(id).value.trim(); };
+    var l = ["Hola Rescue Life, quiero pedir una propuesta.", ""];
+    l.push("Servicios: " + marcados().map(function(i){ return SERVICIOS[i.value]; }).join(", "));
+    l.push("Nombre: " + v("fNom"));
+    l.push("Empresa o institución: " + v("fOrg"));
+    if(v("fRub")) l.push("Tipo de espacio: " + v("fRub"));
+    if(v("fLoc")) l.push("Localidad: " + v("fLoc"));
+    if(v("fCan")) l.push("Personas (aprox.): " + v("fCan"));
+    if(!$("fldFecha").hidden && v("fFec")){ var p = v("fFec").split("-"); l.push("Fecha del evento: " + p[2] + "/" + p[1] + "/" + p[0]); }
+    if(v("fTel")) l.push("Teléfono: " + v("fTel"));
+    if(v("fMsj")){ l.push(""); l.push(v("fMsj")); }
+    return l.join("\n");
+  }
+
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var via = (e.submitter && e.submitter.getAttribute("data-via")) || "wa";
+    var err = [];
+    if(!marcados().length){ srvs.classList.add("bad"); err.push("qué servicio necesitás"); }
+    ["fNom","fOrg"].forEach(function(id){ if(!$(id).value.trim()){ $(id).classList.add("bad"); err.push(id === "fNom" ? "tu nombre" : "la empresa o institución"); } });
+    if(err.length){
+      var ult = err.pop();
+      msg.textContent = "Para armar la propuesta nos falta saber " + (err.length ? err.join(", ") + " y " : "") + ult + ".";
+      msg.hidden = false;
+      f.scrollIntoView({behavior:reduce ? "auto" : "smooth", block:"start"});
+      return;
+    }
+    msg.hidden = true;
+    var t = texto();
+    if(via === "mail"){
+      location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Pedido de propuesta — " + $("fOrg").value.trim()) + "&body=" + encodeURIComponent(t);
+    }else{
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t), "_blank", "noopener");
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -328,6 +328,10 @@ section{position:relative}
 .dea .campus small{display:block; color:#C9D6EA; font-size:13.5px; line-height:1.4; margin-top:2px}
 .dea .campus .arr{margin-left:auto; flex:none; transition:transform .25s var(--ease)}
 .dea .campus:hover .arr{transform:translateX(4px)}
+.dea .campus.rl{background:rgba(229,38,36,.14); border-color:rgba(229,38,36,.45)}
+.dea .campus.rl:hover{background:rgba(229,38,36,.22)}
+.dea .campus.rl .ic{background:#E52624}
+.dea .campus + .campus{margin-top:10px}
 
 /* ============ Sectores ============ */
 .sect{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
@@ -843,7 +847,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
             <li>Capacitaciones obligatorias del programa anual, adaptadas al rubro del cliente.</li>
             <li>Manejo seguro de autoelevador, manipulación de alimentos y trabajo en altura.</li>
           </ul>
-          <div class="acts" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri sm" href="#cotizar" data-cotizar="puntual:g-cap">Cotizar capacitaciones <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="primeros-auxilios/"><svg class="ico"><use href="#i-lock"/></svg> Campus de alumnos</a></div>
+          <div class="acts" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn pri sm" href="#cotizar" data-cotizar="puntual:g-cap">Cotizar capacitaciones <svg class="ico arr"><use href="#i-arr"/></svg></a><a class="btn line sm" href="rescuelife/"><svg class="ico"><use href="#i-heart"/></svg> Rescue Life</a><a class="btn line sm" href="primeros-auxilios/"><svg class="ico"><use href="#i-lock"/></svg> Campus de alumnos</a></div>
         </div>
       </div>
     </div>
@@ -982,15 +986,18 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
       <div class="acts" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;--d:.18s" data-rv>
         <a class="btn pri" href="#cotizar" data-cotizar="puntual:dea">Consultar por DEA <svg class="ico arr"><use href="#i-arr"/></svg></a>
         <a class="btn ghost" href="#cotizar" data-cotizar="puntual:rcp">Cursos de RCP</a>
+        <a class="btn ghost" href="rescuelife/"><svg class="ico"><use href="#i-heart"/></svg> Conocé Rescue Life</a>
       </div>
     </div>
     <div class="card-d" data-rv="r" style="--d:.15s">
       <b class="k"><svg class="ico"><use href="#i-heart"/></svg> Programa Rescue Life</b>
       <ul class="ticks">
+        <li>Habilitación de espacios cardioseguros, con certificación AIDER.</li>
         <li>Provisión, instalación y mantenimiento de DEA (desfibriladores externos automáticos).</li>
-        <li>Capacitación en uso de DEA con práctica sobre maniquí y recertificación anual.</li>
-        <li>Cursos de primeros auxilios y RCP con certificación AIDER International.</li>
+        <li>Cursos de primeros auxilios, RCP y uso de DEA para empresas.</li>
+        <li>Cobertura médica preventiva en eventos.</li>
       </ul>
+      <a class="campus rl" href="rescuelife/"><span class="ic"><svg class="ico"><use href="#i-heart"/></svg></span><span><b>Rescue Life</b><small>Espacios cardioseguros, desfibriladores, capacitación y eventos. Conocé todos los servicios.</small></span><svg class="ico arr"><use href="#i-arr"/></svg></a>
       <a class="campus" href="primeros-auxilios/"><span class="ic"><svg class="ico"><use href="#i-lock"/></svg></span><span><b>Campus de alumnos</b><small>Curso online de Primeros Auxilios y RCP. Ingresá con el usuario de tu grupo.</small></span><svg class="ico arr"><use href="#i-arr"/></svg></a>
     </div>
   </div>
@@ -1158,7 +1165,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
       </div>
       <div>
         <h4>Secciones</h4>
-        <ul><li><a href="#servicios">Servicios</a></li><li><a href="#abono">Abono mensual</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#cotizar">Cotizador online</a></li><li><a href="clientes/">Campus de clientes</a></li></ul>
+        <ul><li><a href="#servicios">Servicios</a></li><li><a href="#abono">Abono mensual</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#cotizar">Cotizador online</a></li><li><a href="clientes/">Campus de clientes</a></li><li><a href="rescuelife/">Rescue Life · Cardioprotección</a></li></ul>
       </div>
       <div>
         <h4>Contacto</h4>
