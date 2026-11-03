@@ -1479,7 +1479,7 @@ var Q;
 function pedidoNuevo(){
   return {
     paso:1, tipo:"",
-    abono:{personal:10, rubro:"", riesgo:false, extra:false},
+    abono:{personal:10, rubro:"", riesgo:false, ambiente:false, extra:false},
     sel:{},
     hab:{est:"", m2:"", partido:"", sit:"", srv:{}, det:""},
     consulta:"",
@@ -1548,6 +1548,7 @@ function renderDetalle(){
       '<p class="hint">Personal en relación de dependencia.</p></div>' +
       '<div class="fld"><label for="aRubro">Rubro o actividad *</label><select class="sel" id="aRubro">' + opciones(RUBROS, Q.abono.rubro, "Elegí una opción") + '</select></div>' +
       '<label class="chk"><input type="checkbox" id="aRiesgo"' + (Q.abono.riesgo ? " checked" : "") + '><span class="box" aria-hidden="true"></span><span>Industria, construcción u otra actividad de riesgo especial<small>Maquinaria pesada, productos químicos, trabajo en altura, etc.</small></span></label>' +
+      '<label class="chk"><input type="checkbox" id="aAmb"' + (Q.abono.ambiente ? " checked" : "") + '><span class="box" aria-hidden="true"></span><span>Sumar el seguimiento de medio ambiente<small>Declaraciones y vencimientos de residuos, efluentes, emisiones y habilitación ambiental. Las mediciones se cotizan aparte.</small></span></label>' +
       '<label class="chk"><input type="checkbox" id="aExtra"' + (Q.abono.extra ? " checked" : "") + '><span class="box" aria-hidden="true"></span><span>Quiero sumar mediciones, capacitaciones u otros servicios<small>Se cotizan aparte del abono.</small></span></label>' +
       '<div id="aExtraL"' + (Q.abono.extra ? "" : " hidden") + '>' + htmlCatalogo() + '</div>';
   }else if(t === "puntual"){
@@ -1590,6 +1591,7 @@ function resumen(){
     filas.push(["Personal", Q.abono.personal + (Q.abono.personal == 1 ? " persona" : " personas")]);
     if(Q.abono.rubro) filas.push(["Rubro", Q.abono.rubro]);
     if(Q.abono.riesgo) filas.push(["Actividad", "De riesgo especial"]);
+    if(Q.abono.ambiente) filas.push(["Medio ambiente", "Con seguimiento ambiental"]);
     if(Q.abono.extra) lista = lineasItems();
   }else if(Q.tipo === "puntual"){
     lista = lineasItems();
@@ -1734,6 +1736,7 @@ det.addEventListener("change", function(e){
     det.querySelectorAll("[data-hab]").forEach(function(c){ c.checked = el.checked; });
   }else if(el.id === "aRubro"){ Q.abono.rubro = el.value; marcar("aRubro", false); }
   else if(el.id === "aRiesgo"){ Q.abono.riesgo = el.checked; }
+  else if(el.id === "aAmb"){ Q.abono.ambiente = el.checked; }
   else if(el.id === "aExtra"){ Q.abono.extra = el.checked; $("aExtraL").hidden = !el.checked; }
   else if(el.id === "hEst"){ Q.hab.est = el.value; marcar("hEst", false); }
   else if(el.name === "hSit"){ Q.hab.sit = el.value; }
@@ -1788,7 +1791,7 @@ function payload(){
     });
   }
   if(Q.tipo === "abono"){
-    p.abono = {personal:Q.abono.personal, rubro:Q.abono.rubro, riesgo:!!Q.abono.riesgo};
+    p.abono = {personal:Q.abono.personal, rubro:Q.abono.rubro, riesgo:!!Q.abono.riesgo, ambiente:!!Q.abono.ambiente};
     if(Q.abono.extra) p.items = items();
   }else if(Q.tipo === "puntual"){
     p.items = items();
