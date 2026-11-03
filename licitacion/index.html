@@ -292,8 +292,9 @@ footer.pf a:hover{text-decoration:underline}
 
       <fieldset class="sec">
         <h2><span class="n">4</span>Servicios a cotizar además del abono</h2>
-        <p class="sub">Marcá solo lo que necesiten aparte. Se cotiza por separado del abono mensual.</p>
+        <p class="sub">Marcá solo lo que necesiten. Los trabajos puntuales se cotizan por separado del abono mensual.</p>
         <div class="incl"><svg class="ico"><use href="#i-check"/></svg><span>El abono mensual ya incluye la visita técnica con acta, el RGRL, el legajo técnico, el programa anual de capacitación, la gestión de EPP y las mediciones de iluminación y ruido.</span></div>
+        <label class="chk" style="margin-bottom:18px"><input type="checkbox" id="fAmb" data-k="ambiente"><span class="box" aria-hidden="true"></span><span><b>Sumar el seguimiento de medio ambiente al abono</b><small>Declaraciones juradas, inscripciones y vencimientos de residuos especiales, efluentes, emisiones, aparatos a presión y Certificado de Aptitud Ambiental. Las mediciones y análisis se cotizan aparte.</small></span></label>
         <div id="srvs"></div>
       </fieldset>
 
@@ -576,7 +577,7 @@ function payload(o){
     origen:location.origin + location.pathname, api:API_URL,
     datos:{nombre:limpio(o.nombre, 120), empresa:limpio(o.empresa, 120), email:limpio(o.email, 120).toLowerCase(),
            tel:limpio(o.tel, 40), localidad:limpio(o.localidad, 80), cuit:limpio(o.cuit, 20), coment:comentario(o)},
-    abono:{personal:Math.min(99999, entero(o.personal)), rubro:o.rubro, riesgo:!!o.riesgo}
+    abono:{personal:Math.min(99999, entero(o.personal)), rubro:o.rubro, riesgo:!!o.riesgo, ambiente:!!o.ambiente}
   };
   var it = itemsPedido(o);
   if(it.length) p.items = it;
@@ -588,6 +589,7 @@ function textoPedido(o){
   if(limpio(o.cuit)) L.push("CUIT: " + limpio(o.cuit, 20));
   L.push("Rubro: " + o.rubro + (o.riesgo ? " (riesgo especial)" : ""));
   L.push("Personal: " + entero(o.personal) + " personas");
+  if(o.ambiente) L.push("Con seguimiento de medio ambiente");
   L.push("Email: " + limpio(o.email, 120));
   L.push("Teléfono: " + limpio(o.tel, 40));
   L.push("");
