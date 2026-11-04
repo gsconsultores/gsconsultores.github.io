@@ -429,6 +429,8 @@ function idYoutube(v){ var m = String(v).match(/(?:youtu\.be\/|v=|embed\/|shorts
 function embed(v){
   var yt = idYoutube(v);
   if(yt) return '<iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?rel=0&modestbranding=1" title="Video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+  var bn = String(v).match(/(?:iframe|player)\.mediadelivery\.net\/(?:embed|play)\/(\d+)\/([0-9a-f-]{36})/i);
+  if(bn) return '<iframe src="https://player.mediadelivery.net/embed/' + bn[1] + '/' + bn[2] + '?preload=true" title="Video" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
   var vm = String(v).match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?(?:.*[?&]h=([0-9a-f]+))?/);
   if(vm) return '<iframe src="https://player.vimeo.com/video/' + vm[1] + ((vm[2] || vm[3]) ? '?h=' + (vm[2] || vm[3]) : '') + '" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
   var dr = String(v).match(/drive\.google\.com\/file\/d\/([-\w]{20,})/);

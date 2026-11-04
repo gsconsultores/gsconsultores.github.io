@@ -478,6 +478,8 @@ section{position:relative}
 .resumen li{margin:3px 0}
 .resumen li::marker{color:var(--orange)}
 .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.wz-promo{display:flex; gap:12px; align-items:center; margin:16px 0 0; padding:12px 14px; border-radius:14px; background:#FFF1EA; border:1px solid #F6C9B3; color:#7A3416; font-size:14.5px; line-height:1.4}
+.wz-promo b{color:var(--orange); font:800 22px/1 var(--display); flex:none}
 .wz-msg{margin:0 0 14px; padding:12px 14px; border-radius:12px; background:#FDECEC; color:#9B1C1C; font-size:14.5px; display:flex; gap:10px; align-items:flex-start}
 .wz-msg .ico{color:#D93B3B; width:20px; height:20px; margin-top:1px}
 .alt-box{margin-top:14px; padding:16px; border-radius:16px; background:#EEF4FB; border:1px solid #D3E0F0}
@@ -1065,6 +1067,7 @@ footer{background:var(--navy3); color:#9FB1CE; padding:64px 0 28px; font-size:14
           <li><span class="c">3</span><span class="l">Tus datos</span></li>
         </ol>
         <div class="wz-bar"><i id="wzBar"></i></div>
+        <div class="wz-promo" id="wzPromo" hidden><b>-20%</b><span id="wzPromoTxt"></span></div>
       </div>
 
       <form id="wzForm" novalidate autocomplete="on">
@@ -1193,6 +1196,22 @@ var WHATSAPP = "5491178295509";
 var EMAIL = "Contacto@gsconsultoresargentina.com";
 var PLAZO = "dentro de las 48 h hábiles";
 var CLAVE_LOCAL = "gs-web-pedido-v1";
+
+/* Beneficios por link: index.html?promo=CODIGO#cotizar
+   El descuento lo aplica el servidor en el borrador (ver PROMOS en
+   Codigo.gs) y siempre pasa por tu aprobación antes de enviarse.      */
+var PROMOS = {
+  CURSO20:{pct:20, txt:"Beneficio para alumnos del curso de Primeros Auxilios: 20% de descuento en el servicio mensual de Seguridad e Higiene."}
+};
+var PROMO = null;
+(function(){
+  var m = /[?&]promo=([\w-]+)/i.exec(location.search), cod = m ? m[1].toUpperCase() : "", g = null;
+  try{ g = JSON.parse(localStorage.getItem("gs-web-promo") || "null"); }catch(e){}
+  if(!PROMOS[cod] && g && PROMOS[g.c] && g.hasta > Date.now()) cod = g.c;        // vuelve dentro de los 30 días
+  if(!PROMOS[cod]) return;
+  PROMO = {codigo:cod, pct:PROMOS[cod].pct, txt:PROMOS[cod].txt};
+  try{ localStorage.setItem("gs-web-promo", JSON.stringify({c:cod, hasta:Date.now() + 30 * 864e5})); }catch(e){}
+})();
 
 /* Solo para probar en la compu: index.html?api=/mock-api */
 (function(){
@@ -1801,6 +1820,7 @@ function payload(){
   }else if(Q.tipo === "consulta"){
     p.consulta = String(Q.consulta || "").trim().slice(0, 3000);
   }
+  if(PROMO) p.promo = PROMO.codigo;
   return p;
 }
 function textoPedido(){
@@ -1817,6 +1837,7 @@ function textoPedido(){
   if(Q.tipo === "consulta" && Q.consulta.length > 140){ L.push(""); L.push(Q.consulta); }
   if(Q.tipo === "proyecto" && Q.hab.det){ L.push(""); L.push(Q.hab.det); }
   if(d.coment){ L.push(""); L.push("Comentarios: " + d.coment); }
+  if(PROMO){ L.push(""); L.push("Beneficio: " + PROMO.txt + " (código " + PROMO.codigo + ")."); }
   return L.join("\n");
 }
 function mostrarAlternativa(msg, esError){
@@ -1872,6 +1893,11 @@ function exito(id){
 /* ---------- Arranque ---------- */
 $("ptoPlazo").textContent = "Te respondemos " + PLAZO + ", con el detalle de cada trabajo y sin compromiso.";
 $("anio").textContent = new Date().getFullYear();
+if(PROMO){
+  $("wzPromoTxt").textContent = PROMO.txt;
+  $("wzPromo").hidden = false;
+  if(!Q.tipo) Q.tipo = "abono";
+}
 if(Q.tipo) elegirTipo(Q.tipo, false);
 irA(1, false);
 </script>
