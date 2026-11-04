@@ -130,27 +130,25 @@ header.top .wrap{display:flex; align-items:center; gap:16px; min-height:66px}
 .lec h1{font-size:clamp(24px,3.2vw,34px); color:var(--navy); margin:10px 0 16px}
 .player{position:relative; aspect-ratio:16/9; border-radius:var(--r); overflow:hidden; background:var(--navy3); box-shadow:var(--sh); container-type:inline-size}
 /* ============ Intro Rescue Life + GS antes de cada video ============ */
-.intro{position:absolute; inset:0; z-index:3; background:radial-gradient(60% 70% at 50% 42%, #3A0D0C 0%, #141012 55%, #0B0A0C 100%); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; transition:opacity .55s ease}
+.intro{position:absolute; inset:0; z-index:3; background:radial-gradient(60% 70% at 50% 42%, #3A0D0C 0%, #141012 55%, #0B0A0C 100%); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; transition:opacity .4s ease}
 .intro.out{opacity:0; pointer-events:none}
-.intro .ecg{position:absolute; left:0; right:0; top:46%; width:100%; height:16cqw; transform:translateY(-50%)}
-.intro .ecg path{fill:none; stroke:#E52624; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1400; stroke-dashoffset:1400; filter:drop-shadow(0 0 5px rgba(229,38,36,.9)); animation:inEcg 1.5s .1s cubic-bezier(.5,.1,.3,1) forwards, inEcgOut .5s 1.5s forwards}
-.intro .corazon{position:relative; width:17cqw; opacity:0; transform:scale(.6); animation:inPop .45s .9s cubic-bezier(.3,1.6,.5,1) forwards, inLate 1.1s 1.35s ease-in-out 2}
-.intro .marca{position:relative; margin-top:1.6cqw; font:900 6.4cqw/1 Montserrat, var(--display); letter-spacing:.04em; opacity:0; transform:translateY(2cqw); animation:inSube .5s 1.3s ease-out forwards}
+.intro .ecg{position:absolute; left:0; right:0; top:40%; width:100%; height:16cqw; transform:translateY(-50%); opacity:.22}
+.intro .ecg path{fill:none; stroke:#E52624; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 5px rgba(229,38,36,.9))}
+.intro .corazon{position:relative; width:13cqw}
+.intro .marca{position:relative; margin-top:1.2cqw; font:900 5.4cqw/1 Montserrat, var(--display); letter-spacing:.04em}
 .intro .marca i{font-style:normal; color:#E52624}
-.intro .curso{position:relative; margin-top:1.2cqw; font:600 2.1cqw/1.2 var(--body); letter-spacing:.28em; text-transform:uppercase; color:#E9D6D5; opacity:0; animation:inSube .5s 1.75s ease-out forwards}
-.intro .junto{position:absolute; bottom:6cqw; display:flex; align-items:center; gap:1.4cqw; opacity:0; animation:inSube .5s 2.3s ease-out forwards}
-.intro .junto small{font:500 1.7cqw/1 var(--body); letter-spacing:.2em; text-transform:uppercase; color:#B9A9A8}
-.intro .junto svg{width:2.6cqw; height:3.9cqw}
-.intro .junto b{font:800 2.3cqw/1 var(--display); letter-spacing:.06em}
-.intro .junto::before{content:""; position:absolute; left:-8cqw; right:-8cqw; top:-2.4cqw; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent)}
-.intro .saltar{position:absolute; right:2cqw; top:2cqw; border:1px solid rgba(255,255,255,.3); background:rgba(0,0,0,.35); color:#fff; border-radius:999px; padding:6px 14px; font-size:13px; cursor:pointer; opacity:0; animation:inSube .4s 1s forwards}
+.intro .curso{position:relative; margin-top:1cqw; font:600 1.9cqw/1.2 var(--body); letter-spacing:.28em; text-transform:uppercase; color:#E9D6D5}
+.intro .arrancar{position:relative; margin:2.4cqw 0 4cqw; display:inline-flex; align-items:center; gap:10px; border:0; border-radius:999px; padding:12px 24px; background:#E52624; color:#fff; font:700 16px var(--body); cursor:pointer; box-shadow:0 10px 30px -8px rgba(229,38,36,.8); transition:transform .2s, background .2s}
+.intro .arrancar:hover{background:#C81D1B; transform:scale(1.04)}
+.intro .arrancar .ico{width:22px; height:22px}
+.intro .junto{position:absolute; bottom:2.6cqw; display:flex; align-items:center; gap:1.4cqw}
+.intro .junto small{font:500 1.6cqw/1 var(--body); letter-spacing:.2em; text-transform:uppercase; color:#B9A9A8}
+.intro .junto svg{width:2.4cqw; height:3.6cqw}
+.intro .junto b{font:800 2.1cqw/1 var(--display); letter-spacing:.06em}
+.intro video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#000; z-index:1}
+.intro .saltar{position:absolute; right:2cqw; top:2cqw; z-index:2; border:1px solid rgba(255,255,255,.3); background:rgba(0,0,0,.35); color:#fff; border-radius:999px; padding:6px 14px; font-size:13px; cursor:pointer}
 .intro .saltar:hover{background:rgba(0,0,0,.6)}
-@keyframes inEcg{to{stroke-dashoffset:0}}
-@keyframes inEcgOut{to{opacity:.18}}
-@keyframes inPop{to{opacity:1; transform:scale(1)}}
-@keyframes inLate{0%,100%{transform:scale(1)} 15%{transform:scale(1.12)} 30%{transform:scale(1)} 45%{transform:scale(1.08)} 60%{transform:scale(1)}}
-@keyframes inSube{to{opacity:1; transform:none}}
-@media (prefers-reduced-motion:reduce){ .intro *{animation-duration:.01s !important; animation-delay:0s !important; animation-iteration-count:1 !important} }
+@media (max-width:560px){ .intro .arrancar{padding:9px 16px; font-size:14px} .intro .junto{display:none} }
 .player iframe,.player video{position:absolute; inset:0; width:100%; height:100%; border:0}
 .player .pend{position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#C9D6EA; padding:20px;
   background:radial-gradient(600px 300px at 80% 0%, #1F4A86 0%, transparent 70%), var(--navy3)}
@@ -703,85 +701,48 @@ function bloquePromo(){
     '<span class="tx"><b>Beneficio para alumnos</b>' + PROMO_CURSO.pct + '% de descuento en el servicio mensual de Seguridad e Higiene para tu empresa.</span>' +
     '<a class="btn" href="' + PROMO_CURSO.url + '" target="_blank" rel="noopener">Cotizar con descuento</a></div>';
 }
-// Intro de unos 5 s antes de cada video: Rescue Life junto a GS. Consultores.
+// Intro antes de cada video: portada con la marca y «Comenzar la lección»; al tocarla
+// suena intro.mp4 (Rescue Life junto a GS) y después arranca el video de la lección.
+// Va como archivo de esta carpeta y no en Bunny porque, para que suene, el video
+// tiene que arrancar con el mismo clic del alumno.
 function introHtml(){
   return '<div class="intro" id="intro">' +
     '<svg class="ecg" aria-hidden="true" viewBox="0 0 600 100" preserveAspectRatio="none"><path d="M0 55h190l12-16 10 16h36l14-44 18 82 14-38h34l14-12 12 12h246"/></svg>' +
     '<img class="corazon" src="../rescuelife/isotipo.png" alt="">' +
     '<div class="marca"><i>RESCUE</i> LIFE</div>' +
     '<div class="curso">Curso de Primeros Auxilios y RCP</div>' +
+    '<button class="arrancar" type="button" id="introPlay"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Comenzar la lección</button>' +
     '<div class="junto"><small>junto a</small><svg aria-hidden="true"><use href="#gs-iso"/></svg><b>GS. CONSULTORES</b></div>' +
-    '<button class="saltar" type="button" id="saltarIntro">Saltar ›</button>' +
+    '<video id="introVid" src="intro.mp4" playsinline preload="auto" hidden></video>' +
+    '<button class="saltar" type="button" id="saltarIntro" hidden>Saltar ›</button>' +
   '</div>';
 }
 function correrIntro(){
   var el = $('#intro'); if(!el) return;
-  var son = sonidoIntro();
+  var v = $('#introVid'), listo = false;
   function cerrar(){
-    if(!el.parentNode) return;
-    if(son) son.cortar();
-    el.classList.add('out'); setTimeout(function(){ if(el.parentNode) el.remove(); }, 600);
+    if(listo) return; listo = true;
+    try{ v.pause(); }catch(e){}
+    el.classList.add('out'); setTimeout(function(){ if(el.parentNode) el.remove(); }, 450);
+    arrancarLeccion();
   }
-  var t = setTimeout(cerrar, 5000);
-  $('#saltarIntro').addEventListener('click', function(){ clearTimeout(t); cerrar(); });
+  $('#introPlay').addEventListener('click', function(){
+    el.classList.add('sonando'); v.hidden = false; $('#saltarIntro').hidden = false;
+    var p = v.play();
+    if(p && p.catch) p.catch(cerrar);            // si el navegador no la deja sonar, va directo a la lección
+  });
+  v.addEventListener('ended', cerrar);
+  v.addEventListener('error', cerrar);
+  $('#saltarIntro').addEventListener('click', cerrar);
 }
-
-/* ---- Sonido de la intro: bip de monitor + latido, generados con Web Audio (sin archivos).
-   Los navegadores solo dejan sonar después de que el alumno tocó algo en la página,
-   así que el contexto se crea con el primer clic o tecla. Sin eso, la intro sale muda. ---- */
-var audioIntro = null;
-function prepararAudio(){
+function arrancarLeccion(){
   try{
-    if(!audioIntro){ var AC = window.AudioContext || window.webkitAudioContext; if(!AC) return; audioIntro = new AC(); }
-    if(audioIntro.state === 'suspended') audioIntro.resume();
+    if(seg.bn) seg.bn.play();
+    else if(seg.yt && seg.yt.playVideo) seg.yt.playVideo();
+    else if($('#vid')) $('#vid').play().catch(function(){});
   }catch(e){}
 }
-document.addEventListener('pointerdown', prepararAudio, true);
-document.addEventListener('keydown', prepararAudio, true);
 
-function sonidoIntro(){
-  var ac = audioIntro;
-  if(!ac || ac.state === 'closed') return null;
-  var inicio = performance.now(), ctl = { cortado:false, master:null };
-  ctl.cortar = function(){
-    ctl.cortado = true;
-    try{ if(ctl.master){ var m = ctl.master; m.gain.setTargetAtTime(0, ac.currentTime, 0.05); setTimeout(function(){ m.disconnect(); }, 400); } }catch(e){}
-  };
-  if(ac.state === 'running') programarSonido(ac, ctl, 0);
-  else ac.resume().then(function(){ programarSonido(ac, ctl, (performance.now() - inicio) / 1000); }, function(){});
-  return ctl;
-}
-function programarSonido(ac, ctl, atraso){   // atraso: segundos que la animación ya avanzó
-  if(ctl.cortado) return;
-  var t0 = ac.currentTime + 0.03 - atraso, master = ac.createGain();
-  ctl.master = master;
-  master.gain.value = 0.9; master.connect(ac.destination);
-  function bip(t){                      // bip de monitor cardíaco: 1 kHz corto
-    var o = ac.createOscillator(), g = ac.createGain();
-    o.type = 'sine'; o.frequency.value = 1000;
-    g.gain.setValueAtTime(0.0001, t0 + t);
-    g.gain.exponentialRampToValueAtTime(0.22, t0 + t + 0.01);
-    g.gain.exponentialRampToValueAtTime(0.0001, t0 + t + 0.16);
-    o.connect(g); g.connect(master); o.start(t0 + t); o.stop(t0 + t + 0.2);
-  }
-  function golpe(t, fuerza){           // un golpe grave del latido (cae de 75 a 40 Hz)
-    var o = ac.createOscillator(), g = ac.createGain(), f = ac.createBiquadFilter();
-    o.type = 'sine';
-    o.frequency.setValueAtTime(75, t0 + t); o.frequency.exponentialRampToValueAtTime(40, t0 + t + 0.14);
-    f.type = 'lowpass'; f.frequency.value = 180;
-    g.gain.setValueAtTime(0.0001, t0 + t);
-    g.gain.exponentialRampToValueAtTime(fuerza, t0 + t + 0.015);
-    g.gain.exponentialRampToValueAtTime(0.0001, t0 + t + 0.2);
-    o.connect(f); f.connect(g); g.connect(master); o.start(t0 + t); o.stop(t0 + t + 0.25);
-  }
-  // Mismos tiempos que la animación: el pico de la línea (~0,7 s) y los dos latidos del corazón (1,5 y 2,6 s).
-  function cuando(t, fn){ if(t0 + t >= ac.currentTime) fn(); }   // si el audio arrancó tarde, no suena lo que ya pasó
-  cuando(0.7, function(){ bip(0.7); });
-  [1.5, 2.6].forEach(function(t){
-    cuando(t, function(){ bip(t); golpe(t, 0.9); });
-    cuando(t + 0.3, function(){ golpe(t + 0.3, 0.6); });
-  });
-}
 function vCurso(id){
   var i = 0;
   for(var k = 0; k < MODULOS.length; k++) if(MODULOS[k].id === id) i = k;
