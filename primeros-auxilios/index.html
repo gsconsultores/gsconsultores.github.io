@@ -468,6 +468,20 @@ function registrarCert(){
   }).catch(function(){});
 }
 
+/* ============ Registro de cursantes (hoja «Cursantes») ============
+   Una fila por DNI que se actualiza al empezar, entrar, completar una
+   lección o rendir. Si no hay conexión, no molesta al alumno.        */
+function enviarAvance(evento){
+  enviarAvance.hecho = true;
+  if(!API_URL || !st.alumno) return;
+  var a = st.alumno, ob = obligatorias(), mejor = 0;
+  st.intentos.forEach(function(i){ if(i.nota > mejor) mejor = i.nota; });
+  var datos = { accion:'avance', evento:evento, dni:a.dni, nombre:nombreCompleto(a), empresa:a.empresa || '',
+    vistas:hechos(), total:MODULOS.length, obligVistas:ob.length - faltanOblig().length, obligTotal:ob.length,
+    intentos:st.intentos.length, mejor:mejor, aprobo:!!st.cert, codigo:st.cert ? st.cert.codigo : '' };
+  try{ fetch(API_URL, { method:'POST', body:JSON.stringify(datos), keepalive:true }).catch(function(){}); }catch(e){}
+}
+
 /* ============ Ruteo ============ */
 function ir(h){ if(location.hash === h) render(); else location.hash = h; }
 window.addEventListener('hashchange', render);
@@ -480,6 +494,7 @@ function render(){
   $('#prog').hidden = !ACCESO.ok || !st.alumno || vista === 'verificar';
   $('#salir').hidden = !ACCESO.ok || vista === 'verificar';
   actualizarProgreso();
+  if(ACCESO.ok && st.alumno && !enviarAvance.hecho && vista !== 'verificar') enviarAvance('Ingresó');   // una vez por visita
   if(vista === 'verificar'){ app.innerHTML = vVerificar(h); consultarRegistro(h); }
   else if(!ACCESO.ok){ app.innerHTML = vLogin(); bindLogin(); }
   else if(!st.alumno || vista === 'inicio'){ app.innerHTML = vInicio(); bindInicio(); }
@@ -552,6 +567,7 @@ function bindInicio(){
     if(!ok){ toast('Revisá los campos marcados en rojo.'); return; }
     st = { alumno:d, hechos:{}, intentos:[], cert:null };
     guardar();
+    enviarAvance('Empezó el curso');
     ir('#curso/' + MODULOS[0].id);
   });
   var s = $('#otroAlumno');
@@ -784,6 +800,8 @@ function marcar(id){
   if(st.hechos[id]) return;
   var antes = todoVisto();
   st.hechos[id] = true; guardar(); actualizarProgreso();
+  var mm = MODULOS.filter(function(x){ return x.id === id; })[0];
+  enviarAvance('Completó: ' + (mm ? mm.titulo : id));
   var e = $('#est'); if(e){ e.className = 'est ok'; e.innerHTML = '<svg class="ico"><use href="#i-check"/></svg>Lección completada'; }
   var b = $('#btnSig'); if(b && /Completar/.test(b.textContent)) b.textContent = +$('.lec').getAttribute('data-i') < MODULOS.length - 1 ? 'Siguiente lección' : 'Ir al examen';
   if(!antes && todoVisto()) toast('¡Completaste las lecciones obligatorias! Ya podés rendir el examen.');
@@ -862,6 +880,7 @@ function bindExamen(){
       st.cert = { nombre:nom, dni:a.dni, empresa:a.empresa, fecha:f2, nota:ex.nota, codigo:codigoCert(nom, a.dni, f2, ex.nota) };
     }
     guardar(); render(); registrarCert();
+    enviarAvance((aprobado ? 'Aprobó' : 'Desaprobó') + ' el examen (' + ex.nota + '%)');
   });
 }
 
